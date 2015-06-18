@@ -1,4 +1,47 @@
+# generated files
 .DS_Store
+bin/
+gen/
+
+# nend
 CocosNendSample/proj.android/libs/nendSDK-2.6.1.jar
+CocosNendSample/proj.android/src/net/
 CocosNendSample/proj.ios_mac/ios/NendAd/
+CocosNendSample/proj.ios_mac/ios/NendModule.mm
+CocosNendSample/proj.ios_mac/ios/NendInterstitialModule.mm
+CocosNendSample/Classes/NendModule.h
+CocosNendSample/Classes/NendModule.cpp
+CocosNendSample/Classes/NendInterstitialModule.h
+CocosNendSample/Classes/NendInterstitialModule.cpp
+CocosNendSample/Classes/NendIconModule.h
+CocosNendSample/Classes/NendIconModule.cpp
 CocosNendSample/bin/
+
+# eclipse settings
+.classpath
+.project
+.externalToolBuilders/
+.settings/
+
+# proj.android
+./bin
+./proj.android/assets
+./proj.android/bin
+./proj.android/gen
+./proj.android/libs
+./proj.android/obj
+./proj.android/local.properties
+./proj.android/project.properties
+./proj.android/proguard-project.txt
+./cocos2d/cocos/platform/android/java/bin
+./cocos2d/cocos/platform/android/java/gen
+./cocos2d/cocos/platform/android/java/libs
+./cocos2d/cocos/platform/android/java/local.properties
+./cocos2d/cocos/platform/android/java/res
+
+# proj.ios_mac
+./cocos2d/build/build
+./cocos2d/build/cocos2d_libs.xcodeproj/xcuserdata
+./proj.ios_mac/build
+./proj.ios_mac/project.xcodeproj/project.xcworkspace
+./proj.ios_mac/project.xcodeproj/xcuserdata
