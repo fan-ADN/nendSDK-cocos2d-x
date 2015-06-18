@@ -146,10 +146,6 @@ void IconMenuScene::onExit()
 {
     CCLayer::onExit();
 
-    // アイコン広告のロードを一時停止する
-    NendIconModule::pause();
-    // アイコン広告を非表示にする
-    NendIconModule::hideNADIconView();
     // アイコン広告のリソースを解放する
     NendIconModule::release();
     // EventDispatcher登録の解除
@@ -232,7 +228,6 @@ void IconMenuScene::showPreviousSceneButtonCallback(cocos2d::Ref* pSender)
 void IconMenuScene::addEventDispatcher()
 {
     // EventDispatcherで通知を受け取る
-    // アイコン
     Director::getInstance()->getEventDispatcher()->addCustomEventListener(NADIconLoaderDelegateNotification,[&](cocos2d::EventCustom *event) {
         int *intValue = (int *)event->getUserData();
         int resultCode = *intValue;
@@ -259,6 +254,5 @@ void IconMenuScene::addEventDispatcher()
 void IconMenuScene::removeEventDispatcher()
 {
     // EventDispatcherの通知を停止
-    // アイコン
     Director::getInstance()->getEventDispatcher()->removeCustomEventListeners(NADIconLoaderDelegateNotification);
 }

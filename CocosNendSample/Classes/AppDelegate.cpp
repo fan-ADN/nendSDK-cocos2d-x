@@ -1,5 +1,9 @@
 #include "AppDelegate.h"
 #include "HelloWorldScene.h"
+#include "NendModule.h"
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+#include "NendIconModule.h"
+#endif
 
 USING_NS_CC;
 
@@ -101,14 +105,20 @@ bool AppDelegate::applicationDidFinishLaunching() {
 void AppDelegate::applicationDidEnterBackground() {
     Director::getInstance()->stopAnimation();
 
-    // if you use SimpleAudioEngine, it must be pause
-    // SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
+    // アプリがバックグラウンドになった時に定期ロードを停止する
+    NendModule::pause();
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    NendIconModule::pause();
+#endif
 }
 
 // this function will be called when the app is active again
 void AppDelegate::applicationWillEnterForeground() {
     Director::getInstance()->startAnimation();
 
-    // if you use SimpleAudioEngine, it must resume here
-    // SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
+    // アプリがフォアグラウンドになった時に定期ロードを再開する
+    NendModule::resume();
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    NendIconModule::resume();
+#endif
 }

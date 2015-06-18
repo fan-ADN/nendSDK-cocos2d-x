@@ -204,10 +204,6 @@ void BannerViewScene::onExit()
 {
     CCLayer::onExit();
 
-    // バナー広告のロードを一時停止する
-    NendModule::pause();
-    // バナー広告を非表示にする
-    NendModule::hideNADView();
     // バナー広告のリソースを解放する
     NendModule::release();
     // EventDispatcher登録の解除
@@ -287,7 +283,6 @@ void BannerViewScene::showPreviousSceneButtonCallback(Ref* pSender)
 void BannerViewScene::addEventDispatcher()
 {
     // EventDispatcherで通知を受け取る
-    // バナー
     Director::getInstance()->getEventDispatcher()->addCustomEventListener(NADViewDelegateNotification,[&](cocos2d::EventCustom *event) {
         int *intValue = (int *)event->getUserData();
         int resultCode = *intValue;
@@ -318,6 +313,5 @@ void BannerViewScene::addEventDispatcher()
 void BannerViewScene::removeEventDispatcher()
 {
     // EventDispatcherの通知を停止
-    // バナー
     Director::getInstance()->getEventDispatcher()->removeCustomEventListeners(NADViewDelegateNotification);
 }

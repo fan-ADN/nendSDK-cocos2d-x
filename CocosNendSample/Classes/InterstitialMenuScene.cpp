@@ -369,7 +369,6 @@ void InterstitialMenuScene::addEventDispatcher()
 // EventDispatcherの通知を停止
 void InterstitialMenuScene::removeEventDispatcher()
 {
-    // インタースティシャル
     Director::getInstance()->getEventDispatcher()->removeCustomEventListeners(NADInterstitialDelegateLoadResultNotification);
     Director::getInstance()->getEventDispatcher()->removeCustomEventListeners(NADInterstitialDelegateLoadResultWithSpotIdNotification);
     Director::getInstance()->getEventDispatcher()->removeCustomEventListeners(NADInterstitialDelegateShowResultNotification);

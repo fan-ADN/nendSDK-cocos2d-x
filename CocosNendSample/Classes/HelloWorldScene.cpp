@@ -109,7 +109,7 @@ void HelloWorld::menuCloseCallback(Ref* pSender)
 #endif
 }
 
-// 前の画面に遷移する
+
 void HelloWorld::showBannerSceneButtonCallback(Ref* pSender)
 {
     Director::getInstance()->replaceScene(TransitionSlideInR::create(0.5f,BannerMenuScene::createScene()));
