@@ -19,16 +19,13 @@ CocosNendSample/bin/
 
 # eclipse settings
 .classpath
-.project
 .externalToolBuilders/
 .settings/
 
 # proj.android
 ./bin
-./proj.android/assets
 ./proj.android/bin
 ./proj.android/gen
-./proj.android/libs
 ./proj.android/obj
 ./proj.android/local.properties
 ./proj.android/project.properties
