@@ -26,7 +26,7 @@ cocos2d-xでNendSDKを利用するサンプルプロジェクトになります�
 1. Eclipse > File > Import > Android / Existing Android Code Into Workspace  
 ダウンロードしたCocosNendSampleのproj.androidをインポートする。
 
-2. インポートしたCocosNendSampleを右クリック> Properties
+2. インポートしたCocosNendSampleを右クリック> Properties  
 ![image](https://raw.github.com/wiki/fan-ADN/nendSDK-cocos2d-x/images/readme_img/sc1.png)
 
 Android > Library > Add...をクリックし、Eclipseにインポート済みのlibcocos2dxを選択する。 
