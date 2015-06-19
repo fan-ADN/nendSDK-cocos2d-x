@@ -26,8 +26,7 @@ nendの管理画面からcocos2d-xモジュール 3.x用をダウンロードし
 1. Eclipse > File > Import > Android / Existing Android Code Into Workspace  
 ダウンロードしたCocosNendSampleのproj.androidをインポートする。
 
-2. インポートしたCocosNendSampleを右クリック > Properties > Android > Library  
-参照がエラーになっているcocos2dxの項目を一旦Removeする。  
+2. インポートしたCocosNendSampleを右クリック > Properties > Android > Library
 Add...をクリックし、Eclipseにインポート済みのlibcocos2dxを選択する。  
 
 ### 1 SDK の組み込み
