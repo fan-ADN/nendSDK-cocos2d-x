@@ -35,11 +35,8 @@ Android > Library > Add...をクリックし、Eclipseにインポート済み�
 ![image](https://raw.github.com/wiki/fan-ADN/nendSDK-cocos2d-x/images/readme_img/sc3.png)
 
 #### 1 NendSDK の組み込み
-1. jar ファイルの追加  と Google Play services の追加  
+jar ファイルの追加  と Google Play services を追加します。  
 [組込み方法](https://github.com/fan-ADN/nendSDK-cocos2d-x/wiki/組込み方法) の説明に従って行ってください。  
-
-2. マニフェスト設定を行う  
-本サンプルではこの手順は不要です。
 
 #### 2 cocos2d-x モジュールの組み込み
 [組込み方法](https://github.com/fan-ADN/nendSDK-cocos2d-x/wiki/組込み方法/) の説明に従って行ってください。
