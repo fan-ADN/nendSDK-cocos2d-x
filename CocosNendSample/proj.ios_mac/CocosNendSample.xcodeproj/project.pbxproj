@@ -63,8 +63,6 @@
 		B54CE4881B2EC0B200888DF5 /* BannerMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54CE4841B2EC0B200888DF5 /* BannerMenuScene.cpp */; };
 		B54CE4891B2EC0B200888DF5 /* BannerViewScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54CE4861B2EC0B200888DF5 /* BannerViewScene.cpp */; };
 		B54CE48C1B2EC0BD00888DF5 /* InterstitialMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54CE48A1B2EC0BD00888DF5 /* InterstitialMenuScene.cpp */; };
-		B54D98EF1B2EBDE700EC03F3 /* libNendAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B54D98EB1B2EBDE700EC03F3 /* libNendAd.a */; };
-		B54D98F01B2EBDE700EC03F3 /* NADView_readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = B54D98EE1B2EBDE700EC03F3 /* NADView_readme.txt */; };
 		B54D98F81B2EBE6900EC03F3 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54D98F71B2EBE6900EC03F3 /* ImageIO.framework */; };
 		B54D98FA1B2EBE6F00EC03F3 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54D98F91B2EBE6F00EC03F3 /* AdSupport.framework */; };
 		B54D98FC1B2EBE8400EC03F3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54D98FB1B2EBE8400EC03F3 /* Security.framework */; };
@@ -166,10 +164,6 @@
 		B54CE4871B2EC0B200888DF5 /* BannerViewScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerViewScene.h; sourceTree = "<group>"; };
 		B54CE48A1B2EC0BD00888DF5 /* InterstitialMenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InterstitialMenuScene.cpp; sourceTree = "<group>"; };
 		B54CE48B1B2EC0BD00888DF5 /* InterstitialMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterstitialMenuScene.h; sourceTree = "<group>"; };
-		B54D98EB1B2EBDE700EC03F3 /* libNendAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libNendAd.a; sourceTree = "<group>"; };
-		B54D98EC1B2EBDE700EC03F3 /* NADInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADInterstitial.h; sourceTree = "<group>"; };
-		B54D98ED1B2EBDE700EC03F3 /* NADView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADView.h; sourceTree = "<group>"; };
-		B54D98EE1B2EBDE700EC03F3 /* NADView_readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NADView_readme.txt; sourceTree = "<group>"; };
 		B54D98F71B2EBE6900EC03F3 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
 		B54D98F91B2EBE6F00EC03F3 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
 		B54D98FB1B2EBE8400EC03F3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
@@ -190,7 +184,6 @@
 				B54D98FC1B2EBE8400EC03F3 /* Security.framework in Frameworks */,
 				B54D98FA1B2EBE6F00EC03F3 /* AdSupport.framework in Frameworks */,
 				B54D98F81B2EBE6900EC03F3 /* ImageIO.framework in Frameworks */,
-				B54D98EF1B2EBDE700EC03F3 /* libNendAd.a in Frameworks */,
 				52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */,
 				1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */,
 				D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */,
@@ -230,7 +223,6 @@
 		080E96DDFE201D6D7F000001 /* ios */ = {
 			isa = PBXGroup;
 			children = (
-				B54D98EA1B2EBDE700EC03F3 /* NendAd */,
 				5087E77117EB970100C73F5D /* Icons */,
 				503AE0FA17EB989F00D1A890 /* AppController.h */,
 				503AE0FB17EB989F00D1A890 /* AppController.mm */,
@@ -380,18 +372,6 @@
 			path = ios;
 			sourceTree = SOURCE_ROOT;
 		};
-		B54D98EA1B2EBDE700EC03F3 /* NendAd */ = {
-			isa = PBXGroup;
-			children = (
-				B54D98EB1B2EBDE700EC03F3 /* libNendAd.a */,
-				B54D98EC1B2EBDE700EC03F3 /* NADInterstitial.h */,
-				B54D98ED1B2EBDE700EC03F3 /* NADView.h */,
-				B54D98EE1B2EBDE700EC03F3 /* NADView_readme.txt */,
-			);
-			name = NendAd;
-			path = ios/NendAd;
-			sourceTree = SOURCE_ROOT;
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -490,7 +470,6 @@
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
-				B54D98F01B2EBDE700EC03F3 /* NADView_readme.txt in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				46880B8119C43A67006E1F66 /* HelloWorld.png in Resources */,
@@ -595,7 +574,7 @@
 				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/ios/NendAd";
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
@@ -629,7 +608,7 @@
 				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/ios/NendAd";
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
