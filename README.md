@@ -14,7 +14,7 @@ cocos2d-xでNendSDKを利用するサンプルプロジェクトになります�
 
 ### iOS  
 
-#### 1 NendSDK と cocos2d-x モジュールの組み込み
+#### 1 NendSDK と cocos2d-x モジュールの組み込み
 [組込み方法](https://github.com/fan-ADN/nendSDK-cocos2d-x/wiki/組込み方法) の説明に従って行ってください。
 
 
@@ -26,8 +26,13 @@ cocos2d-xでNendSDKを利用するサンプルプロジェクトになります�
 1. Eclipse > File > Import > Android / Existing Android Code Into Workspace  
 ダウンロードしたCocosNendSampleのproj.androidをインポートする。
 
-2. インポートしたCocosNendSampleを右クリック > Properties > Android > Library
-Add...をクリックし、Eclipseにインポート済みのlibcocos2dxを選択する。  
+2. インポートしたCocosNendSampleを右クリック> Properties
+![image](https://raw.github.com/wiki/fan-ADN/nendSDK-cocos2d-x/images/readme_img/sc1.png)
+
+Android > Library > Add...をクリックし、Eclipseにインポート済みのlibcocos2dxを選択する。 
+![image](https://raw.github.com/wiki/fan-ADN/nendSDK-cocos2d-x/images/readme_img/sc2.png)
+ 
+![image](https://raw.github.com/wiki/fan-ADN/nendSDK-cocos2d-x/images/readme_img/sc3.png)
 
 #### 1 NendSDK の組み込み
 1. jar ファイルの追加  と Google Play services の追加  
@@ -36,7 +41,7 @@ Add...をクリックし、Eclipseにインポート済みのlibcocos2dxを選�
 2. マニフェスト設定を行う  
 本サンプルではこの手順は不要です。
 
-#### 2 cocos2d-x モジュールの組み込み
+#### 2 cocos2d-x モジュールの組み込み
 [組込み方法](https://github.com/fan-ADN/nendSDK-cocos2d-x/wiki/組込み方法/) の説明に従って行ってください。
 
 #### 3 EclipseでプロジェクトをCleanしてRunする。  
