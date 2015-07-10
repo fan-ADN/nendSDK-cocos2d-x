@@ -7,10 +7,13 @@ cocos2d-xでNendSDKを利用するサンプルプロジェクトになります�
 
 * cocos2d-x-3.6
 
-* nendSDK Cocos2d-x module ver1.2.0
+* nendSDK Cocos2d-x module ver1.2.1
 
 ## Usage
-[nend管理画面](https://www.nend.net/admin/login)からcocos2d-xモジュール 3.x用をダウンロードし、以下の手順でプロジェクトにSDKとモジュールの追加及び設定を行ってください。
+[nend管理画面](https://www.nend.net/admin/login)からcocos2d-xモジュール 3.x用をダウンロードし、以下の手順でプロジェクトにSDKとモジュールの追加及び設定を行ってください。  
+
+#### 複数の広告枠IDをサンプルで利用する場合
+広告枠ID ( apikey と spotID )を複数利用する場合は、サンプルプロジェクト内の apiKey と spotID の定義箇所を書き換えてご利用ください。
 
 ### iOS  
 
