@@ -20,6 +20,7 @@ public:
     
     // メニューボタンのコールバック
     void showBannerSceneButtonCallback(cocos2d::Ref* pSender);
+    void showBannerWithSpotIDSceneButtonCallback(cocos2d::Ref* pSender);
     void showInterstitialSceneButtonCallback(cocos2d::Ref* pSender);
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
     void showIconSceneButtonCallback(cocos2d::Ref* pSender);

@@ -1,36 +1,36 @@
 //
-//  IconMenuScene.h
+//  IconMenuWithSpotIDScene.h
 //  HelloCpp
 //
 //  Created by F@N Communications, Inc.
 //
 //
 
-#ifndef __HelloCpp__IconMenuScene__
-#define __HelloCpp__IconMenuScene__
+#ifndef __HelloCpp__IconMenuWithSpotIDScene__
+#define __HelloCpp__IconMenuWithSpotIDScene__
 
 #include <stdio.h>
 #include "cocos2d.h"
 
-class IconMenuScene : public cocos2d::LayerColor
+class IconMenuWithSpotIDScene : public cocos2d::LayerColor
 {
 public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::Scene* createScene();
-    
+
     // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
     virtual bool init();
-    
+
     // a selector callback
     void menuCloseCallback(cocos2d::Ref* pSender);
-    
+
     // implement the "static create()" method manually
-    CREATE_FUNC(IconMenuScene);
-    
+    CREATE_FUNC(IconMenuWithSpotIDScene);
+
     virtual void onEnter();
     virtual void onExit();
     virtual void onExitTransitionDidStart();
-    
+
     // メニューボタンのコールバック
     void createIconTopCallback(cocos2d::Ref* pSender);
     void createIconBottomCallback(cocos2d::Ref* pSender);
@@ -38,16 +38,23 @@ public:
     void createIconWithNumberTopCallback(cocos2d::Ref* pSender);
     void createIconWithNumberBottomCallback(cocos2d::Ref* pSender);
     void showIconCallback(cocos2d::Ref* pSender);
+    void showIconWithSpotIDCallback(cocos2d::Ref* pSender);
     void hideIconCallback(cocos2d::Ref* pSender);
+    void hideIconWithSpotIDCallback(cocos2d::Ref* pSender);
     void pauseIconCallback(cocos2d::Ref* pSender);
+    void pauseIconWithSpotIDCallback(cocos2d::Ref* pSender);
     void resumeIconCallback(cocos2d::Ref* pSender);
+    void resumeIconWithSpotIDCallback(cocos2d::Ref* pSender);
     void releaseIconCallback(cocos2d::Ref* pSender);
-    void toWithSpotIDMenuCallback(cocos2d::Ref* pSender);
+    void releaseIconWithSpotIDCallback(cocos2d::Ref* pSender);
+    void spaceAndTitleDisableCallback(cocos2d::Ref* pSender);
+    void spaceDisableCallback(cocos2d::Ref* pSender);
+    void titleDsableCallback(cocos2d::Ref* pSender);
     void showPreviousSceneButtonCallback(cocos2d::Ref* pSender);
-    
+
     // EventDispatcher登録&削除
     void addEventDispatcher();
     void removeEventDispatcher();
 };
 
-#endif /* defined(__HelloCpp__IconMenuScene__) */
+#endif /* defined(__HelloCpp__IconMenuWithSpotIDScene__) */
