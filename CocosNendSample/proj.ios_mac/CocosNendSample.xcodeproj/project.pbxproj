@@ -60,6 +60,7 @@
 		521A8EAA19F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
+		B50AD7D41B53402E0073C188 /* BannerViewWithSpotIDScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B50AD7D21B53402E0073C188 /* BannerViewWithSpotIDScene.cpp */; };
 		B54CE4881B2EC0B200888DF5 /* BannerMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54CE4841B2EC0B200888DF5 /* BannerMenuScene.cpp */; };
 		B54CE4891B2EC0B200888DF5 /* BannerViewScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54CE4861B2EC0B200888DF5 /* BannerViewScene.cpp */; };
 		B54CE48C1B2EC0BD00888DF5 /* InterstitialMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54CE48A1B2EC0BD00888DF5 /* InterstitialMenuScene.cpp */; };
@@ -158,6 +159,8 @@
 		521A8EA819F11F5000D177D7 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		B50AD7D21B53402E0073C188 /* BannerViewWithSpotIDScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BannerViewWithSpotIDScene.cpp; sourceTree = "<group>"; };
+		B50AD7D31B53402E0073C188 /* BannerViewWithSpotIDScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerViewWithSpotIDScene.h; sourceTree = "<group>"; };
 		B54CE4841B2EC0B200888DF5 /* BannerMenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BannerMenuScene.cpp; sourceTree = "<group>"; };
 		B54CE4851B2EC0B200888DF5 /* BannerMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerMenuScene.h; sourceTree = "<group>"; };
 		B54CE4861B2EC0B200888DF5 /* BannerViewScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BannerViewScene.cpp; sourceTree = "<group>"; };
@@ -310,6 +313,8 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B50AD7D21B53402E0073C188 /* BannerViewWithSpotIDScene.cpp */,
+				B50AD7D31B53402E0073C188 /* BannerViewWithSpotIDScene.h */,
 				B54CE48A1B2EC0BD00888DF5 /* InterstitialMenuScene.cpp */,
 				B54CE48B1B2EC0BD00888DF5 /* InterstitialMenuScene.h */,
 				B54CE4841B2EC0B200888DF5 /* BannerMenuScene.cpp */,
@@ -520,6 +525,7 @@
 				B54CE48C1B2EC0BD00888DF5 /* InterstitialMenuScene.cpp in Sources */,
 				B54CE4881B2EC0B200888DF5 /* BannerMenuScene.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				B50AD7D41B53402E0073C188 /* BannerViewWithSpotIDScene.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
