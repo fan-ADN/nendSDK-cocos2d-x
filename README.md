@@ -7,7 +7,7 @@ cocos2d-xでNendSDKを利用するサンプルプロジェクトになります�
 
 * cocos2d-x-3.6
 
-* nendSDK Cocos2d-x module ver1.2.1
+* nendSDK Cocos2d-x module ver1.2.2
 
 ## Usage
 [nend管理画面](https://www.nend.net/admin/login)からcocos2d-xモジュール 3.x用をダウンロードし、以下の手順でプロジェクトにSDKとモジュールの追加及び設定を行ってください。  
@@ -32,9 +32,9 @@ cocos2d-xでNendSDKを利用するサンプルプロジェクトになります�
 2. インポートしたCocosNendSampleを右クリック> Properties  
 ![image](https://raw.github.com/wiki/fan-ADN/nendSDK-cocos2d-x/images/readme_img/sc1.png)
 
-Android > Library > Add...をクリックし、Eclipseにインポート済みのlibcocos2dxを選択する。 
+Android > Library > Add...をクリックし、Eclipseにインポート済みのlibcocos2dxを選択する。
 ![image](https://raw.github.com/wiki/fan-ADN/nendSDK-cocos2d-x/images/readme_img/sc2.png)
- 
+
 ![image](https://raw.github.com/wiki/fan-ADN/nendSDK-cocos2d-x/images/readme_img/sc3.png)
 
 #### 1 NendSDK の組み込み
