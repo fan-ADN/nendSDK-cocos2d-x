@@ -42,6 +42,9 @@ public:
     void pauseIconCallback(cocos2d::Ref* pSender);
     void resumeIconCallback(cocos2d::Ref* pSender);
     void releaseIconCallback(cocos2d::Ref* pSender);
+    void spaceAndTitleDisableCallback(cocos2d::Ref* pSender);
+    void spaceDisableCallback(cocos2d::Ref* pSender);
+    void titleDsableCallback(cocos2d::Ref* pSender);
     void toWithSpotIDMenuCallback(cocos2d::Ref* pSender);
     void showPreviousSceneButtonCallback(cocos2d::Ref* pSender);
     

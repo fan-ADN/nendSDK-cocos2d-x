@@ -15,9 +15,6 @@ USING_NS_CC;
 static char apiKey_A[] = "0c734134519f25412ae9a9bff94783b81048ffbe";
 static char spotID_A[] = "101282";
 
-static char apiKey_B[] = "0c734134519f25412ae9a9bff94783b81048ffbe";
-static char spotID_B[] = "101282";
-
 Scene* IconMenuWithSpotIDScene::createScene()
 {
     // 'scene' is an autorelease object
@@ -80,7 +77,7 @@ bool IconMenuWithSpotIDScene::init()
     createTopMenu->setPosition(Point(visibleSize.width/2 + origin.x - 100 * displayScale, visibleSize.height/2 + origin.y + 150 * displayScale));
     this->addChild(createTopMenu);
 
-    auto createBottomLabel = Label::createWithSystemFont("createBottomB", font->getCString(), fontSize);
+    auto createBottomLabel = Label::createWithSystemFont("createBottomA", font->getCString(), fontSize);
     createBottomLabel->setColor(Color3B::BLACK);
     auto createBottomItem = MenuItemLabel::create(createBottomLabel, CC_CALLBACK_1(IconMenuWithSpotIDScene::createIconBottomCallback, this));
     auto createBottomMenu = Menu::create(createBottomItem, NULL);
@@ -101,7 +98,7 @@ bool IconMenuWithSpotIDScene::init()
     createTopNumberMenu->setPosition(Point(visibleSize.width/2 + origin.x - 100 * displayScale, visibleSize.height/2 + origin.y + 100 * displayScale));
     this->addChild(createTopNumberMenu);
 
-    auto createBottomNumberLabel = Label::createWithSystemFont("createBottomNum_B", font->getCString(), fontSize);
+    auto createBottomNumberLabel = Label::createWithSystemFont("createBottomNum_A", font->getCString(), fontSize);
     createBottomNumberLabel->setColor(Color3B::BLACK);
     auto createBottomNumberItem = MenuItemLabel::create(createBottomNumberLabel, CC_CALLBACK_1(IconMenuWithSpotIDScene::createIconWithNumberBottomCallback, this));
     auto createBottomNumberMenu = Menu::create(createBottomNumberItem, NULL);
@@ -136,68 +133,33 @@ bool IconMenuWithSpotIDScene::init()
     showMenu->setPosition(Point(visibleSize.width/2 + origin.x - 100 * displayScale, visibleSize.height/2 + origin.y + 50 * displayScale));
     this->addChild(showMenu);
 
-    auto showWithSpotIDLabel = Label::createWithSystemFont("show_B", font->getCString(), fontSize);
-    showWithSpotIDLabel->setColor(Color3B::BLACK);
-    auto showWithSpotIDItem = MenuItemLabel::create(showWithSpotIDLabel, CC_CALLBACK_1(IconMenuWithSpotIDScene::showIconWithSpotIDCallback, this));
-    auto showWithSpotIDMenu = Menu::create(showWithSpotIDItem, NULL);
-    showWithSpotIDMenu->setPosition(Point(visibleSize.width/2 + origin.x + 100 * displayScale, visibleSize.height/2 + origin.y + 50 * displayScale));
-    this->addChild(showWithSpotIDMenu);
-
     auto hideLabel = Label::createWithSystemFont("hide_A", font->getCString(), fontSize);
     hideLabel->setColor(Color3B::BLACK);
     auto hideItem = MenuItemLabel::create(hideLabel, CC_CALLBACK_1(IconMenuWithSpotIDScene::hideIconCallback, this));
     auto hideMenu = Menu::create(hideItem, NULL);
-    hideMenu->setPosition(Point(visibleSize.width/2 + origin.x - 100 * displayScale, visibleSize.height/2 + origin.y));
+    hideMenu->setPosition(Point(visibleSize.width/2 + origin.x + 100 * displayScale, visibleSize.height/2 + origin.y + 50 * displayScale));
     this->addChild(hideMenu);
-
-    auto hideWithSpotIDLabel = Label::createWithSystemFont("hide_B", font->getCString(), fontSize);
-    hideWithSpotIDLabel->setColor(Color3B::BLACK);
-    auto hideWithSpotIDItem = MenuItemLabel::create(hideWithSpotIDLabel, CC_CALLBACK_1(IconMenuWithSpotIDScene::hideIconWithSpotIDCallback, this));
-    auto hideWithSpotIDMenu = Menu::create(hideWithSpotIDItem, NULL);
-    hideWithSpotIDMenu->setPosition(Point(visibleSize.width/2 + origin.x + 100 * displayScale, visibleSize.height/2 + origin.y));
-    this->addChild(hideWithSpotIDMenu);
 
     auto pauseLabel = Label::createWithSystemFont("pause_A", font->getCString(), fontSize);
     pauseLabel->setColor(Color3B::BLACK);
     auto pauseItem = MenuItemLabel::create(pauseLabel, CC_CALLBACK_1(IconMenuWithSpotIDScene::pauseIconCallback, this));
     auto pauseMenu = Menu::create(pauseItem, NULL);
-    pauseMenu->setPosition(Point(visibleSize.width/2 + origin.x - 100 * displayScale, visibleSize.height/2 + origin.y - 50 * displayScale));
+    pauseMenu->setPosition(Point(visibleSize.width/2 + origin.x - 100 * displayScale, visibleSize.height/2 + origin.y));
     this->addChild(pauseMenu);
-
-    auto pauseWithSpotIDLabel = Label::createWithSystemFont("pause_B", font->getCString(), fontSize);
-    pauseWithSpotIDLabel->setColor(Color3B::BLACK);
-    auto pauseWithSpotIDItem = MenuItemLabel::create(pauseWithSpotIDLabel, CC_CALLBACK_1(IconMenuWithSpotIDScene::pauseIconWithSpotIDCallback, this));
-    auto pauseWithSpotIDMenu = Menu::create(pauseWithSpotIDItem, NULL);
-    pauseWithSpotIDMenu->setPosition(Point(visibleSize.width/2 + origin.x + 100 * displayScale, visibleSize.height/2 + origin.y - 50 * displayScale));
-    this->addChild(pauseWithSpotIDMenu);
 
     auto resumeLabel = Label::createWithSystemFont("resume_A", font->getCString(), fontSize);
     resumeLabel->setColor(Color3B::BLACK);
     auto resumeItem = MenuItemLabel::create(resumeLabel, CC_CALLBACK_1(IconMenuWithSpotIDScene::resumeIconCallback, this));
     auto resumeMenu = Menu::create(resumeItem, NULL);
-    resumeMenu->setPosition(Point(visibleSize.width/2 + origin.x - 100 * displayScale, visibleSize.height/2 + origin.y - 100 * displayScale));
+    resumeMenu->setPosition(Point(visibleSize.width/2 + origin.x + 100 * displayScale, visibleSize.height/2 + origin.y));
     this->addChild(resumeMenu);
-
-    auto resumeWithSpotIDLabel = Label::createWithSystemFont("resume_B", font->getCString(), fontSize);
-    resumeWithSpotIDLabel->setColor(Color3B::BLACK);
-    auto resumeWithSpotIDItem = MenuItemLabel::create(resumeWithSpotIDLabel, CC_CALLBACK_1(IconMenuWithSpotIDScene::resumeIconWithSpotIDCallback, this));
-    auto resumeWithSpotIDMenu = Menu::create(resumeWithSpotIDItem, NULL);
-    resumeWithSpotIDMenu->setPosition(Point(visibleSize.width/2 + origin.x + 100 * displayScale, visibleSize.height/2 + origin.y - 100 * displayScale));
-    this->addChild(resumeWithSpotIDMenu);
 
     auto releaseLabel = Label::createWithSystemFont("release_A", font->getCString(), fontSize);
     releaseLabel->setColor(Color3B::BLACK);
     auto releaseItem = MenuItemLabel::create(releaseLabel, CC_CALLBACK_1(IconMenuWithSpotIDScene::releaseIconCallback, this));
     auto releaseMenu = Menu::create(releaseItem, NULL);
-    releaseMenu->setPosition(Point(visibleSize.width/2 + origin.x - 100 * displayScale, visibleSize.height/2 + origin.y - 150 * displayScale));
+    releaseMenu->setPosition(Point(visibleSize.width/2 + origin.x - 100 * displayScale, visibleSize.height/2 + origin.y - 50 * displayScale));
     this->addChild(releaseMenu);
-
-    auto releaseWithSpotIDLabel = Label::createWithSystemFont("release_B", font->getCString(), fontSize);
-    releaseWithSpotIDLabel->setColor(Color3B::BLACK);
-    auto releaseWithSpotIDItem = MenuItemLabel::create(releaseWithSpotIDLabel, CC_CALLBACK_1(IconMenuWithSpotIDScene::releaseIconWithSpotIDCallback, this));
-    auto releaseWithSpotIDMenu = Menu::create(releaseWithSpotIDItem, NULL);
-    releaseWithSpotIDMenu->setPosition(Point(visibleSize.width/2 + origin.x + 100 * displayScale, visibleSize.height/2 + origin.y - 150 * displayScale));
-    this->addChild(releaseWithSpotIDMenu);
 
     auto showPreviousLabel = Label::createWithSystemFont("Back", font->getCString(), fontSize);
     showPreviousLabel->setColor(Color3B::BLACK);
@@ -229,7 +191,6 @@ void IconMenuWithSpotIDScene::onExitTransitionDidStart()
 
     // アイコン広告のリソースを解放する
     NendIconModule::release(spotID_A);
-    NendIconModule::release(spotID_B);
 }
 
 void IconMenuWithSpotIDScene::menuCloseCallback(Ref* pSender)
@@ -250,11 +211,11 @@ void IconMenuWithSpotIDScene::createIconTopCallback(cocos2d::Ref* pSender)
 // 画面下部中央に並べてアイコン広告を生成する
 void IconMenuWithSpotIDScene::createIconBottomCallback(cocos2d::Ref* pSender)
 {
-	this->releaseIconWithSpotIDCallback(NULL);
+	this->releaseIconCallback(NULL);
 
-    NendIconModule::createNADIconLoader(apiKey_B, spotID_B);
-    NendIconModule::createNADIconViewBottom(spotID_B, true, true, Color3B::ORANGE);
-    NendIconModule::load(spotID_B);
+    NendIconModule::createNADIconLoader(apiKey_A, spotID_A);
+    NendIconModule::createNADIconViewBottom(spotID_A, true, true, Color3B::ORANGE);
+    NendIconModule::load(spotID_A);
 }
 // 位置を指定してアイコン広告を生成する
 void IconMenuWithSpotIDScene::createIconUserCallback(cocos2d::Ref* pSender)
@@ -279,11 +240,11 @@ void IconMenuWithSpotIDScene::createIconWithNumberTopCallback(cocos2d::Ref* pSen
 // 画面下部中央に並べてアイコン広告を生成する(表示数指定)
 void IconMenuWithSpotIDScene::createIconWithNumberBottomCallback(cocos2d::Ref* pSender)
 {
-	this->releaseIconWithSpotIDCallback(NULL);
+	this->releaseIconCallback(NULL);
 
-    NendIconModule::createNADIconLoader(apiKey_B, spotID_B);
-    NendIconModule::createNADIconViewBottom(5, spotID_B, true, true, Color3B(0, 255, 255));
-    NendIconModule::load(spotID_B);
+    NendIconModule::createNADIconLoader(apiKey_A, spotID_A);
+    NendIconModule::createNADIconViewBottom(5, spotID_A, true, true, Color3B(0, 255, 255));
+    NendIconModule::load(spotID_A);
 }
 // タイトルと余白なしで画面下部中央に並べてアイコン広告を生成する
 void IconMenuWithSpotIDScene::spaceAndTitleDisableCallback(cocos2d::Ref* pSender)
@@ -317,45 +278,25 @@ void IconMenuWithSpotIDScene::showIconCallback(cocos2d::Ref* pSender)
 {
     NendIconModule::showNADIconView(spotID_A);
 }
-void IconMenuWithSpotIDScene::showIconWithSpotIDCallback(cocos2d::Ref* pSender)
-{
-    NendIconModule::showNADIconView(spotID_B);
-}
 // アイコン広告を非表示にする
 void IconMenuWithSpotIDScene::hideIconCallback(cocos2d::Ref* pSender)
 {
     NendIconModule::hideNADIconView(spotID_A);
-}
-void IconMenuWithSpotIDScene::hideIconWithSpotIDCallback(cocos2d::Ref* pSender)
-{
-    NendIconModule::hideNADIconView(spotID_B);
 }
 // アイコン広告のロードを一時停止する
 void IconMenuWithSpotIDScene::pauseIconCallback(cocos2d::Ref* pSender)
 {
     NendIconModule::pause(spotID_A);
 }
-void IconMenuWithSpotIDScene::pauseIconWithSpotIDCallback(cocos2d::Ref* pSender)
-{
-    NendIconModule::pause(spotID_B);
-}
 // アイコン広告のロードを再開する
 void IconMenuWithSpotIDScene::resumeIconCallback(cocos2d::Ref* pSender)
 {
     NendIconModule::resume(spotID_A);
 }
-void IconMenuWithSpotIDScene::resumeIconWithSpotIDCallback(cocos2d::Ref* pSender)
-{
-    NendIconModule::resume(spotID_B);
-}
 // アイコン広告のリソースを解放する
 void IconMenuWithSpotIDScene::releaseIconCallback(cocos2d::Ref* pSender)
 {
     NendIconModule::release(spotID_A);
-}
-void IconMenuWithSpotIDScene::releaseIconWithSpotIDCallback(cocos2d::Ref* pSender)
-{
-    NendIconModule::release(spotID_B);
 }
 // 前の画面に遷移する
 void IconMenuWithSpotIDScene::showPreviousSceneButtonCallback(cocos2d::Ref* pSender)

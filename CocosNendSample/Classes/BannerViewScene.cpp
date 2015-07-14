@@ -203,7 +203,10 @@ void BannerViewScene::onEnter()
 void BannerViewScene::onExit()
 {
     CCLayer::onExit();
+}
 
+void BannerViewScene::onExitTransitionDidStart()
+{
     // バナー広告のリソースを解放する
     NendModule::release();
     // EventDispatcher登録の解除

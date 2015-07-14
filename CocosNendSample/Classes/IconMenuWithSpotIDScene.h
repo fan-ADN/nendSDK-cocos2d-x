@@ -38,15 +38,10 @@ public:
     void createIconWithNumberTopCallback(cocos2d::Ref* pSender);
     void createIconWithNumberBottomCallback(cocos2d::Ref* pSender);
     void showIconCallback(cocos2d::Ref* pSender);
-    void showIconWithSpotIDCallback(cocos2d::Ref* pSender);
     void hideIconCallback(cocos2d::Ref* pSender);
-    void hideIconWithSpotIDCallback(cocos2d::Ref* pSender);
     void pauseIconCallback(cocos2d::Ref* pSender);
-    void pauseIconWithSpotIDCallback(cocos2d::Ref* pSender);
     void resumeIconCallback(cocos2d::Ref* pSender);
-    void resumeIconWithSpotIDCallback(cocos2d::Ref* pSender);
     void releaseIconCallback(cocos2d::Ref* pSender);
-    void releaseIconWithSpotIDCallback(cocos2d::Ref* pSender);
     void spaceAndTitleDisableCallback(cocos2d::Ref* pSender);
     void spaceDisableCallback(cocos2d::Ref* pSender);
     void titleDsableCallback(cocos2d::Ref* pSender);

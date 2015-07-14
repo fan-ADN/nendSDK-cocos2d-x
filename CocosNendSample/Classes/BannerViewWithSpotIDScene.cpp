@@ -21,9 +21,9 @@ bool _isAdjustFlag;
 static char apiKey_A[] = "a6eca9dd074372c898dd1df549301f277c53f2b9";
 static char spotID_A[] = "3172";
 
-// 広告枠BのapiKeyとspotID
-static char apiKey_B[] = "a6eca9dd074372c898dd1df549301f277c53f2b9";
-static char spotID_B[] = "3172";
+// 広告枠BのapiKeyとspotID (バナーサイズ：320x100)
+static char apiKey_B[] = "eb5ca11fa8e46315c2df1b8e283149049e8d235e";
+static char spotID_B[] = "70996";
 
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 
@@ -31,9 +31,9 @@ static char spotID_B[] = "3172";
 static char apiKey_A[] = "c5cb8bc474345961c6e7a9778c947957ed8e1e4f";
 static char spotID_A[] = "3174";
 
-// 広告枠BのapiKeyとspotID
-static char apiKey_B[] = "c5cb8bc474345961c6e7a9778c947957ed8e1e4f";
-static char spotID_B[] = "3174";
+// 広告枠BのapiKeyとspotID (バナーサイズ：320x100)
+static char apiKey_B[] = "8932b68d22d1d32f5d7251f9897a6aa64117995e";
+static char spotID_B[] = "71000";
 
 #endif
 
@@ -198,7 +198,10 @@ void BannerViewWithSpotIDScene::onEnter()
 void BannerViewWithSpotIDScene::onExit()
 {
     CCLayer::onExit();
-    
+}
+
+void BannerViewWithSpotIDScene::onExitTransitionDidStart()
+{
     // バナー広告のリソースを解放する
     NendModule::release();
     // EventDispatcher登録の解除

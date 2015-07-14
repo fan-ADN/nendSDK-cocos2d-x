@@ -29,6 +29,7 @@ public:
     
     virtual void onEnter();
     virtual void onExit();
+    virtual void onExitTransitionDidStart();
     
     // メニューボタンのコールバック
     void createBannerTopCallback(cocos2d::Ref* pSender);

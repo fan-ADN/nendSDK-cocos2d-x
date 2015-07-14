@@ -106,6 +106,27 @@ bool IconMenuScene::init()
     createBottomNumberMenu->setPosition(Point(visibleSize.width/2 + origin.x + 100 * displayScale, visibleSize.height/2 + origin.y + 100 * displayScale));
     this->addChild(createBottomNumberMenu);
     
+    auto titleSpaceLabel = Label::createWithSystemFont("titleSpaceOFF", font->getCString(), fontSize);
+    titleSpaceLabel->setColor(Color3B::BLACK);
+    auto titleSpaceLabelItem = MenuItemLabel::create(titleSpaceLabel, CC_CALLBACK_1(IconMenuScene::spaceAndTitleDisableCallback, this));
+    auto titleSpaceLabelItemMenu = Menu::create(titleSpaceLabelItem, NULL);
+    titleSpaceLabelItemMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 50 * displayScale));
+    this->addChild(titleSpaceLabelItemMenu);
+
+    auto spaceOffLabel = Label::createWithSystemFont("spaceOFF", font->getCString(), fontSize);
+    spaceOffLabel->setColor(Color3B::BLACK);
+    auto spaceOffItem = MenuItemLabel::create(spaceOffLabel, CC_CALLBACK_1(IconMenuScene::spaceDisableCallback, this));
+    auto spaceOffItemMenu = Menu::create(spaceOffItem, NULL);
+    spaceOffItemMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
+    this->addChild(spaceOffItemMenu);
+
+    auto titleOffLabel = Label::createWithSystemFont("titleOFF", font->getCString(), fontSize);
+    titleOffLabel->setColor(Color3B::BLACK);
+    auto titleOffItem = MenuItemLabel::create(titleOffLabel, CC_CALLBACK_1(IconMenuScene::titleDsableCallback, this));
+    auto titleOffItemMenu = Menu::create(titleOffItem, NULL);
+    titleOffItemMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 50 * displayScale));
+    this->addChild(titleOffItemMenu);
+
     auto showLabel = Label::createWithSystemFont("show", font->getCString(), fontSize);
     showLabel->setColor(Color3B::BLACK);
     auto showItem = MenuItemLabel::create(showLabel, CC_CALLBACK_1(IconMenuScene::showIconCallback, this));
@@ -138,7 +159,7 @@ bool IconMenuScene::init()
     releaseLabel->setColor(Color3B::BLACK);
     auto releaseItem = MenuItemLabel::create(releaseLabel, CC_CALLBACK_1(IconMenuScene::releaseIconCallback, this));
     auto releaseMenu = Menu::create(releaseItem, NULL);
-    releaseMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 50 * displayScale));
+    releaseMenu->setPosition(Point(visibleSize.width/2 + origin.x - 100 * displayScale, visibleSize.height/2 + origin.y - 50 * displayScale));
     this->addChild(releaseMenu);
 
     auto toNextSceneLabel = Label::createWithSystemFont("ToWithSpotIDMenu >", font->getCString(), fontSize);
@@ -231,6 +252,33 @@ void IconMenuScene::createIconWithNumberBottomCallback(cocos2d::Ref* pSender)
 
     NendIconModule::createNADIconLoader(apiKey, spotID);
     NendIconModule::createNADIconViewBottom(5);
+    NendIconModule::load();
+}
+// タイトルと余白なしで画面下部中央に並べてアイコン広告を生成する
+void IconMenuScene::spaceAndTitleDisableCallback(cocos2d::Ref* pSender)
+{
+	this->releaseIconCallback(NULL);
+
+    NendIconModule::createNADIconLoader(apiKey, spotID);
+    NendIconModule::createNADIconViewBottom(spotID, false, false, Color3B(0, 100, 255));
+    NendIconModule::load();
+}
+// 余白なしで画面上部中央に並べてアイコン広告を生成する
+void IconMenuScene::spaceDisableCallback(cocos2d::Ref* pSender)
+{
+	this->releaseIconCallback(NULL);
+
+    NendIconModule::createNADIconLoader(apiKey, spotID);
+    NendIconModule::createNADIconViewTop(spotID, true, false, Color3B(0, 255, 255));
+    NendIconModule::load();
+}
+// タイトルなしで画面下部中央に並べてアイコン広告を生成する
+void IconMenuScene::titleDsableCallback(cocos2d::Ref* pSender)
+{
+	this->releaseIconCallback(NULL);
+
+    NendIconModule::createNADIconLoader(apiKey, spotID);
+    NendIconModule::createNADIconViewBottom(spotID, false, true, Color3B(0, 0, 0));
     NendIconModule::load();
 }
 // アイコン広告を再表示する
