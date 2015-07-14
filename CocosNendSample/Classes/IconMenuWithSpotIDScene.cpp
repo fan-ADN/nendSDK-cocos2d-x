@@ -261,7 +261,7 @@ void IconMenuWithSpotIDScene::spaceDisableCallback(cocos2d::Ref* pSender)
 	this->releaseIconCallback(NULL);
 
     NendIconModule::createNADIconLoader(apiKey_A, spotID_A);
-    NendIconModule::createNADIconViewTop(spotID_A, true, false, Color3B(0, 255, 255));
+    NendIconModule::createNADIconViewBottom(spotID_A, true, false, Color3B(0, 255, 255));
     NendIconModule::load(spotID_A);
 }
 // タイトルなしで画面下部中央に並べてアイコン広告を生成する
