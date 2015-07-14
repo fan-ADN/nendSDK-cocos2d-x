@@ -18,7 +18,9 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../Classes/NendInterstitialModule.cpp \
                    ../../Classes/BannerMenuScene.cpp \
                    ../../Classes/BannerViewScene.cpp \
+                   ../../Classes/BannerViewWithSpotIDScene.cpp \
                    ../../Classes/IconMenuScene.cpp \
+                   ../../Classes/IconMenuWithSpotIDScene.cpp \
                    ../../Classes/InterstitialMenuScene.cpp
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes

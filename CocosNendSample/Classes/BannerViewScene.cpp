@@ -144,43 +144,43 @@ bool BannerViewScene::init()
     auto showBannerLabel = Label::createWithSystemFont("show", font->getCString(), fontSize);
     auto showBannerItem = MenuItemLabel::create(showBannerLabel, CC_CALLBACK_1(BannerViewScene::showBannerCallback, this));
     auto showBannerMenu = Menu::create(showBannerItem, NULL);
-    showBannerMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 100 * displayScale));
+    showBannerMenu->setPosition(Point(visibleSize.width/2 + origin.x - 100 * displayScale, visibleSize.height/2 + origin.y + 100 * displayScale));
     this->addChild(showBannerMenu);
-    
+
     auto hideBannerLabel = Label::createWithSystemFont("hide", font->getCString(), fontSize);
     auto hideBannerItem = MenuItemLabel::create(hideBannerLabel, CC_CALLBACK_1(BannerViewScene::hideBannerCallback, this));
     auto hideBannerMenu = Menu::create(hideBannerItem, NULL);
-    hideBannerMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 50 * displayScale));
+    hideBannerMenu->setPosition(Point(visibleSize.width/2 + origin.x + 100 * displayScale, visibleSize.height/2 + origin.y + 100 * displayScale));
     this->addChild(hideBannerMenu);
-    
+
     auto pauseBannerLabel = Label::createWithSystemFont("pause", font->getCString(), fontSize);
     auto pauseBannerItem = MenuItemLabel::create(pauseBannerLabel, CC_CALLBACK_1(BannerViewScene::pauseBannerCallback, this));
     auto pauseBannerMenu = Menu::create(pauseBannerItem, NULL);
-    pauseBannerMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
+    pauseBannerMenu->setPosition(Point(visibleSize.width/2 + origin.x - 100 * displayScale, visibleSize.height/2 + origin.y + 50 * displayScale));
     this->addChild(pauseBannerMenu);
-    
+
     auto resumeBannerLabel = Label::createWithSystemFont("resume", font->getCString(), fontSize);
     auto resumeBannerItem = MenuItemLabel::create(resumeBannerLabel, CC_CALLBACK_1(BannerViewScene::resumeBannerCallback, this));
     auto resumeBannerMenu = Menu::create(resumeBannerItem, NULL);
-    resumeBannerMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 50 * displayScale));
+    resumeBannerMenu->setPosition(Point(visibleSize.width/2 + origin.x + 100 * displayScale, visibleSize.height/2 + origin.y + 50 * displayScale));
     this->addChild(resumeBannerMenu);
-    
+
     auto releaseBannerLabel = Label::createWithSystemFont("release", font->getCString(), fontSize);
     auto releaseBannerItem = MenuItemLabel::create(releaseBannerLabel, CC_CALLBACK_1(BannerViewScene::releaseBannerCallback, this));
     auto releaseBannerMenu = Menu::create(releaseBannerItem, NULL);
-    releaseBannerMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 100 * displayScale));
+    releaseBannerMenu->setPosition(Point(visibleSize.width/2 + origin.x - 100 * displayScale, visibleSize.height/2 + origin.y));
     this->addChild(releaseBannerMenu);
     
     auto adjustOnLabel = Label::createWithSystemFont("AdjustON", font->getCString(), fontSize);
     auto adjustOnItem = MenuItemLabel::create(adjustOnLabel, CC_CALLBACK_1(BannerViewScene::isAdjustOnCallback, this));
     auto adjustOnMenu = Menu::create(adjustOnItem, NULL);
-    adjustOnMenu->setPosition(Point(visibleSize.width/2 + origin.x - 100 * displayScale, visibleSize.height/2 + origin.y - 100 * displayScale));
+    adjustOnMenu->setPosition(Point(visibleSize.width/2 + origin.x - 100 * displayScale, visibleSize.height/2 + origin.y - 150 * displayScale));
     this->addChild(adjustOnMenu);
     
     auto adjustOffLabel = Label::createWithSystemFont("AdjustOFF", font->getCString(), fontSize);
     auto adjustOffItem = MenuItemLabel::create(adjustOffLabel, CC_CALLBACK_1(BannerViewScene::isAdjustOffCallback, this));
     auto adjustOffMenu = Menu::create(adjustOffItem, NULL);
-    adjustOffMenu->setPosition(Point(visibleSize.width/2 + origin.x + 100 * displayScale, visibleSize.height/2 + origin.y - 100 * displayScale));
+    adjustOffMenu->setPosition(Point(visibleSize.width/2 + origin.x + 100 * displayScale, visibleSize.height/2 + origin.y - 150 * displayScale));
     this->addChild(adjustOffMenu);
     
     auto showPreviousLabel = Label::createWithSystemFont("Back", font->getCString(), fontSize);
@@ -203,7 +203,10 @@ void BannerViewScene::onEnter()
 void BannerViewScene::onExit()
 {
     CCLayer::onExit();
+}
 
+void BannerViewScene::onExitTransitionDidStart()
+{
     // バナー広告のリソースを解放する
     NendModule::release();
     // EventDispatcher登録の解除

@@ -1,30 +1,22 @@
 //
-//  BannerViewScene.h
-//  HelloCpp
+//  BannerViewWithSpotIDScene.h
+//  CocosNendSample
 //
 //  Created by F@N Communications, Inc.
 //
 //
 
-#ifndef __HelloCpp__BannerViewScene__
-#define __HelloCpp__BannerViewScene__
+#ifndef __CocosNendSample__BannerViewWithSpotIDScene__
+#define __CocosNendSample__BannerViewWithSpotIDScene__
 
 #include <stdio.h>
 #include "cocos2d.h"
 
-typedef enum {
-    BANNER_320_50,
-    BANNER_320_100,
-    BANNER_300_100,
-    BANNER_300_250,
-    BANNER_728_90
-} BannerSize;
-
-class BannerViewScene : public cocos2d::Layer
+class BannerViewWithSpotIDScene : public cocos2d::Layer
 {
 public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
-    static cocos2d::Scene* createScene(BannerSize bannerSize);
+    static cocos2d::Scene* createScene();
     
     // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
     virtual bool init();
@@ -33,7 +25,7 @@ public:
     void menuCloseCallback(cocos2d::Ref* pSender);
     
     // implement the "static create()" method manually
-    CREATE_FUNC(BannerViewScene);
+    CREATE_FUNC(BannerViewWithSpotIDScene);
     
     virtual void onEnter();
     virtual void onExit();
@@ -44,17 +36,22 @@ public:
     void createBannerBottomCallback(cocos2d::Ref* pSender);
     void createBannerUserCallback(cocos2d::Ref* pSender);
     void showBannerCallback(cocos2d::Ref* pSender);
+    void showBannerWithSpotIDCallback(cocos2d::Ref* pSender);
     void hideBannerCallback(cocos2d::Ref* pSender);
+    void hideBannerWithSpotIDCallback(cocos2d::Ref* pSender);
     void pauseBannerCallback(cocos2d::Ref* pSender);
+    void pauseBannerWithSpotIDCallback(cocos2d::Ref* pSender);
     void resumeBannerCallback(cocos2d::Ref* pSender);
+    void resumeBannerWithSpotIDCallback(cocos2d::Ref* pSender);
     void releaseBannerCallback(cocos2d::Ref* pSender);
+    void releaseBannerWithSpotIDCallback(cocos2d::Ref* pSender);
     void showPreviousSceneButtonCallback(cocos2d::Ref* pSender);
     void isAdjustOnCallback(cocos2d::Ref* pSender);
     void isAdjustOffCallback(cocos2d::Ref* pSender);
-
+    
     // EventDispatcher登録&削除
     void addEventDispatcher();
     void removeEventDispatcher();
 };
 
-#endif /* defined(__HelloCpp__BannerViewScene__) */
+#endif /* defined(__CocosNendSample__BannerViewWithSpotIDScene__) */
