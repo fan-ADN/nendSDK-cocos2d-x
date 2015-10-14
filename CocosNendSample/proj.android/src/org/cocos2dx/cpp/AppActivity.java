@@ -26,10 +26,8 @@ THE SOFTWARE.
 ****************************************************************************/
 package org.cocos2dx.cpp;
 
-import net.nend.NendModule.NendInterstitialModule;
-
 import org.cocos2dx.lib.Cocos2dxActivity;
-
+import net.nend.NendModule.NendInterstitialModule;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.KeyEvent;

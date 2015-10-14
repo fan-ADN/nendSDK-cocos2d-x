@@ -4,7 +4,7 @@ bin/
 gen/
 
 # nend
-CocosNendSample/proj.android/libs/nendSDK-2.6.1.jar
+CocosNendSample/proj.android/libs/nendSDK-2.6.3.jar
 CocosNendSample/proj.android/src/net/
 CocosNendSample/proj.ios_mac/ios/NendAd/
 CocosNendSample/proj.ios_mac/ios/NendModule.mm
@@ -42,3 +42,11 @@ CocosNendSample/bin/
 ./proj.ios_mac/build
 ./proj.ios_mac/project.xcodeproj/project.xcworkspace
 ./proj.ios_mac/project.xcodeproj/xcuserdata
+
+# gradle
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+/build
+/captures

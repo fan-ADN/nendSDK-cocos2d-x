@@ -64,7 +64,7 @@ bool InterstitialMenuScene::init()
     auto director = Director::getInstance();
     auto displayScale = director->getContentScaleFactor();
     
-    auto font = String::create("fonts/arial.ttf");
+    std::string font = StringUtils::format("fonts/arial.ttf");
     auto fontSize = 15 * displayScale;
     
     auto label = Label::createWithTTF("InterstitialMenuScene", "fonts/Marker Felt.ttf", 24 * displayScale);
@@ -76,25 +76,25 @@ bool InterstitialMenuScene::init()
     // add the label as a child to this layer
     this->addChild(label, 1);
     
-    auto showLabel = Label::createWithSystemFont("Show", font->getCString(), fontSize);
+    auto showLabel = Label::createWithSystemFont("Show", font, fontSize);
     auto showItem = MenuItemLabel::create(showLabel, CC_CALLBACK_1(InterstitialMenuScene::showInterstitialButtonCallback, this));
     auto showMenu = Menu::create(showItem, NULL);
     showMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 100 * displayScale));
     this->addChild(showMenu);
     
-    auto showInterstitialLabel = Label::createWithSystemFont("ShowWithSpotID", font->getCString(), fontSize);
+    auto showInterstitialLabel = Label::createWithSystemFont("ShowWithSpotID", font, fontSize);
     auto showInterstitialItem = MenuItemLabel::create(showInterstitialLabel, CC_CALLBACK_1(InterstitialMenuScene::showInterstitialWithSpotIdButtonCallback, this));
     auto showInterstitialMenu = Menu::create(showInterstitialItem, NULL);
     showInterstitialMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 50 * displayScale));
     this->addChild(showInterstitialMenu);
     
-    auto hideInterstitialLabel = Label::createWithSystemFont("dismiss", font->getCString(), fontSize);
+    auto hideInterstitialLabel = Label::createWithSystemFont("dismiss", font, fontSize);
     auto hideInterstitialItem = MenuItemLabel::create(hideInterstitialLabel, CC_CALLBACK_1(InterstitialMenuScene::hideInterstitialWithSpotIdButtonCallback, this));
     auto hideInterstitialMenu = Menu::create(hideInterstitialItem, NULL);
     hideInterstitialMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
     this->addChild(hideInterstitialMenu);
     
-    auto showPreviousLabel = Label::createWithSystemFont("Back", font->getCString(), fontSize);
+    auto showPreviousLabel = Label::createWithSystemFont("Back", font, fontSize);
     auto showPreviousItem = MenuItemLabel::create(showPreviousLabel, CC_CALLBACK_1(InterstitialMenuScene::showPreviousSceneButtonCallback, this));
     auto showPreviousMenu = Menu::create(showPreviousItem, NULL);
     showPreviousMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 150 * displayScale));
@@ -108,7 +108,7 @@ bool InterstitialMenuScene::init()
 
 void InterstitialMenuScene::onEnter()
 {
-    CCLayer::onEnter();
+    Layer::onEnter();
     
     // インタースティシャル広告のロードを開始する
     NendInterstitialModule::createNADInterstitial(interstitialApiKey, interstitialSpotID);
@@ -123,7 +123,7 @@ void InterstitialMenuScene::onEnter()
 
 void InterstitialMenuScene::onExit()
 {
-    CCLayer::onExit();
+    Layer::onExit();
     // EventDispatcher登録の解除
     this->removeEventDispatcher();
 }
