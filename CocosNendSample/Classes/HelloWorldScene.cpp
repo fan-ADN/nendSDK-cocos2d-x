@@ -63,7 +63,7 @@ bool HelloWorld::init()
     auto director = Director::getInstance();
     auto displayScale = director->getContentScaleFactor();
     
-    auto font = String::create("fonts/arial.ttf");
+    std::string font = StringUtils::format("fonts/arial.ttf");
     auto fontSize = 15 * displayScale;
     
     auto label = Label::createWithTTF("NendSDK Cocos2d-x Sample", "fonts/Marker Felt.ttf", 24 *displayScale);
@@ -75,17 +75,17 @@ bool HelloWorld::init()
     // add the label as a child to this layer
     this->addChild(label, 1);
 
-    auto showBannerLabel = Label::createWithSystemFont("Show BannerMenuScene", font->getCString(), fontSize);
+    auto showBannerLabel = Label::createWithSystemFont("Show BannerMenuScene", font, fontSize);
     auto showBannerItem = MenuItemLabel::create(showBannerLabel, CC_CALLBACK_1(HelloWorld::showBannerSceneButtonCallback, this));
     auto showBannerMenu = Menu::create(showBannerItem, NULL);
     this->addChild(showBannerMenu);
     
-    auto showBannerWithSpotIDLabel = Label::createWithSystemFont("Show BannerViewWithSpotIDScene", font->getCString(), fontSize);
+    auto showBannerWithSpotIDLabel = Label::createWithSystemFont("Show BannerViewWithSpotIDScene", font, fontSize);
     auto showBannerWithSpotIDItem = MenuItemLabel::create(showBannerWithSpotIDLabel, CC_CALLBACK_1(HelloWorld::showBannerWithSpotIDSceneButtonCallback, this));
     auto showBannerWithSpotIDMenu = Menu::create(showBannerWithSpotIDItem, NULL);
     this->addChild(showBannerWithSpotIDMenu);
     
-    auto showInterstitialLabel = Label::createWithSystemFont("Show InterstitialMenuScene", font->getCString(), fontSize);
+    auto showInterstitialLabel = Label::createWithSystemFont("Show InterstitialMenuScene", font, fontSize);
     auto showInterstitialItem = MenuItemLabel::create(showInterstitialLabel, CC_CALLBACK_1(HelloWorld::showInterstitialSceneButtonCallback, this));
     auto showInterstitialMenu = Menu::create(showInterstitialItem, NULL);
     this->addChild(showInterstitialMenu);
@@ -101,7 +101,7 @@ bool HelloWorld::init()
     showBannerMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 100 * displayScale));
     showBannerWithSpotIDMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 50 * displayScale));
     
-    auto showIconLabel = Label::createWithSystemFont("Show IconMenuScene", font->getCString(), fontSize);
+    auto showIconLabel = Label::createWithSystemFont("Show IconMenuScene", font, fontSize);
     auto showIconItem = MenuItemLabel::create(showIconLabel, CC_CALLBACK_1(HelloWorld::showIconSceneButtonCallback, this));
     auto showIconMenu = Menu::create(showIconItem, NULL);
     showIconMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));

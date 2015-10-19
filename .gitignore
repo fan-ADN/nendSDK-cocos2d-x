@@ -4,7 +4,7 @@ bin/
 gen/
 
 # nend
-CocosNendSample/proj.android/libs/nendSDK-2.6.1.jar
+CocosNendSample/proj.android/libs/nendSDK-2.6.3.jar
 CocosNendSample/proj.android/src/net/
 CocosNendSample/proj.ios_mac/ios/NendAd/
 CocosNendSample/proj.ios_mac/ios/NendModule.mm
@@ -16,6 +16,7 @@ CocosNendSample/Classes/NendInterstitialModule.cpp
 CocosNendSample/Classes/NendIconModule.h
 CocosNendSample/Classes/NendIconModule.cpp
 CocosNendSample/bin/
+CocosNendSample/idea/dictionaries
 
 # eclipse settings
 .classpath
@@ -40,5 +41,14 @@ CocosNendSample/bin/
 ./cocos2d/build/build
 ./cocos2d/build/cocos2d_libs.xcodeproj/xcuserdata
 ./proj.ios_mac/build
-./proj.ios_mac/project.xcodeproj/project.xcworkspace
-./proj.ios_mac/project.xcodeproj/xcuserdata
+./proj.ios_mac/*.xcodeproj/project.xcworkspace
+./proj.ios_mac/*.xcodeproj/xcuserdata/
+
+# gradle
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+/.idea/dictionaries
+/build
+/captures
