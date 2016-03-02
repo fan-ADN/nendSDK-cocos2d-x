@@ -17,6 +17,7 @@ CocosNendSample/Classes/NendIconModule.h
 CocosNendSample/Classes/NendIconModule.cpp
 CocosNendSample/bin/
 CocosNendSample/idea/dictionaries
+CocosNendSample/cocos2d/cocos/platform/android/libcocos2dx/build/
 
 # eclipse settings
 .classpath
