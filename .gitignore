@@ -24,25 +24,25 @@ CocosNendSample/idea/dictionaries
 .settings/
 
 # proj.android
-./bin
-./proj.android/bin
-./proj.android/gen
-./proj.android/obj
-./proj.android/local.properties
-./proj.android/project.properties
-./proj.android/proguard-project.txt
-./cocos2d/cocos/platform/android/java/bin
-./cocos2d/cocos/platform/android/java/gen
-./cocos2d/cocos/platform/android/java/libs
-./cocos2d/cocos/platform/android/java/local.properties
-./cocos2d/cocos/platform/android/java/res
+CocosNendSample/bin
+CocosNendSample/proj.android/bin
+CocosNendSample/proj.android/gen
+CocosNendSample/proj.android/obj/
+CocosNendSample/proj.android/local.properties
+CocosNendSample/proj.android/project.properties
+CocosNendSample/proj.android/proguard-project.txt
+CocosNendSample/cocos2d/cocos/platform/android/java/bin
+CocosNendSample/cocos2d/cocos/platform/android/java/gen
+CocosNendSample/cocos2d/cocos/platform/android/java/libs
+CocosNendSample/cocos2d/cocos/platform/android/java/local.properties
+CocosNendSample/cocos2d/cocos/platform/android/java/res
 
 # proj.ios_mac
-./cocos2d/build/build
-./cocos2d/build/cocos2d_libs.xcodeproj/xcuserdata
-./proj.ios_mac/build
-./proj.ios_mac/*.xcodeproj/project.xcworkspace
-./proj.ios_mac/*.xcodeproj/xcuserdata/
+CocosNendSample/cocos2d/build/build
+CocosNendSample/cocos2d/build/cocos2d_libs.xcodeproj/xcuserdata
+CocosNendSample/proj.ios_mac/build
+CocosNendSample/proj.ios_mac/*.xcodeproj/project.xcworkspace
+CocosNendSample/proj.ios_mac/*.xcodeproj/xcuserdata/
 
 # gradle
 .gradle
@@ -52,3 +52,17 @@ CocosNendSample/idea/dictionaries
 /.idea/dictionaries
 /build
 /captures
+
+# proj.android-studio
+CocosNendSample/proj.android-studio/app/assets/
+CocosNendSample/proj.android-studio/app/obj/local/
+CocosNendSample/proj.android-studio/app/libs/armeabi/
+CocosNendSample/proj.android-studio/app/gradle.properties
+CocosNendSample/proj.android-studio/app/local.properties
+CocosNendSample/proj.android-studio/gradle
+CocosNendSample/proj.android-studio/local.properties
+CocosNendSample/proj.android-studio/.idea/workspace.xml
+CocosNendSample/proj.android-studio/.idea/libraries
+CocosNendSample/proj.android-studio/.idea/dictionaries
+CocosNendSample/proj.android-studio/build
+CocosNendSample/proj.android-studio/captures
