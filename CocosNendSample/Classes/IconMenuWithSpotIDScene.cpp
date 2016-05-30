@@ -1,6 +1,6 @@
 //
 //  IconMenuWithSpotIDScene.cpp
-//  HelloCpp
+//  CocosNendSample
 //
 //  Created by F@N Communications, Inc.
 //
@@ -56,12 +56,11 @@ bool IconMenuWithSpotIDScene::init()
     // create and initialize a label
 
     auto director = Director::getInstance();
-    auto displayScale = director->getContentScaleFactor();
 
     std::string font = StringUtils::format("fonts/arial.ttf");
-    auto fontSize = 15 * displayScale;
+    auto fontSize = 15;
 
-    auto label = Label::createWithTTF("IconMenuWithSpotIDScene", "fonts/Marker Felt.ttf", 24 * displayScale);
+    auto label = Label::createWithTTF("IconMenuWithSpotIDScene", "fonts/Marker Felt.ttf", 24);
 
     // position the label on the center of the screen
     label->setPosition(Point(origin.x + visibleSize.width/2,
@@ -74,42 +73,42 @@ bool IconMenuWithSpotIDScene::init()
     createTopLabel->setColor(Color3B::BLACK);
     auto createTopItem = MenuItemLabel::create(createTopLabel, CC_CALLBACK_1(IconMenuWithSpotIDScene::createIconTopCallback, this));
     auto createTopMenu = Menu::create(createTopItem, NULL);
-    createTopMenu->setPosition(Point(visibleSize.width/2 + origin.x - 100 * displayScale, visibleSize.height/2 + origin.y + 150 * displayScale));
+    createTopMenu->setPosition(Point(visibleSize.width/2 + origin.x - 100, visibleSize.height/2 + origin.y + 150));
     this->addChild(createTopMenu);
 
     auto createBottomLabel = Label::createWithSystemFont("createBottom", font, fontSize);
     createBottomLabel->setColor(Color3B::BLACK);
     auto createBottomItem = MenuItemLabel::create(createBottomLabel, CC_CALLBACK_1(IconMenuWithSpotIDScene::createIconBottomCallback, this));
     auto createBottomMenu = Menu::create(createBottomItem, NULL);
-    createBottomMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 150 * displayScale));
+    createBottomMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 150));
     this->addChild(createBottomMenu);
 
     auto createUserLabel = Label::createWithSystemFont("createUser", font, fontSize);
     createUserLabel->setColor(Color3B::BLACK);
     auto createUserItem = MenuItemLabel::create(createUserLabel, CC_CALLBACK_1(IconMenuWithSpotIDScene::createIconUserCallback, this));
     auto createUserMenu = Menu::create(createUserItem, NULL);
-    createUserMenu->setPosition(Point(visibleSize.width/2 + origin.x + 100 * displayScale, visibleSize.height/2 + origin.y + 150 * displayScale));
+    createUserMenu->setPosition(Point(visibleSize.width/2 + origin.x + 100, visibleSize.height/2 + origin.y + 150));
     this->addChild(createUserMenu);
 
     auto createTopNumberLabel = Label::createWithSystemFont("createTopNum", font, fontSize);
     createTopNumberLabel->setColor(Color3B::BLACK);
     auto createTopNumberItem = MenuItemLabel::create(createTopNumberLabel, CC_CALLBACK_1(IconMenuWithSpotIDScene::createIconWithNumberTopCallback, this));
     auto createTopNumberMenu = Menu::create(createTopNumberItem, NULL);
-    createTopNumberMenu->setPosition(Point(visibleSize.width/2 + origin.x - 100 * displayScale, visibleSize.height/2 + origin.y + 100 * displayScale));
+    createTopNumberMenu->setPosition(Point(visibleSize.width/2 + origin.x - 100, visibleSize.height/2 + origin.y + 100));
     this->addChild(createTopNumberMenu);
 
     auto createBottomNumberLabel = Label::createWithSystemFont("createBottomNum", font, fontSize);
     createBottomNumberLabel->setColor(Color3B::BLACK);
     auto createBottomNumberItem = MenuItemLabel::create(createBottomNumberLabel, CC_CALLBACK_1(IconMenuWithSpotIDScene::createIconWithNumberBottomCallback, this));
     auto createBottomNumberMenu = Menu::create(createBottomNumberItem, NULL);
-    createBottomNumberMenu->setPosition(Point(visibleSize.width/2 + origin.x + 100 * displayScale, visibleSize.height/2 + origin.y + 100 * displayScale));
+    createBottomNumberMenu->setPosition(Point(visibleSize.width/2 + origin.x + 100, visibleSize.height/2 + origin.y + 100));
     this->addChild(createBottomNumberMenu);
 
     auto titleSpaceLabel = Label::createWithSystemFont("titleSpaceOFF", font, fontSize);
     titleSpaceLabel->setColor(Color3B::BLACK);
     auto titleSpaceLabelItem = MenuItemLabel::create(titleSpaceLabel, CC_CALLBACK_1(IconMenuWithSpotIDScene::spaceAndTitleDisableCallback, this));
     auto titleSpaceLabelItemMenu = Menu::create(titleSpaceLabelItem, NULL);
-    titleSpaceLabelItemMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 50 * displayScale));
+    titleSpaceLabelItemMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 50));
     this->addChild(titleSpaceLabelItemMenu);
 
     auto spaceOffLabel = Label::createWithSystemFont("spaceOFF", font, fontSize);
@@ -123,49 +122,49 @@ bool IconMenuWithSpotIDScene::init()
     titleOffLabel->setColor(Color3B::BLACK);
     auto titleOffItem = MenuItemLabel::create(titleOffLabel, CC_CALLBACK_1(IconMenuWithSpotIDScene::titleDsableCallback, this));
     auto titleOffItemMenu = Menu::create(titleOffItem, NULL);
-    titleOffItemMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 50 * displayScale));
+    titleOffItemMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 50));
     this->addChild(titleOffItemMenu);
 
     auto showLabel = Label::createWithSystemFont("show", font, fontSize);
     showLabel->setColor(Color3B::BLACK);
     auto showItem = MenuItemLabel::create(showLabel, CC_CALLBACK_1(IconMenuWithSpotIDScene::showIconCallback, this));
     auto showMenu = Menu::create(showItem, NULL);
-    showMenu->setPosition(Point(visibleSize.width/2 + origin.x - 100 * displayScale, visibleSize.height/2 + origin.y + 50 * displayScale));
+    showMenu->setPosition(Point(visibleSize.width/2 + origin.x - 100, visibleSize.height/2 + origin.y + 50));
     this->addChild(showMenu);
 
     auto hideLabel = Label::createWithSystemFont("hide", font, fontSize);
     hideLabel->setColor(Color3B::BLACK);
     auto hideItem = MenuItemLabel::create(hideLabel, CC_CALLBACK_1(IconMenuWithSpotIDScene::hideIconCallback, this));
     auto hideMenu = Menu::create(hideItem, NULL);
-    hideMenu->setPosition(Point(visibleSize.width/2 + origin.x + 100 * displayScale, visibleSize.height/2 + origin.y + 50 * displayScale));
+    hideMenu->setPosition(Point(visibleSize.width/2 + origin.x + 100, visibleSize.height/2 + origin.y + 50));
     this->addChild(hideMenu);
 
     auto pauseLabel = Label::createWithSystemFont("pause", font, fontSize);
     pauseLabel->setColor(Color3B::BLACK);
     auto pauseItem = MenuItemLabel::create(pauseLabel, CC_CALLBACK_1(IconMenuWithSpotIDScene::pauseIconCallback, this));
     auto pauseMenu = Menu::create(pauseItem, NULL);
-    pauseMenu->setPosition(Point(visibleSize.width/2 + origin.x - 100 * displayScale, visibleSize.height/2 + origin.y));
+    pauseMenu->setPosition(Point(visibleSize.width/2 + origin.x - 100, visibleSize.height/2 + origin.y));
     this->addChild(pauseMenu);
 
     auto resumeLabel = Label::createWithSystemFont("resume", font, fontSize);
     resumeLabel->setColor(Color3B::BLACK);
     auto resumeItem = MenuItemLabel::create(resumeLabel, CC_CALLBACK_1(IconMenuWithSpotIDScene::resumeIconCallback, this));
     auto resumeMenu = Menu::create(resumeItem, NULL);
-    resumeMenu->setPosition(Point(visibleSize.width/2 + origin.x + 100 * displayScale, visibleSize.height/2 + origin.y));
+    resumeMenu->setPosition(Point(visibleSize.width/2 + origin.x + 100, visibleSize.height/2 + origin.y));
     this->addChild(resumeMenu);
 
     auto releaseLabel = Label::createWithSystemFont("release", font, fontSize);
     releaseLabel->setColor(Color3B::BLACK);
     auto releaseItem = MenuItemLabel::create(releaseLabel, CC_CALLBACK_1(IconMenuWithSpotIDScene::releaseIconCallback, this));
     auto releaseMenu = Menu::create(releaseItem, NULL);
-    releaseMenu->setPosition(Point(visibleSize.width/2 + origin.x - 100 * displayScale, visibleSize.height/2 + origin.y - 50 * displayScale));
+    releaseMenu->setPosition(Point(visibleSize.width/2 + origin.x - 100, visibleSize.height/2 + origin.y - 50));
     this->addChild(releaseMenu);
 
     auto showPreviousLabel = Label::createWithSystemFont("Back", font, fontSize);
     showPreviousLabel->setColor(Color3B::BLACK);
     auto showPreviousItem = MenuItemLabel::create(showPreviousLabel, CC_CALLBACK_1(IconMenuWithSpotIDScene::showPreviousSceneButtonCallback, this));
     auto showPreviousMenu = Menu::create(showPreviousItem, NULL);
-    showPreviousMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 150 * displayScale));
+    showPreviousMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 150));
     this->addChild(showPreviousMenu);
 
     return true;
