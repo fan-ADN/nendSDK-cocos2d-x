@@ -13,9 +13,6 @@ LOCAL_MODULE_FILENAME := libcocos2dcpp
 LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../../Classes/AppDelegate.cpp \
                    ../../../Classes/HelloWorldScene.cpp \
-                   ../../../Classes/NendModule.cpp \
-                   ../../../Classes/NendIconModule.cpp \
-                   ../../../Classes/NendInterstitialModule.cpp \
                    ../../../Classes/BannerMenuScene.cpp \
                    ../../../Classes/BannerViewScene.cpp \
                    ../../../Classes/BannerViewWithSpotIDScene.cpp \
@@ -25,23 +22,28 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../../Classes/NativeMenuScene.cpp \
                    ../../../Classes/NativeViewScene.cpp \
                    ../../../Classes/NativeInfeedViewScene.cpp \
-                   ../../../Classes/NendNativeLabel.cpp \
-                   ../../../Classes/NendNativeSprite.cpp \
-                   ../../../Classes/NendHttpHelper.cpp \
-                   ../../../Classes/NendNativeAdClient.cpp \
-                   ../../../Classes/NendNativeAdRender.cpp \
-                   ../../../Classes/NendNativeAdValidate.cpp \
-                   ../../../Classes/NendNativeLabelConstraint.cpp \
-                   ../../../Classes/NendNativeSpriteConstraint.cpp \
-                   ../../../Classes/NendNativeClipNodeConstraint.cpp \
-                   ../../../Classes/NendNativeClippingNode.cpp \
-                   ../../../Classes/NendNativeAdLog.cpp \
-                   ../../../Classes/AndroidNativeAdClient.cpp \
-                   ../../../Classes/AndroidNativeAd.cpp \
-                   ../../../Classes/NendNativeAdViewHolder.cpp \
-                   ../../../Classes/AndroidNativeJNI.cpp
+                   ../../../Classes/Common/NendHttpHelper.cpp \
+                   ../../../Classes/Common/NendNativeAdClient.cpp \
+                   ../../../Classes/Common/NendNativeAdLog.cpp \
+                   ../../../Classes/Common/NendNativeAdRender.cpp \
+                   ../../../Classes/Common/NendNativeAdValidate.cpp \
+                   ../../../Classes/Common/NendNativeAdViewHolder.cpp \
+                   ../../../Classes/Common/NendNativeClipNodeConstraint.cpp \
+                   ../../../Classes/Common/NendNativeClippingNode.cpp \
+                   ../../../Classes/Common/NendNativeLabel.cpp \
+                   ../../../Classes/Common/NendNativeLabelConstraint.cpp \
+                   ../../../Classes/Common/NendNativeSprite.cpp \
+                   ../../../Classes/Common/NendNativeSpriteConstraint.cpp \
+                   ../../../Classes/Android/AndroidNativeAd.cpp \
+                   ../../../Classes/Android/AndroidNativeAdClient.cpp \
+                   ../../../Classes/Android/AndroidNativeJNI.cpp \
+                   ../../../Classes/Android/NendIconModule.cpp \
+                   ../../../Classes/Android/NendInterstitialModule.cpp \
+                   ../../../Classes/Android/NendModule.cpp
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../../Classes
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../../Classes/Common
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../../Classes/Android
 
 # _COCOS_HEADER_ANDROID_BEGIN
 # _COCOS_HEADER_ANDROID_END

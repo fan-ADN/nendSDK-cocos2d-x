@@ -128,7 +128,7 @@ const float longWidePromotionURLLabelFontSize = 14;
 const Point longWideActionTextLabelPoint = Point(210, 8);
 const Size  longWideActionTextLabelSize = Size(100, 21);
 const float longWideActionTextLabelFontSize =14;
-const Point longWideAdImageSpritePoint = Point(longWideLayerSize.width /2, 228);
+const Point longWideAdImageSpritePoint = Point(10, 138);
 const Point longWideLogoImageSpritePoint = Point(272, 326);
 
 // Text-Only layout
@@ -433,12 +433,19 @@ LayerColor * NativeViewScene::makeNativeAdLayer()
     // 広告画像
     auto adImageSprite = NendNativeSprite::create();
     adImageSprite->setName("NendNativeAdImageSprite"); // 広告要素の識別に使用する任意の名前を設定します
+    adImageSprite->setAnchorPoint(Point(0,0));
     if (m_nativeType != NATIVE_LARGE_WIDE) {
-        adImageSprite->setAnchorPoint(Point(0,0));
+        adImageSprite->setPosition(layout.imageSpritePoint);
+        adLayer->addChild(adImageSprite);
+    } else {
+        // 広告画像(クリップ)
+        auto clipNode = NendNativeClippingNode::create(Size(300.f, 180.f), 10.f, adImageSprite, NEND_CLIP_CENTER);
+        clipNode->setName("NendNativeAdClipNode");
+        clipNode->setPosition(layout.imageSpritePoint);
+        clipNode->addChild(adImageSprite);
+        adLayer->addChild(clipNode);
     }
-    adImageSprite->setPosition(layout.imageSpritePoint);
-    adLayer->addChild(adImageSprite);
-    
+
     // ロゴ画像
     auto logoImageSprite = NendNativeSprite::create();
     logoImageSprite->setAnchorPoint(Point(0,0));
@@ -487,8 +494,8 @@ void NativeViewScene::loadNativeAd(){
             m_binder->setAdImage_Name("NendNativeAdImageSprite"); // 広告画像
             if (m_nativeType == NATIVE_LARGE_WIDE) {
                 m_binder->setLogoImage_Name("NendNativeAdLogoImageSprite"); // ロゴ画像
+                m_binder->setClipNode_Name("NendNativeAdClipNode"); // 広告画像(クリップ)
             }
-            
             // ロードした広告の描画を行います
             // 第一引数にはネイティブ広告を表示する領域を設定します
             m_NativeAdClient->renderAdViews(m_adLayer, m_binder);
