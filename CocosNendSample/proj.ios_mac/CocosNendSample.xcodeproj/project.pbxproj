@@ -24,6 +24,9 @@
 		46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */; };
 		46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */; };
+		4F3567C61CFBFF5100ADB788 /* NativeInfeedViewScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3567C01CFBFF5100ADB788 /* NativeInfeedViewScene.cpp */; };
+		4F3567C71CFBFF5100ADB788 /* NativeMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3567C21CFBFF5100ADB788 /* NativeMenuScene.cpp */; };
+		4F3567C81CFBFF5100ADB788 /* NativeViewScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3567C41CFBFF5100ADB788 /* NativeViewScene.cpp */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
@@ -60,13 +63,13 @@
 		521A8EAA19F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
-		B54FA5951BCE156200416999 /* InterstitialMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54FA5931BCE156200416999 /* InterstitialMenuScene.cpp */; settings = {ASSET_TAGS = (); }; };
+		B54FA5951BCE156200416999 /* InterstitialMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54FA5931BCE156200416999 /* InterstitialMenuScene.cpp */; };
 		B54FA5971BCE157100416999 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54FA5961BCE157100416999 /* AdSupport.framework */; };
 		B54FA5991BCE157900416999 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54FA5981BCE157900416999 /* Security.framework */; };
 		B54FA59B1BCE157E00416999 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54FA59A1BCE157E00416999 /* ImageIO.framework */; };
-		B54FA5A41BCE179E00416999 /* BannerMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54FA59E1BCE179E00416999 /* BannerMenuScene.cpp */; settings = {ASSET_TAGS = (); }; };
-		B54FA5A51BCE179E00416999 /* BannerViewScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54FA5A01BCE179E00416999 /* BannerViewScene.cpp */; settings = {ASSET_TAGS = (); }; };
-		B54FA5A61BCE179E00416999 /* BannerViewWithSpotIDScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54FA5A21BCE179E00416999 /* BannerViewWithSpotIDScene.cpp */; settings = {ASSET_TAGS = (); }; };
+		B54FA5A41BCE179E00416999 /* BannerMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54FA59E1BCE179E00416999 /* BannerMenuScene.cpp */; };
+		B54FA5A51BCE179E00416999 /* BannerViewScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54FA5A01BCE179E00416999 /* BannerViewScene.cpp */; };
+		B54FA5A61BCE179E00416999 /* BannerViewWithSpotIDScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54FA5A21BCE179E00416999 /* BannerViewWithSpotIDScene.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -124,6 +127,12 @@
 		46880B8519C43A87006E1F66 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HelloWorldScene.cpp; sourceTree = "<group>"; };
 		46880B8719C43A87006E1F66 /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldScene.h; sourceTree = "<group>"; };
+		4F3567C01CFBFF5100ADB788 /* NativeInfeedViewScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NativeInfeedViewScene.cpp; sourceTree = "<group>"; };
+		4F3567C11CFBFF5100ADB788 /* NativeInfeedViewScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeInfeedViewScene.h; sourceTree = "<group>"; };
+		4F3567C21CFBFF5100ADB788 /* NativeMenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NativeMenuScene.cpp; sourceTree = "<group>"; };
+		4F3567C31CFBFF5100ADB788 /* NativeMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeMenuScene.h; sourceTree = "<group>"; };
+		4F3567C41CFBFF5100ADB788 /* NativeViewScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NativeViewScene.cpp; sourceTree = "<group>"; };
+		4F3567C51CFBFF5100ADB788 /* NativeViewScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeViewScene.h; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -329,6 +338,12 @@
 				B54FA5A31BCE179E00416999 /* BannerViewWithSpotIDScene.h */,
 				B54FA5931BCE156200416999 /* InterstitialMenuScene.cpp */,
 				B54FA5941BCE156200416999 /* InterstitialMenuScene.h */,
+				4F3567C21CFBFF5100ADB788 /* NativeMenuScene.cpp */,
+				4F3567C31CFBFF5100ADB788 /* NativeMenuScene.h */,
+				4F3567C41CFBFF5100ADB788 /* NativeViewScene.cpp */,
+				4F3567C51CFBFF5100ADB788 /* NativeViewScene.h */,
+				4F3567C01CFBFF5100ADB788 /* NativeInfeedViewScene.cpp */,
+				4F3567C11CFBFF5100ADB788 /* NativeInfeedViewScene.h */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */,
@@ -526,13 +541,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F3567C81CFBFF5100ADB788 /* NativeViewScene.cpp in Sources */,
 				B54FA5A41BCE179E00416999 /* BannerMenuScene.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				B54FA5A51BCE179E00416999 /* BannerViewScene.cpp in Sources */,
+				4F3567C71CFBFF5100ADB788 /* NativeMenuScene.cpp in Sources */,
 				B54FA5951BCE156200416999 /* InterstitialMenuScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				4F3567C61CFBFF5100ADB788 /* NativeInfeedViewScene.cpp in Sources */,
 				B54FA5A61BCE179E00416999 /* BannerViewWithSpotIDScene.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 			);

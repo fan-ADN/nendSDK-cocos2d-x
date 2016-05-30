@@ -25,7 +25,7 @@ public:
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
     void showIconSceneButtonCallback(cocos2d::Ref* pSender);
 #endif
-
+    void showNativeAdSceneButtonCallback(cocos2d::Ref* pSender);
 };
 
 #endif // __HELLOWORLD_SCENE_H__

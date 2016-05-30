@@ -21,7 +21,25 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../../Classes/BannerViewWithSpotIDScene.cpp \
                    ../../../Classes/IconMenuScene.cpp \
                    ../../../Classes/IconMenuWithSpotIDScene.cpp \
-                   ../../../Classes/InterstitialMenuScene.cpp
+                   ../../../Classes/InterstitialMenuScene.cpp \
+                   ../../../Classes/NativeMenuScene.cpp \
+                   ../../../Classes/NativeViewScene.cpp \
+                   ../../../Classes/NativeInfeedViewScene.cpp \
+                   ../../../Classes/NendNativeLabel.cpp \
+                   ../../../Classes/NendNativeSprite.cpp \
+                   ../../../Classes/NendHttpHelper.cpp \
+                   ../../../Classes/NendNativeAdClient.cpp \
+                   ../../../Classes/NendNativeAdRender.cpp \
+                   ../../../Classes/NendNativeAdValidate.cpp \
+                   ../../../Classes/NendNativeLabelConstraint.cpp \
+                   ../../../Classes/NendNativeSpriteConstraint.cpp \
+                   ../../../Classes/NendNativeClipNodeConstraint.cpp \
+                   ../../../Classes/NendNativeClippingNode.cpp \
+                   ../../../Classes/NendNativeAdLog.cpp \
+                   ../../../Classes/AndroidNativeAdClient.cpp \
+                   ../../../Classes/AndroidNativeAd.cpp \
+                   ../../../Classes/NendNativeAdViewHolder.cpp \
+                   ../../../Classes/AndroidNativeJNI.cpp
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../../Classes
 

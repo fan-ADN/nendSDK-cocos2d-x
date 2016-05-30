@@ -7,6 +7,9 @@
 
 USING_NS_CC;
 
+
+static cocos2d::Size designResolutionSize = cocos2d::Size(320, 480);
+
 AppDelegate::AppDelegate() {
 
 }
@@ -42,54 +45,17 @@ bool AppDelegate::applicationDidFinishLaunching() {
         director->setOpenGLView(glview);
     }
     
-    auto frameSize = glview->getFrameSize();
-    
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    
-    if (frameSize.width > 320) {
-        // retina
-        
-        if (frameSize.width >= 1024) {
-            
-            director->setContentScaleFactor(3.f);
-            
-        }else{
-            
-            director->setContentScaleFactor(2.f);
-        }
-        
-    }else{
-        // none retina
-        director->setContentScaleFactor(1.f);
-    }
-    
-#elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-    
-    if (frameSize.width > 480) {
-
-        if (frameSize.width >= 1024) {
-
-            director->setContentScaleFactor(3.f);
-
-        }else{
-
-            director->setContentScaleFactor(2.f);
-        }
-
-    }else{
-        director->setContentScaleFactor(1.f);
-    }
-
-#endif
-
-    glview->setDesignResolutionSize(frameSize.width, frameSize.height, ResolutionPolicy::SHOW_ALL);
-
     // turn on display FPS
     director->setDisplayStats(true);
 
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);
 
+    // Set the design resolution
+    glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::SHOW_ALL);
+
+    director->setContentScaleFactor(2);
+    
     register_all_packages();
 
     // create a scene. it's an autorelease object

@@ -5,6 +5,7 @@
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 #include "IconMenuScene.h"
 #endif
+#include "NativeMenuScene.h"
 
 USING_NS_CC;
 
@@ -60,13 +61,10 @@ bool HelloWorld::init()
     // add a label shows "Hello World"
     // create and initialize a label
     
-    auto director = Director::getInstance();
-    auto displayScale = director->getContentScaleFactor();
-    
     std::string font = StringUtils::format("fonts/arial.ttf");
-    auto fontSize = 15 * displayScale;
+    auto fontSize = 15;
     
-    auto label = Label::createWithTTF("NendSDK Cocos2d-x Sample", "fonts/Marker Felt.ttf", 24 *displayScale);
+    auto label = Label::createWithTTF("NendSDK Cocos2d-x Sample", "fonts/Marker Felt.ttf", 24);
     
     // position the label on the center of the screen
     label->setPosition(Point(origin.x + visibleSize.width/2,
@@ -89,17 +87,23 @@ bool HelloWorld::init()
     auto showInterstitialItem = MenuItemLabel::create(showInterstitialLabel, CC_CALLBACK_1(HelloWorld::showInterstitialSceneButtonCallback, this));
     auto showInterstitialMenu = Menu::create(showInterstitialItem, NULL);
     this->addChild(showInterstitialMenu);
-    
+
+    auto showNativeAdLabel = Label::createWithSystemFont("Show NativeAdMenuScene", font, fontSize);
+    auto showNativeAdItem = MenuItemLabel::create(showNativeAdLabel, CC_CALLBACK_1(HelloWorld::showNativeAdSceneButtonCallback, this));
+    auto showNativeAdMenu = Menu::create(showNativeAdItem, NULL);
+    this->addChild(showNativeAdMenu);
+
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     
-    showBannerMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 100 * displayScale));
-    showBannerWithSpotIDMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
-    showInterstitialMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 100 * displayScale));
+    showBannerMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 100));
+    showBannerWithSpotIDMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 33));
+    showInterstitialMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 33));
+    showNativeAdMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 100));
     
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
     
-    showBannerMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 100 * displayScale));
-    showBannerWithSpotIDMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 50 * displayScale));
+    showBannerMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 100));
+    showBannerWithSpotIDMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 50));
     
     auto showIconLabel = Label::createWithSystemFont("Show IconMenuScene", font, fontSize);
     auto showIconItem = MenuItemLabel::create(showIconLabel, CC_CALLBACK_1(HelloWorld::showIconSceneButtonCallback, this));
@@ -107,7 +111,8 @@ bool HelloWorld::init()
     showIconMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
     this->addChild(showIconMenu);
     
-    showInterstitialMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 50 * displayScale));
+    showInterstitialMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 50));
+    showNativeAdMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 100));
 
 #endif
     
@@ -147,4 +152,9 @@ void HelloWorld::showIconSceneButtonCallback(Ref* pSender)
 void HelloWorld::showInterstitialSceneButtonCallback(Ref* pSender)
 {
     Director::getInstance()->replaceScene(TransitionSlideInR::create(0.5f,InterstitialMenuScene::createScene()));
+}
+
+void HelloWorld::showNativeAdSceneButtonCallback(Ref* pSender)
+{
+    Director::getInstance()->replaceScene(TransitionSlideInR::create(0.5f,NativeMenuScene::createScene()));
 }

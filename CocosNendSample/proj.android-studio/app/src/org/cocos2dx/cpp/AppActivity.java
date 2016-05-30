@@ -25,62 +25,21 @@ package org.cocos2dx.cpp;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.view.KeyEvent;
-
-import net.nend.NendModule.NendInterstitialModule;
-
 import org.cocos2dx.lib.Cocos2dxActivity;
 
 public class AppActivity extends Cocos2dxActivity {
 
     private static Context sContext = null;
-    private static boolean backKeySelected;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         sContext = this;
-        setBackKeySelected(false);
-    }
-
-    public static boolean isBackKeySelected() {
-        return backKeySelected;
-    }
-
-    public static void setBackKeySelected(boolean backKeySelected) {
-        AppActivity.backKeySelected = backKeySelected;
     }
 
     public static Context getContext() {
         return sContext;
     }
 
-    @Override
-    public boolean dispatchKeyEvent(KeyEvent event) {
-
-        if (event.getAction() == KeyEvent.ACTION_DOWN) {
-
-            if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
-
-                setBackKeySelected(true);
-            } else {
-                setBackKeySelected(false);
-            }
-        } else if (event.getAction() == KeyEvent.ACTION_UP) {
-
-            if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
-                setBackKeySelected(true);
-                // 終了時広告の表示処理を行う
-                NendInterstitialModule.showNADInterstitialViewFromBackKey();
-            } else {
-                setBackKeySelected(false);
-            }
-
-        } else {
-            setBackKeySelected(false);
-        }
-
-        return super.dispatchKeyEvent(event);
-    }
 }

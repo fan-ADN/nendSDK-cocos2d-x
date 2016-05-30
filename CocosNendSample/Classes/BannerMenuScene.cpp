@@ -1,6 +1,6 @@
 //
 //  BannerMenuScene.cpp
-//  HelloCpp
+//  CocosNendSample
 //
 //  Created by F@N Communications, Inc.
 //
@@ -49,12 +49,11 @@ bool BannerMenuScene::init()
     // create and initialize a label
     
     auto director = Director::getInstance();
-    auto displayScale = director->getContentScaleFactor();
     
     std::string font = StringUtils::format("fonts/arial.ttf");
-    auto fontSize = 15 * displayScale;
+    auto fontSize = 15;
     
-    auto label = Label::createWithTTF("BannerMenuScene", "fonts/Marker Felt.ttf", 24 * displayScale);
+    auto label = Label::createWithTTF("BannerMenuScene", "fonts/Marker Felt.ttf", 24);
     
     // position the label on the center of the screen
     label->setPosition(Point(origin.x + visibleSize.width/2,
@@ -66,19 +65,19 @@ bool BannerMenuScene::init()
     auto bannerLabel_320_50 = Label::createWithSystemFont("320x50", font, fontSize);
     auto bannerItem_320_50 = MenuItemLabel::create(bannerLabel_320_50, CC_CALLBACK_1(BannerMenuScene::showBanner320_50ViewSceneButtonCallback, this));
     auto bannerMenu_320_50 = Menu::create(bannerItem_320_50, NULL);
-    bannerMenu_320_50->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 150 * displayScale));
+    bannerMenu_320_50->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 150));
     this->addChild(bannerMenu_320_50);
     
     auto bannerLabel_320_100 = Label::createWithSystemFont("320x100", font, fontSize);
     auto bannerItem_320_100 = MenuItemLabel::create(bannerLabel_320_100, CC_CALLBACK_1(BannerMenuScene::showBanner320_100ViewSceneButtonCallback, this));
     auto bannerMenu_320_100 = Menu::create(bannerItem_320_100, NULL);
-    bannerMenu_320_100->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 100 * displayScale));
+    bannerMenu_320_100->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 100));
     this->addChild(bannerMenu_320_100);
     
     auto bannerLabel_300_100 = Label::createWithSystemFont("300x100", font, fontSize);
     auto bannerItem_300_100 = MenuItemLabel::create(bannerLabel_300_100, CC_CALLBACK_1(BannerMenuScene::showBanner300_100ViewSceneButtonCallback, this));
     auto bannerMenu_300_100 = Menu::create(bannerItem_300_100, NULL);
-    bannerMenu_300_100->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 50 * displayScale));
+    bannerMenu_300_100->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 50));
     this->addChild(bannerMenu_300_100);
     
     auto bannerLabel_300_250 = Label::createWithSystemFont("300x250", font, fontSize);
@@ -90,13 +89,13 @@ bool BannerMenuScene::init()
     auto bannerLabel_728_90 = Label::createWithSystemFont("728_90", font, fontSize);
     auto bannerItem_728_90 = MenuItemLabel::create(bannerLabel_728_90, CC_CALLBACK_1(BannerMenuScene::showBanner728_90ViewSceneButtonCallback, this));
     auto bannerMenu_728_90 = Menu::create(bannerItem_728_90, NULL);
-    bannerMenu_728_90->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 50 * displayScale));
+    bannerMenu_728_90->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 50));
     this->addChild(bannerMenu_728_90);
 
     auto showPreviousLabel = Label::createWithSystemFont("Back", font, fontSize);
     auto showPreviousItem = MenuItemLabel::create(showPreviousLabel, CC_CALLBACK_1(BannerMenuScene::showPreviousSceneButtonCallback, this));
     auto showPreviousMenu = Menu::create(showPreviousItem, NULL);
-    showPreviousMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 150 * displayScale));
+    showPreviousMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 150));
     this->addChild(showPreviousMenu);
     
     return true;

@@ -1,6 +1,6 @@
 //
 //  InterstitialMenuScene.h
-//  HelloCpp
+//  CocosNendSample
 //
 //  Created by F@N Communications, Inc.
 //
@@ -40,8 +40,6 @@ public:
     void addEventDispatcher();
     void removeEventDispatcher();
     
-    // backキーのイベント検知
-    void onKeyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event * event);
 };
 
 #endif /* defined(__HelloCpp__InterstitialMenuScene__) */
