@@ -34,7 +34,6 @@ CocosNendSample/proj.android/project.properties
 CocosNendSample/proj.android/proguard-project.txt
 CocosNendSample/cocos2d/cocos/platform/android/java/bin
 CocosNendSample/cocos2d/cocos/platform/android/java/gen
-CocosNendSample/cocos2d/cocos/platform/android/java/libs
 CocosNendSample/cocos2d/cocos/platform/android/java/local.properties
 CocosNendSample/cocos2d/cocos/platform/android/java/res
 
