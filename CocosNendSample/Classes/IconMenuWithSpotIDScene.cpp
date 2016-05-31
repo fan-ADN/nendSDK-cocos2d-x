@@ -55,8 +55,6 @@ bool IconMenuWithSpotIDScene::init()
     // add a label shows "Hello World"
     // create and initialize a label
 
-    auto director = Director::getInstance();
-
     std::string font = StringUtils::format("fonts/arial.ttf");
     auto fontSize = 15;
 
