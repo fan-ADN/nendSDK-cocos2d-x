@@ -6,10 +6,8 @@
 class HelloWorld : public cocos2d::Layer
 {
 public:
-    // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::Scene* createScene();
 
-    // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
     virtual bool init();
     
     // a selector callback
@@ -25,7 +23,7 @@ public:
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
     void showIconSceneButtonCallback(cocos2d::Ref* pSender);
 #endif
-
+    void showNativeAdSceneButtonCallback(cocos2d::Ref* pSender);
 };
 
 #endif // __HELLOWORLD_SCENE_H__

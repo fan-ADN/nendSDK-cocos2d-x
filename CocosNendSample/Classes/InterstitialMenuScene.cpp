@@ -1,6 +1,6 @@
 //
 //  InterstitialMenuScene.cpp
-//  HelloCpp
+//  CocosNendSample
 //
 //  Created by F@N Communications, Inc.
 //
@@ -61,13 +61,10 @@ bool InterstitialMenuScene::init()
     // add a label shows "Hello World"
     // create and initialize a label
     
-    auto director = Director::getInstance();
-    auto displayScale = director->getContentScaleFactor();
-    
     std::string font = StringUtils::format("fonts/arial.ttf");
-    auto fontSize = 15 * displayScale;
+    auto fontSize = 15;
     
-    auto label = Label::createWithTTF("InterstitialMenuScene", "fonts/Marker Felt.ttf", 24 * displayScale);
+    auto label = Label::createWithTTF("InterstitialMenuScene", "fonts/Marker Felt.ttf", 24);
     
     // position the label on the center of the screen
     label->setPosition(Point(origin.x + visibleSize.width/2,
@@ -79,13 +76,13 @@ bool InterstitialMenuScene::init()
     auto showLabel = Label::createWithSystemFont("Show", font, fontSize);
     auto showItem = MenuItemLabel::create(showLabel, CC_CALLBACK_1(InterstitialMenuScene::showInterstitialButtonCallback, this));
     auto showMenu = Menu::create(showItem, NULL);
-    showMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 100 * displayScale));
+    showMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 100));
     this->addChild(showMenu);
     
     auto showInterstitialLabel = Label::createWithSystemFont("ShowWithSpotID", font, fontSize);
     auto showInterstitialItem = MenuItemLabel::create(showInterstitialLabel, CC_CALLBACK_1(InterstitialMenuScene::showInterstitialWithSpotIdButtonCallback, this));
     auto showInterstitialMenu = Menu::create(showInterstitialItem, NULL);
-    showInterstitialMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 50 * displayScale));
+    showInterstitialMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 50));
     this->addChild(showInterstitialMenu);
     
     auto hideInterstitialLabel = Label::createWithSystemFont("dismiss", font, fontSize);
@@ -97,7 +94,7 @@ bool InterstitialMenuScene::init()
     auto showPreviousLabel = Label::createWithSystemFont("Back", font, fontSize);
     auto showPreviousItem = MenuItemLabel::create(showPreviousLabel, CC_CALLBACK_1(InterstitialMenuScene::showPreviousSceneButtonCallback, this));
     auto showPreviousMenu = Menu::create(showPreviousItem, NULL);
-    showPreviousMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 150 * displayScale));
+    showPreviousMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 150));
     this->addChild(showPreviousMenu);
     
     // EventDispatcher登録
@@ -112,12 +109,6 @@ void InterstitialMenuScene::onEnter()
     
     // インタースティシャル広告のロードを開始する
     NendInterstitialModule::createNADInterstitial(interstitialApiKey, interstitialSpotID);
-    
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    // インタースティシャル広告の表示する向きを縦固定で設定する ※iOSのみ
-    int supportedOrientations[] = {NAD_INTERSTITIAL_SUPPORTED_ORIENTATION_PORTRAIT,NULL};
-    NendInterstitialModule::setSupportedOrientations(supportedOrientations);
-#endif
     
 }
 
@@ -137,17 +128,6 @@ void InterstitialMenuScene::menuCloseCallback(Ref* pSender)
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
     
 #endif
-}
-
-void InterstitialMenuScene::onKeyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event * event)
-{
-    if ( keyCode == EventKeyboard::KeyCode::KEY_ESCAPE)
-    {
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-        // 端末のbackキーを押された時に、インタースティシャルの終了時広告を表示する例 ※Androidのみ
-        NendInterstitialModule::showFinishNADInterstitialView();
-#endif
-    }
 }
 
 #pragma mark - メニューボタンのコールバック
@@ -327,10 +307,6 @@ void InterstitialMenuScene::addEventDispatcher()
                 // ×ボタンあるいは広告範囲外の領域がクリック
                 log("CLICK_CLOSE");
                 break;
-            case CLICK_EXIT:  //※Android の終了時広告のみ
-                // ×ボタンがクリック
-                log("CLICK_EXIT");
-                break;
             default:
                 break;
         }
@@ -351,10 +327,6 @@ void InterstitialMenuScene::addEventDispatcher()
             case CLICK_CLOSE:
                 // ×ボタンあるいは広告範囲外の領域がクリック
                 log("CLICK_CLOSE:%d",spotId);
-                break;
-            case CLICK_EXIT:  //※Android の終了時広告のみ
-                // ×ボタンがクリック
-                log("CLICK_EXIT:%d",spotId);
                 break;
             default:
                 break;

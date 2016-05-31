@@ -1,6 +1,6 @@
 //
 //  IconMenuScene.h
-//  HelloCpp
+//  CocosNendSample
 //
 //  Created by F@N Communications, Inc.
 //
