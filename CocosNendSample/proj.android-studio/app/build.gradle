@@ -48,3 +48,14 @@ dependencies {
     compile project(':libcocos2dx')
     compile 'com.google.android.gms:play-services-ads:8.4.0'
 }
+
+task cleanAssets(type: Delete) {
+    delete 'assets'
+}
+task copyAssets(type: Copy) {
+    from '../../Resources'
+    into 'assets'
+}
+
+clean.dependsOn cleanAssets
+preBuild.dependsOn copyAssets

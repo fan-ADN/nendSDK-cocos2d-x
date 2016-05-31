@@ -7,7 +7,6 @@
 
 USING_NS_CC;
 
-
 static cocos2d::Size designResolutionSize = cocos2d::Size(320, 480);
 
 AppDelegate::AppDelegate() {
@@ -41,10 +40,10 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if(!glview) {
-        glview = GLViewImpl::create("My Game");
+        glview = GLViewImpl::create("CocosNendSample");
         director->setOpenGLView(glview);
     }
-    
+
     // turn on display FPS
     director->setDisplayStats(true);
 
@@ -53,9 +52,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // Set the design resolution
     glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::SHOW_ALL);
-
-    director->setContentScaleFactor(2);
     
+    director->setContentScaleFactor(2);
+
     register_all_packages();
 
     // create a scene. it's an autorelease object
