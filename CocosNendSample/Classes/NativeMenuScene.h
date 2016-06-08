@@ -27,6 +27,7 @@ public:
     // メニューボタンのコールバック
     void showNativeViewSceneButtonCallback(cocos2d::Ref* pSender, NativeType type);
     void showNativeInfeedViewSceneButtonCallback(cocos2d::Ref* pSender);
+    void showNativeTelopViewSceneButtonCallback(cocos2d::Ref* pSender);
     void showPreviousSceneButtonCallback(cocos2d::Ref* pSender);
 
 };

@@ -4,17 +4,11 @@ bin/
 gen/
 
 # nend
-CocosNendSample/proj.android/libs/nendSDK-2.6.3.jar
-CocosNendSample/proj.android/src/net/
+CocosNendSample/proj.android-studio/app/libs/nendSDK-*.*.*.jar
+CocosNendSample/proj.android-studio/app/src/net/
 CocosNendSample/proj.ios_mac/ios/NendAd/
-CocosNendSample/proj.ios_mac/ios/NendModule.mm
-CocosNendSample/proj.ios_mac/ios/NendInterstitialModule.mm
-CocosNendSample/Classes/NendModule.h
-CocosNendSample/Classes/NendModule.cpp
-CocosNendSample/Classes/NendInterstitialModule.h
-CocosNendSample/Classes/NendInterstitialModule.cpp
-CocosNendSample/Classes/NendIconModule.h
-CocosNendSample/Classes/NendIconModule.cpp
+CocosNendSample/Classes/Android/
+CocosNendSample/Classes/Common/
 CocosNendSample/bin/
 CocosNendSample/idea/dictionaries
 CocosNendSample/cocos2d/cocos/platform/android/libcocos2dx/build/

@@ -9,6 +9,7 @@
 #include "NativeMenuScene.h"
 #include "HelloWorldScene.h"
 #include "NativeInfeedViewScene.h"
+#include "NativeTelopViewScene.h"
 
 USING_NS_CC;
 
@@ -76,10 +77,17 @@ bool NativeMenuScene::init()
     
     showInfeedMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 100));
 
+    auto showTelopLabel = Label::createWithSystemFont("Show Telop", font, fontSize);
+    auto showTelopItem = MenuItemLabel::create(showTelopLabel, CC_CALLBACK_1(NativeMenuScene::showNativeTelopViewSceneButtonCallback, this));
+    auto showTelopMenu = Menu::create(showTelopItem, NULL);
+    this->addChild(showTelopMenu);
+    
+    showTelopMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 150));
+
     auto showPreviousLabel = Label::createWithSystemFont("Back", font, fontSize);
     auto showPreviousItem = MenuItemLabel::create(showPreviousLabel, CC_CALLBACK_1(NativeMenuScene::showPreviousSceneButtonCallback, this));
     auto showPreviousMenu = Menu::create(showPreviousItem, NULL);
-    showPreviousMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 150));
+    showPreviousMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 200));
     this->addChild(showPreviousMenu);
 
     return true;
@@ -93,6 +101,11 @@ void NativeMenuScene::showNativeViewSceneButtonCallback(Ref* pSender, NativeType
 void NativeMenuScene::showNativeInfeedViewSceneButtonCallback(Ref* pSender)
 {
     Director::getInstance()->replaceScene(TransitionSlideInR::create(0.5f,NativeInfeedViewScene::createScene()));
+}
+
+void NativeMenuScene::showNativeTelopViewSceneButtonCallback(Ref* pSender)
+{
+    Director::getInstance()->replaceScene(TransitionSlideInR::create(0.5f, NativeTelopViewScene::createScene()));
 }
 
 void NativeMenuScene::showPreviousSceneButtonCallback(Ref* pSender)

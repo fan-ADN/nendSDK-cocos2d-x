@@ -23,6 +23,7 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../../Classes/NativeMenuScene.cpp \
                    ../../../Classes/NativeViewScene.cpp \
                    ../../../Classes/NativeInfeedViewScene.cpp \
+                   ../../../Classes/NativeTelopViewScene.cpp \
                    ../../../Classes/Common/NendHttpHelper.cpp \
                    ../../../Classes/Common/NendNativeAdClient.cpp \
                    ../../../Classes/Common/NendNativeAdLog.cpp \
