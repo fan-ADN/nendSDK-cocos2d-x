@@ -5,7 +5,7 @@ cocos2d-xでNendSDKを利用するサンプルプロジェクトになります�
 
 ## Requirement
 
-* cocos2d-x-3.11.1
+* cocos2d-x-3.12.0
 
 * nendSDK Cocos2d-x module ver2.0.0
 
@@ -25,7 +25,7 @@ cocos2d-xでNendSDKを利用するサンプルプロジェクトになります�
 
 ### Android  
 
-事前にAndroid Studio環境でcocos2d-x-3.11.1のセットアップが完了している必要があります。
+事前にAndroid Studio環境でcocos2d-x-3.12.0のセットアップが完了している必要があります。
 
 #### Android Studio
 

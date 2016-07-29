@@ -86,12 +86,10 @@ bool NativeTelopViewScene::init()
     adBackground->addChild(clippingNode);
 
     _adImage = Sprite::create();
-    _adImage->setName("AdImage");
     _adImage->setContentSize(Size(80, 60));
     _adImage->setPosition(Point(_adImage->getContentSize().width / 2, _adImage->getContentSize().height / 2));
 
     _prText = Label::create();
-    _prText->setName("PR");
     _prText->setWidth(20);
     _prText->setAlignment(TextHAlignment::CENTER, TextVAlignment::CENTER);
     _prText->setDimensions(20, _adNode->getContentSize().height);
@@ -100,12 +98,11 @@ bool NativeTelopViewScene::init()
     _prText->setPosition(Point(_adImage->getContentSize().width + _prText->getWidth() / 2, _adNode->getContentSize().height / 2));
     
     _shortText = Label::create();
-    _shortText->setName("ShortText");
-    _shortText->setWidth(_adNode->getContentSize().width - _adImage->getContentSize().width - _prText->getWidth());
     _shortText->setHeight(20);
     _shortText->setTextColor(Color4B::WHITE);
     _shortText->setSystemFontSize(20.f);
-    _shortText->setPosition(Point(_adImage->getContentSize().width + _prText->getWidth() + _shortText->getWidth() / 2, _adNode->getContentSize().height / 2));
+    _shortText->setAnchorPoint(Vec2(0.0, 0.5));
+    _shortText->setPosition(Point(_adImage->getContentSize().width + _prText->getWidth(), _adNode->getContentSize().height / 2));
     _shortText->enableWrap(false);
     
     auto prBackground = LayerColor::create(Color4B::BLACK, _prText->getWidth(), _adNode->getContentSize().height);
@@ -143,15 +140,13 @@ void NativeTelopViewScene::onEnter()
                     cocos2d::Rect rect = cocos2d::Rect();
                     rect.size = adImageTexture->getContentSize();
                     _adImage->setTextureRect(rect);
-                    
-                    _shortText->setDimensions(0, _shortText->getContentSize().height);
-                    _shortText->Label::setPosition(Point(_adImage->getContentSize().width + _prText->getContentSize().width + _shortText->getContentSize().width / 2, _shortText->getPosition().y));
-                    this->runAction(Sequence::create(DelayTime::create(delay), CallFunc::create([this]() {
-                        this->scroll();
-                    }), nullptr));
                 }
             });
             nativeAd->activateAdView(_adNode, _prText);
+
+            this->runAction(Sequence::create(DelayTime::create(delay), CallFunc::create([this]() {
+                this->scroll();
+            }), nullptr));
 
         } else {
             CCLOG("NativeAd load error. code:%d, Message:%s", code, errorMessage.c_str());
@@ -172,7 +167,7 @@ void NativeTelopViewScene::menuCloseCallback(Ref* pSender)
 
 void NativeTelopViewScene::scroll()
 {
-    auto to = _shortText->getContentSize().width / 2 * -1;
+    auto to = (_shortText->getContentSize().width * -1) + _adImage->getContentSize().width + _prText->getWidth();
     auto distance = _shortText->getPosition().x - to;
     auto callback = CallFuncN::create(CC_CALLBACK_1(NativeTelopViewScene::scrollFinished, this));
     auto move = MoveTo::create(distance / speed, Vec2(to, _shortText->getPosition().y));
@@ -182,6 +177,6 @@ void NativeTelopViewScene::scroll()
 
 void NativeTelopViewScene::scrollFinished(cocos2d::Node *sender)
 {
-    _shortText->Label::setPosition(Point(_adNode->getContentSize().width + _shortText->getContentSize().width / 2, _shortText->getPosition().y));
+    _shortText->Label::setPosition(Point(_adNode->getContentSize().width, _shortText->getPosition().y));
     this->scroll();
 }

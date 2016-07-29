@@ -12,7 +12,6 @@
 #include "cocos2d.h"
 #include "cocos-ext.h"
 #include "NendNativeAdClient.h"
-#include "NendNativeAdBinder.h"
 
 class NativeInfeedViewScene : public cocos2d::Layer, public cocos2d::extension::TableViewDelegate, public cocos2d::extension::TableViewDataSource
 {

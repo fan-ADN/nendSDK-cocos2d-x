@@ -7,7 +7,6 @@
 //
 
 #include "NativeViewScene.h"
-#include "NendNativeAdClient.h"
 #include "NendNativeAdBinder.h"
 #include "NativeMenuScene.h"
 #include "NendNativeAdLog.h"
@@ -478,7 +477,7 @@ void NativeViewScene::loadNativeAd(){
                 _binder->setLogoImage_Name("NendNativeAdLogoImageSprite"); // ロゴ画像
             }
             // ロードした広告の描画を行います
-            // 第一引数にはネイティブ広告を表示する領域を設定します
+            // 第一引数には広告要素がレイアウトされたNodeを設定します
             nativeAd->renderAdViews(_adLayer, _binder, NAD_NATIVE_ADVERTISING_EXPLIICITY_PR);
 
             // イベント通知の callback を設定します
