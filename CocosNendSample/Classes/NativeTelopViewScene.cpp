@@ -35,10 +35,6 @@ NativeTelopViewScene::~NativeTelopViewScene()
         delete _client;
         _client = nullptr;
     }
-    if (_binder) {
-        delete _binder;
-        _binder = nullptr;
-    }
 }
 
 // on "init" you need to initialize your instance
@@ -89,12 +85,12 @@ bool NativeTelopViewScene::init()
     clippingNode->addChild(_adNode);
     adBackground->addChild(clippingNode);
 
-    _adImage = NendNativeSprite::create();
+    _adImage = Sprite::create();
     _adImage->setName("AdImage");
     _adImage->setContentSize(Size(80, 60));
     _adImage->setPosition(Point(_adImage->getContentSize().width / 2, _adImage->getContentSize().height / 2));
 
-    _prText = NendNativeLabel::create();
+    _prText = Label::create();
     _prText->setName("PR");
     _prText->setWidth(20);
     _prText->setAlignment(TextHAlignment::CENTER, TextVAlignment::CENTER);
@@ -103,7 +99,7 @@ bool NativeTelopViewScene::init()
     _prText->setSystemFontSize(20.f);
     _prText->setPosition(Point(_adImage->getContentSize().width + _prText->getWidth() / 2, _adNode->getContentSize().height / 2));
     
-    _shortText = NendNativeLabel::create();
+    _shortText = Label::create();
     _shortText->setName("ShortText");
     _shortText->setWidth(_adNode->getContentSize().width - _adImage->getContentSize().width - _prText->getWidth());
     _shortText->setHeight(20);
@@ -128,19 +124,7 @@ bool NativeTelopViewScene::init()
     const auto spotId = "485517";
 #endif
     
-    _client = new NendNativeAdClient(apiKey, spotId, NAD_NATIVE_ADVERTISING_EXPLIICITY_PR);
-    _client->setRenderAdViewSuccessCallback([=](Node* container) {
-        _shortText->setDimensions(0, _shortText->getContentSize().height);
-        _shortText->Label::setPosition(Point(_adImage->getContentSize().width + _prText->getContentSize().width + _shortText->getContentSize().width / 2, _shortText->getPosition().y));
-        this->runAction(Sequence::create(DelayTime::create(delay), CallFunc::create([this]() {
-            this->scroll();
-        }), nullptr));
-    });
-
-    _binder = new NendNativeAdBinder();
-    _binder->setPrText_Name(_prText->getName());
-    _binder->setShortTitle_Name(_shortText->getName());
-    _binder->setAdImage_Name(_adImage->getName());
+    _client = new NendNativeAdClient(apiKey, spotId);
 
     return true;
 }
@@ -149,9 +133,26 @@ void NativeTelopViewScene::onEnter()
 {
     Layer::onEnter();
     
-    _client->loadAd([=](NendNativeLoadResultCode code, std::string errorMessage) {
+    _client->loadAd([=](NendNativeAd *nativeAd, NendNativeLoadResultCode code, std::string errorMessage) {
         if (code == NEND_SUCCESS_LOAD_AD) {
-            _client->renderAdViews(_adNode, _binder);
+            _prText->setString(nativeAd->prTextForAdvertisingExplicitly(NAD_NATIVE_ADVERTISING_EXPLIICITY_PR));
+            _shortText->setString(nativeAd->getShortText());
+            nativeAd->downloadAdImage([=](Texture2D* adImageTexture, std::string errorMessage){
+                if (nullptr != adImageTexture) {
+                    _adImage->setTexture(adImageTexture);
+                    cocos2d::Rect rect = cocos2d::Rect();
+                    rect.size = adImageTexture->getContentSize();
+                    _adImage->setTextureRect(rect);
+                    
+                    _shortText->setDimensions(0, _shortText->getContentSize().height);
+                    _shortText->Label::setPosition(Point(_adImage->getContentSize().width + _prText->getContentSize().width + _shortText->getContentSize().width / 2, _shortText->getPosition().y));
+                    this->runAction(Sequence::create(DelayTime::create(delay), CallFunc::create([this]() {
+                        this->scroll();
+                    }), nullptr));
+                }
+            });
+            nativeAd->activateAdView(_adNode, _prText);
+
         } else {
             CCLOG("NativeAd load error. code:%d, Message:%s", code, errorMessage.c_str());
         }

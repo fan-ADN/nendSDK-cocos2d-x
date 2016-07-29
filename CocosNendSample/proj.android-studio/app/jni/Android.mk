@@ -21,27 +21,26 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../../Classes/IconMenuWithSpotIDScene.cpp \
                    ../../../Classes/InterstitialMenuScene.cpp \
                    ../../../Classes/NativeMenuScene.cpp \
+                   ../../../Classes/NativeCustomViewScene.cpp \
                    ../../../Classes/NativeViewScene.cpp \
                    ../../../Classes/NativeInfeedViewScene.cpp \
                    ../../../Classes/NativeTelopViewScene.cpp \
-                   ../../../Classes/Common/NendHttpHelper.cpp \
+                   ../../../Classes/Common/NendNativeLabel.cpp \
+                   ../../../Classes/Common/NendNativeSprite.cpp \
+                   ../../../Classes/Common/NendNativeClippingNode.cpp \
                    ../../../Classes/Common/NendNativeAdClient.cpp \
+                   ../../../Classes/Common/NendHttpHelper.cpp \
                    ../../../Classes/Common/NendNativeAdLog.cpp \
                    ../../../Classes/Common/NendNativeAdRender.cpp \
-                   ../../../Classes/Common/NendNativeAdValidate.cpp \
-                   ../../../Classes/Common/NendNativeAdViewHolder.cpp \
-                   ../../../Classes/Common/NendNativeClipNodeConstraint.cpp \
-                   ../../../Classes/Common/NendNativeClippingNode.cpp \
-                   ../../../Classes/Common/NendNativeLabel.cpp \
-                   ../../../Classes/Common/NendNativeLabelConstraint.cpp \
-                   ../../../Classes/Common/NendNativeSprite.cpp \
-                   ../../../Classes/Common/NendNativeSpriteConstraint.cpp \
-                   ../../../Classes/Android/AndroidNativeAd.cpp \
-                   ../../../Classes/Android/AndroidNativeAdClient.cpp \
-                   ../../../Classes/Android/AndroidNativeJNI.cpp \
+                   ../../../Classes/Common/NendNativeAdBinder.cpp \
+                   ../../../Classes/Common/NendNativeAd.cpp \
+                   ../../../Classes/Common/NendNativeImpressionTracker.cpp \
+                   ../../../Classes/Android/NendModule.cpp \
                    ../../../Classes/Android/NendIconModule.cpp \
                    ../../../Classes/Android/NendInterstitialModule.cpp \
-                   ../../../Classes/Android/NendModule.cpp
+                   ../../../Classes/Android/AndroidNativeAd.cpp \
+                   ../../../Classes/Android/AndroidNativeJNI.cpp \
+                   ../../../Classes/Android/AndroidNativeAdClient.cpp
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../../Classes
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../../Classes/Common

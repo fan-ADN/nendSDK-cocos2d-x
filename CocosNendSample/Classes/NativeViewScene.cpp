@@ -7,10 +7,10 @@
 //
 
 #include "NativeViewScene.h"
-#include "NendNativeLabel.h"
 #include "NendNativeAdClient.h"
 #include "NendNativeAdBinder.h"
 #include "NativeMenuScene.h"
+#include "NendNativeAdLog.h"
 
 USING_NS_CC;
 using namespace nend_module;
@@ -265,24 +265,20 @@ const tNativeAdLayout layoutArrays[] = {
 };
 
 
-// インスタンスをクラス内で保持します
-NendNativeAdClient* m_NativeAdClient;
-NendNativeAdBinder* m_binder;
-LayerColor* m_adLayer;
-NativeType m_nativeType;
+NativeType _nativeType;
 
 NativeViewScene::NativeViewScene(){
 }
 
 NativeViewScene::~NativeViewScene(){
     // Scene 解放時に NendNativeAdClient, NendNativeAdBinder を解放します
-    if (m_binder) {
-        delete m_binder;
-        m_binder = nullptr;
+    if (_binder) {
+        delete _binder;
+        _binder = nullptr;
     }
-    if (m_NativeAdClient) {
-        delete m_NativeAdClient;
-        m_NativeAdClient = nullptr;
+    if (_nativeAdClient) {
+        delete _nativeAdClient;
+        _nativeAdClient = nullptr;
     }
 }
 
@@ -292,7 +288,7 @@ Scene* NativeViewScene::createScene(NativeType type)
     NativeViewScene* layer = NativeViewScene::create();
     scene->addChild(layer);
     
-    m_nativeType = type;
+    _nativeType = type;
     return scene;
 }
 
@@ -316,9 +312,9 @@ bool NativeViewScene::init()
     showPreviousMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 210));
     this->addChild(showPreviousMenu);
     
-    m_adLayer = nullptr;
-    m_NativeAdClient = nullptr;
-    m_binder = nullptr;
+    _adLayer = nullptr;
+    _nativeAdClient = nullptr;
+    _binder = nullptr;
 
     return true;
 }
@@ -347,16 +343,16 @@ void NativeViewScene::makeAndLoadNativeAd(){
 
     Size visibleSize = Director::getInstance()->getVisibleSize();
     
-    m_adLayer = this->makeNativeAdLayer();
-    m_adLayer->setPosition(Point((visibleSize.width - m_adLayer->getContentSize().width) /2, (visibleSize.height - m_adLayer->getContentSize().height) /2));
-    this->addChild(m_adLayer);
+    _adLayer = this->makeNativeAdLayer();
+    _adLayer->setPosition(Point((visibleSize.width - _adLayer->getContentSize().width) /2, (visibleSize.height - _adLayer->getContentSize().height) /2));
+    this->addChild(_adLayer);
     
     this->loadNativeAd();
 }
 
 LayerColor * NativeViewScene::makeNativeAdLayer()
 {
-    auto layout = layoutArrays[m_nativeType];
+    auto layout = layoutArrays[_nativeType];
     
     // ネイティブ広告を表示する領域を作成します
     auto adLayer = LayerColor::create(Color4B::WHITE, layout.layerSize.width, layout.layerSize.height);
@@ -364,7 +360,7 @@ LayerColor * NativeViewScene::makeNativeAdLayer()
     // 広告要素を作成し 上記で作成した領域に配置します
 
     // 広告明示
-    auto prLabel = NendNativeLabel::create();
+    auto prLabel = Label::create();
     prLabel->setName("NendNativeAdPrLabel"); // 広告要素の識別に使用する任意の名前を設定します
     prLabel->setTextColor(Color4B::BLACK);
     prLabel->setAnchorPoint(Point(0,0));
@@ -375,7 +371,7 @@ LayerColor * NativeViewScene::makeNativeAdLayer()
     adLayer->addChild(prLabel);
     
     // 広告見出し
-    auto shortTextLabel = NendNativeLabel::create();
+    auto shortTextLabel = Label::create();
     shortTextLabel->setTextColor(Color4B::BLACK);
     shortTextLabel->setAnchorPoint(Point(0,0));
     shortTextLabel->setName("NendNativeAdShortTextLabel"); // 広告要素の識別に使用する任意の名前を設定します
@@ -386,7 +382,7 @@ LayerColor * NativeViewScene::makeNativeAdLayer()
     adLayer->addChild(shortTextLabel);
     
     // 広告文
-    auto longTextLabel = NendNativeLabel::create();
+    auto longTextLabel = Label::create();
     longTextLabel->setName("NendNativeAdLongTextLabel"); // 広告要素の識別に使用する任意の名前を設定します
     longTextLabel->setTextColor(Color4B::BLACK);
     longTextLabel->setAnchorPoint(Point(0,0));
@@ -397,7 +393,7 @@ LayerColor * NativeViewScene::makeNativeAdLayer()
     adLayer->addChild(longTextLabel);
     
     // プロモーション名
-    auto promotionNameLabel = NendNativeLabel::create();
+    auto promotionNameLabel = Label::create();
     promotionNameLabel->setName("NendNativeAdPromotionNameLabel"); // 広告要素の識別に使用する任意の名前を設定します
     promotionNameLabel->setTextColor(Color4B::BLACK);
     promotionNameLabel->setAnchorPoint(Point(0,0));
@@ -408,7 +404,7 @@ LayerColor * NativeViewScene::makeNativeAdLayer()
     adLayer->addChild(promotionNameLabel);
 
     // プロモーションURL
-    auto promotionURLLabel = NendNativeLabel::create();
+    auto promotionURLLabel = Label::create();
     promotionURLLabel->setName("NendNativeAdPromotionURLLabel"); // 広告要素の識別に使用する任意の名前を設定します
     promotionURLLabel->setTextColor(Color4B::BLACK);
     promotionURLLabel->setAnchorPoint(Point(0,0));
@@ -419,7 +415,7 @@ LayerColor * NativeViewScene::makeNativeAdLayer()
     adLayer->addChild(promotionURLLabel);
     
     // アクションボタン
-    auto actionTextLabel = NendNativeLabel::create();
+    auto actionTextLabel = Label::create();
     actionTextLabel->setName("NendNativeAdActionTextLabel"); // 広告要素の識別に使用する任意の名前を設定します
     actionTextLabel->setTextColor(Color4B::BLUE);
     actionTextLabel->setAnchorPoint(Point(0,0));
@@ -431,10 +427,10 @@ LayerColor * NativeViewScene::makeNativeAdLayer()
     adLayer->addChild(actionTextLabel);
     
     // 広告画像
-    auto adImageSprite = NendNativeSprite::create();
+    auto adImageSprite = Sprite::create();
     adImageSprite->setName("NendNativeAdImageSprite"); // 広告要素の識別に使用する任意の名前を設定します
     adImageSprite->setAnchorPoint(Point(0,0));
-    if (m_nativeType != NATIVE_LARGE_WIDE) {
+    if (_nativeType != NATIVE_LARGE_WIDE) {
         adImageSprite->setPosition(layout.imageSpritePoint);
         adLayer->addChild(adImageSprite);
     } else {
@@ -447,7 +443,7 @@ LayerColor * NativeViewScene::makeNativeAdLayer()
     }
 
     // ロゴ画像
-    auto logoImageSprite = NendNativeSprite::create();
+    auto logoImageSprite = Sprite::create();
     logoImageSprite->setAnchorPoint(Point(0,0));
     logoImageSprite->setName("NendNativeAdLogoImageSprite"); // 広告要素の識別に使用する任意の名前を設定します
     logoImageSprite->setPosition(layout.logoImageSpritePoint);
@@ -459,53 +455,41 @@ LayerColor * NativeViewScene::makeNativeAdLayer()
 void NativeViewScene::loadNativeAd(){
     
     // NendNativeAdClient クラスのインスタンスを生成します
-    auto apiKey = spotIdArray[m_nativeType].apiKey;
-    auto spotId = spotIdArray[m_nativeType].spotId;
-    m_NativeAdClient = new NendNativeAdClient(apiKey, spotId, NAD_NATIVE_ADVERTISING_EXPLIICITY_AD);
-
-    // イベント通知の callback を設定します
-    m_NativeAdClient->setRenderAdViewSuccessCallback([=](Node* container){
-        // 広告表示成功時
-        CCLOG("Ad was displayed.");
-    });
-    m_NativeAdClient->setRenderAdViewFailedCallback([=](Node* container){
-        // 広告表示失敗時
-        CCLOG("Ad could not be displayed.");
-    });
-    m_NativeAdClient->setAdClickCallback([=](Node* container){
-        // 広告表示クリック時
-        CCLOG("Click ad.");
-    });
+    auto apiKey = spotIdArray[_nativeType].apiKey;
+    auto spotId = spotIdArray[_nativeType].spotId;
+    _nativeAdClient = new NendNativeAdClient(apiKey, spotId);
 
     // 広告のロードを実行します
-    m_NativeAdClient->loadAd([=](NendNativeLoadResultCode code, std::string errorMessage) {
-        if (code == NEND_SUCCESS_LOAD_AD) {
+    _nativeAdClient->loadAd([=](NendNativeAd* nativeAd, NendNativeLoadResultCode resultCode, std::string errorMessage) {
+        if (resultCode == NEND_SUCCESS_LOAD_AD) {
             // ロード成功
             // 広告要素と表示するNodeの紐付けを行います
-            m_binder = new NendNativeAdBinder();
+            _binder = new NendNativeAdBinder();
             
             // 前項でLabelやSpriteにセットした識別用の名前を設定します
-            m_binder->setPrText_Name("NendNativeAdPrLabel"); // 広告明示
-            m_binder->setShortTitle_Name("NendNativeAdShortTextLabel"); // 広告見出し
-            m_binder->setLongText_Name("NendNativeAdLongTextLabel"); // 広告文
-            m_binder->setPromotionName_Name("NendNativeAdPromotionNameLabel"); // プロモーション名
-            m_binder->setPromotionUrl_Name("NendNativeAdPromotionURLLabel"); // プロモーションURL
-            m_binder->setActionText_Name("NendNativeAdActionTextLabel"); // アクションボタン
-            m_binder->setAdImage_Name("NendNativeAdImageSprite"); // 広告画像
-            if (m_nativeType == NATIVE_LARGE_WIDE) {
-                m_binder->setLogoImage_Name("NendNativeAdLogoImageSprite"); // ロゴ画像
-                m_binder->setClipNode_Name("NendNativeAdClipNode"); // 広告画像(クリップ)
+            _binder->setPrText_Name("NendNativeAdPrLabel"); // 広告明示
+            _binder->setShortTitle_Name("NendNativeAdShortTextLabel"); // 広告見出し
+            _binder->setLongText_Name("NendNativeAdLongTextLabel"); // 広告文
+            _binder->setPromotionName_Name("NendNativeAdPromotionNameLabel"); // プロモーション名
+            _binder->setPromotionUrl_Name("NendNativeAdPromotionURLLabel"); // プロモーションURL
+            _binder->setActionText_Name("NendNativeAdActionTextLabel"); // アクションボタン
+            _binder->setAdImage_Name("NendNativeAdImageSprite"); // 広告画像
+            if (_nativeType == NATIVE_LARGE_WIDE) {
+                _binder->setLogoImage_Name("NendNativeAdLogoImageSprite"); // ロゴ画像
             }
             // ロードした広告の描画を行います
             // 第一引数にはネイティブ広告を表示する領域を設定します
-            m_NativeAdClient->renderAdViews(m_adLayer, m_binder);
-            
+            nativeAd->renderAdViews(_adLayer, _binder, NAD_NATIVE_ADVERTISING_EXPLIICITY_PR);
+
+            // イベント通知の callback を設定します
+            nativeAd->setAdClickCallback([=](NendNativeAd *nativeAd, Node* node){
+                // 広告表示クリック時
+                CCLOG("Click ad.");
+            });
+
         } else {
             // ロード失敗
-            switch (code) {
-                case NEND_EXCESSIVE_AD_CALLS:
-                    // 広告取得数超過
-                    break;
+            switch (resultCode) {
                 case NEND_FAILED_TO_REQUEST:
                     // リクエスト失敗（通信エラー等）
                     break;
@@ -515,7 +499,7 @@ void NativeViewScene::loadNativeAd(){
                 default:
                     break;
             }
-            CCLOG("NativeAd load error. code:%d, Message:%s",code, errorMessage.c_str());
+            CCLOG("NativeAd load error. resultCode:%d, Message:%s",resultCode, errorMessage.c_str());
         }
     });
 }

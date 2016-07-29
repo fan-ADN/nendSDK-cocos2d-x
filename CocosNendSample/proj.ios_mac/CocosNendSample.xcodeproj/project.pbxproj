@@ -24,6 +24,7 @@
 		46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */; };
 		46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */; };
+		4F37A34D1D4A0F7F00EDE730 /* NativeCustomViewScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F37A34B1D4A0F7F00EDE730 /* NativeCustomViewScene.cpp */; };
 		4FF6654D1CFD3BD300C4C7E2 /* BannerMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FF6653F1CFD3BD300C4C7E2 /* BannerMenuScene.cpp */; };
 		4FF6654E1CFD3BD300C4C7E2 /* BannerViewScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FF665411CFD3BD300C4C7E2 /* BannerViewScene.cpp */; };
 		4FF6654F1CFD3BD300C4C7E2 /* BannerViewWithSpotIDScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FF665431CFD3BD300C4C7E2 /* BannerViewWithSpotIDScene.cpp */; };
@@ -135,6 +136,8 @@
 		46880B8519C43A87006E1F66 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HelloWorldScene.cpp; sourceTree = "<group>"; };
 		46880B8719C43A87006E1F66 /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldScene.h; sourceTree = "<group>"; };
+		4F37A34B1D4A0F7F00EDE730 /* NativeCustomViewScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NativeCustomViewScene.cpp; sourceTree = "<group>"; };
+		4F37A34C1D4A0F7F00EDE730 /* NativeCustomViewScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeCustomViewScene.h; sourceTree = "<group>"; };
 		4FF6653F1CFD3BD300C4C7E2 /* BannerMenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BannerMenuScene.cpp; sourceTree = "<group>"; };
 		4FF665401CFD3BD300C4C7E2 /* BannerMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerMenuScene.h; sourceTree = "<group>"; };
 		4FF665411CFD3BD300C4C7E2 /* BannerViewScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BannerViewScene.cpp; sourceTree = "<group>"; };
@@ -341,8 +344,6 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				B5933C9B1D07DEC800A6F414 /* NativeTelopViewScene.cpp */,
-				B5933C9C1D07DEC800A6F414 /* NativeTelopViewScene.h */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */,
@@ -355,12 +356,16 @@
 				4FF665441CFD3BD300C4C7E2 /* BannerViewWithSpotIDScene.h */,
 				4FF665451CFD3BD300C4C7E2 /* InterstitialMenuScene.cpp */,
 				4FF665461CFD3BD300C4C7E2 /* InterstitialMenuScene.h */,
-				4FF665471CFD3BD300C4C7E2 /* NativeInfeedViewScene.cpp */,
-				4FF665481CFD3BD300C4C7E2 /* NativeInfeedViewScene.h */,
 				4FF665491CFD3BD300C4C7E2 /* NativeMenuScene.cpp */,
 				4FF6654A1CFD3BD300C4C7E2 /* NativeMenuScene.h */,
+				4F37A34B1D4A0F7F00EDE730 /* NativeCustomViewScene.cpp */,
+				4F37A34C1D4A0F7F00EDE730 /* NativeCustomViewScene.h */,
 				4FF6654B1CFD3BD300C4C7E2 /* NativeViewScene.cpp */,
 				4FF6654C1CFD3BD300C4C7E2 /* NativeViewScene.h */,
+				4FF665471CFD3BD300C4C7E2 /* NativeInfeedViewScene.cpp */,
+				4FF665481CFD3BD300C4C7E2 /* NativeInfeedViewScene.h */,
+				B5933C9B1D07DEC800A6F414 /* NativeTelopViewScene.cpp */,
+				B5933C9C1D07DEC800A6F414 /* NativeTelopViewScene.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -565,6 +570,7 @@
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				B5933C9D1D07DEC800A6F414 /* NativeTelopViewScene.cpp in Sources */,
+				4F37A34D1D4A0F7F00EDE730 /* NativeCustomViewScene.cpp in Sources */,
 				4FF6654E1CFD3BD300C4C7E2 /* BannerViewScene.cpp in Sources */,
 				4FF665501CFD3BD300C4C7E2 /* InterstitialMenuScene.cpp in Sources */,
 				4FF665521CFD3BD300C4C7E2 /* NativeMenuScene.cpp in Sources */,
