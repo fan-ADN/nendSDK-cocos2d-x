@@ -25,6 +25,7 @@ public:
     CREATE_FUNC(NativeMenuScene);
 
     // メニューボタンのコールバック
+    void showNativeCustomViewSceneButtonCallback(cocos2d::Ref* pSender);
     void showNativeViewSceneButtonCallback(cocos2d::Ref* pSender, NativeType type);
     void showNativeInfeedViewSceneButtonCallback(cocos2d::Ref* pSender);
     void showNativeTelopViewSceneButtonCallback(cocos2d::Ref* pSender);

@@ -8,6 +8,7 @@
 
 #include "NativeMenuScene.h"
 #include "HelloWorldScene.h"
+#include "NativeCustomViewScene.h"
 #include "NativeInfeedViewScene.h"
 #include "NativeTelopViewScene.h"
 
@@ -41,6 +42,13 @@ bool NativeMenuScene::init()
     
     // add the label as a child to this layer
     this->addChild(label, 1);
+
+    auto showCustomLabel = Label::createWithSystemFont("Show Custom", font, fontSize);
+    auto showCustomItem = MenuItemLabel::create(showCustomLabel, CC_CALLBACK_1(NativeMenuScene::showNativeCustomViewSceneButtonCallback, this));
+    auto showCustomMenu = Menu::create(showCustomItem, NULL);
+    this->addChild(showCustomMenu);
+
+    showCustomMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 150));
 
     auto showSmallSquareLabel = Label::createWithSystemFont("Show Small-Square", font, fontSize);
     auto showSmallSquareItem = MenuItemLabel::create(showSmallSquareLabel, CC_CALLBACK_1(NativeMenuScene::showNativeViewSceneButtonCallback, this, NATIVE_SMALL_SQUARE));
@@ -92,6 +100,12 @@ bool NativeMenuScene::init()
 
     return true;
 }
+
+void NativeMenuScene::showNativeCustomViewSceneButtonCallback(Ref* pSender)
+{
+    Director::getInstance()->replaceScene(TransitionSlideInR::create(0.5f,NativeCustomViewScene::createScene()));
+}
+
 
 void NativeMenuScene::showNativeViewSceneButtonCallback(Ref* pSender, NativeType type)
 {

@@ -8,7 +8,6 @@
 
 #include "cocos2d.h"
 #include "NendNativeAdClient.h"
-#include "NendNativeAdBinder.h"
 
 class NativeTelopViewScene : public cocos2d::Layer
 {
@@ -24,7 +23,6 @@ private:
     cocos2d::Label* _prText;
     cocos2d::Label* _shortText;
     nend_module::NendNativeAdClient* _client;
-    nend_module::NendNativeAdBinder* _binder;
 public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::Scene* createScene();

@@ -8,6 +8,7 @@
 
 #include "NativeInfeedViewScene.h"
 #include "NativeMenuScene.h"
+#include "NendNativeAdLog.h"
 
 USING_NS_CC;
 USING_NS_CC_EXT;
@@ -30,8 +31,6 @@ const int numberOfCells = 20; // cellの総数
 const int adRepeatInterval = 5; // 広告の表示間隔
 NendNativeAdClient* m_adClient;
 std::vector<LayerColor*> m_adlayers;
-std::vector<NendNativeAdBinder*> m_adBinders;
-int loadedCells;
 
 
 Scene* NativeInfeedViewScene::createScene()
@@ -53,11 +52,6 @@ NativeInfeedViewScene::~NativeInfeedViewScene()
         delete m_adClient;
         m_adClient = nullptr;
     }
-
-    for (auto itl = m_adBinders.begin(); itl != m_adBinders.end(); ++itl) {
-        delete *itl;
-    }
-    m_adBinders.clear();
 
     for (auto itl = m_adlayers.begin(); itl != m_adlayers.end(); ++itl) {
         auto layout = *itl;
@@ -121,21 +115,9 @@ void NativeInfeedViewScene::showPreviousSceneButtonCallback(Ref* pSender)
 void NativeInfeedViewScene::createNativeAdView()
 {
     // NendNativeAdClient生成
-    m_adClient = new NendNativeAdClient(apiKey, spotId, NAD_NATIVE_ADVERTISING_EXPLIICITY_AD);
-    m_adClient->setRenderAdViewSuccessCallback([=](Node* container){
-        CCLOG("Ad was displayed.");
-    });
-    m_adClient->setRenderAdViewFailedCallback([=](Node* container){
-        CCLOG("Ad could not be displayed.");
-    });
-    m_adClient->setAdClickCallback([=](Node* container){
-        CCLOG("Click ad.");
-    });
-
-    loadedCells = 0;
+    m_adClient = new NendNativeAdClient(apiKey, spotId);
 
     m_adlayers.clear();
-    m_adBinders.clear();
 
     for (int i = 0; i < numberOfCells / adRepeatInterval; i+=1) {
         
@@ -149,7 +131,7 @@ void NativeInfeedViewScene::createNativeAdView()
         adLayer->retain();
         
         // 広告明示
-        auto prLabel = NendNativeLabel::create();
+        auto prLabel = Label::create();
         prLabel->setName("prText");
         prLabel->setPosition(Point(visibleSize.width - 40, 10));
         prLabel->setSystemFontSize(10);
@@ -157,7 +139,7 @@ void NativeInfeedViewScene::createNativeAdView()
         adLayer->addChild(prLabel);
         
         // 広告見出し
-        auto shortLabel = NendNativeLabel::create();
+        auto shortLabel = Label::create();
         shortLabel->setName("shortText");
         shortLabel->setPosition(Point(5 + visibleSize.width / 2, 30));
         shortLabel->setWidth(visibleSize.width - 70);
@@ -166,7 +148,7 @@ void NativeInfeedViewScene::createNativeAdView()
         adLayer->addChild(shortLabel);
         
         // アクションボタン
-        auto actionLabel = NendNativeLabel::create();
+        auto actionLabel = Label::create();
         actionLabel->setName("actionText");
         actionLabel->setPosition(Point(80, 10));
         actionLabel->setSystemFontSize(10);
@@ -174,36 +156,35 @@ void NativeInfeedViewScene::createNativeAdView()
         adLayer->addChild(actionLabel);
         
         // 広告画像
-        auto adImageSprite = NendNativeSprite::create();
+        auto adImageSprite = Sprite::create();
         adImageSprite->setName("adImage");
         adImageSprite->setScale(0.4);
         adImageSprite->setPosition(Point(20, 24));
         adLayer->addChild(adImageSprite);
         m_adlayers.push_back(adLayer);
         
-        // NendNativeAdBinder生成
-        NendNativeAdBinder* adBinder;
-        adBinder = new NendNativeAdBinder();
-        adBinder->setPrText_Name(prLabel->getName());
-        adBinder->setShortTitle_Name(shortLabel->getName());
-        adBinder->setActionText_Name(actionLabel->getName());
-        adBinder->setAdImage_Name(adImageSprite->getName());
-        m_adBinders.push_back(adBinder);
-        
-        m_adClient->loadAd([=](NendNativeLoadResultCode resultCode, std::string errorMessage){
+        m_adClient->loadAd([=](nend_module::NendNativeAd* nativeAd, NendNativeLoadResultCode resultCode, std::string errorMessage){
             switch (resultCode) {
                 case NEND_SUCCESS_LOAD_AD:
-                    CCLOG("NEND_SUCCESS_LOAD_AD:%d",resultCode);{
-                        auto loadContainer = m_adlayers[loadedCells];
-                        auto loadBinder = m_adBinders[loadedCells];
-                        if (loadContainer->getName() == "adlayer") {
-                            m_adClient->renderAdViews(loadContainer, loadBinder);
-                            loadedCells+=1;
+                    CCLOG("NEND_SUCCESS_LOAD_AD:%d",resultCode);
+                    prLabel->setString(nativeAd->prTextForAdvertisingExplicitly(NAD_NATIVE_ADVERTISING_EXPLIICITY_PR));
+                    shortLabel->setString(nativeAd->getShortText());
+                    actionLabel->setString(nativeAd->getActionButtonText());
+                    nativeAd->downloadAdImage([=](Texture2D* texture, std::string errorMessage){
+                        if (texture != nullptr) {
+                            adImageSprite->setTexture(texture);
+                            cocos2d::Rect rect = cocos2d::Rect();
+                            rect.size = texture->getContentSize();
+                            adImageSprite->setTextureRect(rect);
                         }
-                    }
-                    break;
-                case NEND_EXCESSIVE_AD_CALLS:
-                    CCLOG("NEND_EXCESSIVE_AD_CALLS:%d:%s",resultCode, errorMessage.c_str());
+                        else {
+                            CCLOG("Ad image download error. Error message:%s", errorMessage.c_str());
+                        }
+                    });
+                    nativeAd->activateAdView(adLayer, prLabel);
+                    nativeAd->setAdClickCallback([=](nend_module::NendNativeAd* Ad, Node* container){
+                        CCLOG("Click ad.");
+                    });
                     break;
                 case NEND_FAILED_TO_REQUEST:
                     CCLOG("NEND_FAILED_TO_REQUEST:%d:%s",resultCode, errorMessage.c_str());

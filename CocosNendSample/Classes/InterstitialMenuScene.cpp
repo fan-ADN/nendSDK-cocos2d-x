@@ -100,6 +100,8 @@ bool InterstitialMenuScene::init()
     // EventDispatcher登録
     this->addEventDispatcher();
     
+    NendInterstitialModule::setEnableAutoReload(true);
+    
     return true;
 }
 
