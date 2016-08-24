@@ -309,6 +309,10 @@ void InterstitialMenuScene::addEventDispatcher()
                 // ×ボタンあるいは広告範囲外の領域がクリック
                 log("CLICK_CLOSE");
                 break;
+            case CLICK_INFORMATION_INTERSTITIAL:
+                // インフォメーションボタンクリック
+                log("CLICK_INFORMATION_INTERSTITIAL");
+                break;
             default:
                 break;
         }
@@ -329,6 +333,10 @@ void InterstitialMenuScene::addEventDispatcher()
             case CLICK_CLOSE:
                 // ×ボタンあるいは広告範囲外の領域がクリック
                 log("CLICK_CLOSE:%d",spotId);
+                break;
+            case CLICK_INFORMATION_INTERSTITIAL:
+                // インフォメーションボタンクリック
+                log("CLICK_INFORMATION_INTERSTITIAL:%d",spotId);
                 break;
             default:
                 break;

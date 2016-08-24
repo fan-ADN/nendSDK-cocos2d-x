@@ -303,6 +303,40 @@ void BannerViewScene::addEventDispatcher()
                 // バナー広告クリック
                 log("CLICK_AD");
                 break;
+            case CLICK_INFORMATION:
+                // インフォメーションボタンクリック
+                log("CLICK_INFORMATION");
+                break;
+            default:
+                break;
+        }
+    });
+    
+    Director::getInstance()->getEventDispatcher()->addCustomEventListener(NADViewDelegateWithSpotIdNotification,[&](cocos2d::EventCustom *event) {
+        int *resultArray = (int *)event->getUserData();
+        int resultCode = resultArray[0];
+        int spotId = resultArray[1];
+        switch (resultCode) {
+            case FINISH_LOAD_AD:      // iOSのみ
+                // 広告ロード完了
+                log("FINISH_LOAD_AD:%d",spotId);
+                break;
+            case RECEIVE_AD:
+                // 広告受信成功
+                log("RECEIVE_AD:%d",spotId);
+                break;
+            case FAIL_TO_RECEIVE_AD:
+                // 広告受信失敗
+                log("FAIL_TO_RECEIVE_AD:%d",spotId);
+                break;
+            case CLICK_AD:
+                // バナー広告クリック
+                log("CLICK_AD:%d",spotId);
+                break;
+            case CLICK_INFORMATION:
+                // インフォメーションボタンクリック
+                log("CLICK_INFORMATION:%d",spotId);
+                break;
             default:
                 break;
         }
@@ -314,4 +348,5 @@ void BannerViewScene::removeEventDispatcher()
 {
     // EventDispatcherの通知を停止
     Director::getInstance()->getEventDispatcher()->removeCustomEventListeners(NADViewDelegateNotification);
+    Director::getInstance()->getEventDispatcher()->removeCustomEventListeners(NADViewDelegateWithSpotIdNotification);
 }

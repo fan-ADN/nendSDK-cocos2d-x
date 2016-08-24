@@ -323,6 +323,10 @@ void BannerViewWithSpotIDScene::addEventDispatcher()
                 // バナー広告クリック
                 log("CLICK_AD");
                 break;
+            case CLICK_INFORMATION:
+                // インフォメーションボタンクリック
+                log("CLICK_INFORMATION");
+                break;
             default:
                 break;
         }
@@ -348,6 +352,10 @@ void BannerViewWithSpotIDScene::addEventDispatcher()
             case CLICK_AD:
                 // バナー広告クリック
                 log("CLICK_AD:%d",spotId);
+                break;
+            case CLICK_INFORMATION:
+                // インフォメーションボタンクリック
+                log("CLICK_INFORMATION:%d",spotId);
                 break;
             default:
                 break;
