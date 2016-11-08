@@ -525,6 +525,25 @@ void Label::reset()
     setRotationSkewX(0);        // reverse italics
 }
 
+//  ETC1 ALPHA supports, for LabelType::BMFONT & LabelType::CHARMAP
+static Texture2D* _getTexture(Label* label)
+ {
+    struct _FontAtlasPub : public FontAtlas
+    {
+        Texture2D* getTexture()
+        {
+            if (!_atlasTextures.empty())
+                return _atlasTextures.begin()->second;
+            return nullptr;
+        }
+    };
+
+    auto fontAtlas = label->getFontAtlas();
+    Texture2D* texture = nullptr;
+    if (fontAtlas != nullptr)
+        texture = ((_FontAtlasPub*)(fontAtlas))->getTexture();
+    return texture;
+}
 void Label::updateShaderProgram()
 {
     switch (_currLabelEffect)
@@ -535,9 +554,9 @@ void Label::updateShaderProgram()
         else if (_useA8Shader)
             setGLProgramState(GLProgramState::getOrCreateWithGLProgramName(GLProgram::SHADER_NAME_LABEL_NORMAL));
         else if (_shadowEnabled)
-            setGLProgramState(GLProgramState::getOrCreateWithGLProgramName(GLProgram::SHADER_NAME_POSITION_TEXTURE_COLOR));
+            setGLProgramState(GLProgramState::getOrCreateWithGLProgramName(GLProgram::SHADER_NAME_POSITION_TEXTURE_COLOR, _getTexture(this)));
         else
-            setGLProgramState(GLProgramState::getOrCreateWithGLProgramName(GLProgram::SHADER_NAME_POSITION_TEXTURE_COLOR_NO_MVP));
+            setGLProgramState(GLProgramState::getOrCreateWithGLProgramName(GLProgram::SHADER_NAME_POSITION_TEXTURE_COLOR_NO_MVP, _getTexture(this)));
 
         break;
     case cocos2d::LabelEffect::OUTLINE: 
@@ -567,7 +586,6 @@ void Label::setFontAtlas(FontAtlas* atlas,bool distanceFieldEnabled /* = false *
 
     if (atlas == _fontAtlas)
     {
-        FontAtlasCache::releaseFontAtlas(atlas);
         return;
     }
 
@@ -620,7 +638,7 @@ bool Label::setBMFontFilePath(const std::string& bmfontFilePath, const Vec2& ima
     }
 
     //assign the default fontSize
-    if (fabs(fontSize) < FLT_EPSILON) {
+    if (std::abs(fontSize) < FLT_EPSILON) {
         FontFNT *bmFont = (FontFNT*)newAtlas->getFont();
         if (bmFont) {
             float originalFontSize = bmFont->getOriginalFontSize();
@@ -1002,7 +1020,7 @@ void Label::scaleFontSizeDown(float fontSize)
         ttfConfig.fontSize = fontSize;
         this->setTTFConfigInternal(ttfConfig);
     }else if(_currentLabelType == LabelType::BMFONT){
-        if (fabs(fontSize) < FLT_EPSILON) {
+        if (std::abs(fontSize) < FLT_EPSILON) {
             fontSize = 0.1f;
             shouldUpdateContent = false;
         }
@@ -1112,14 +1130,7 @@ void Label::enableShadow(const Color4B& shadowColor /* = Color4B::BLACK */,const
 
     if (_currentLabelType == LabelType::BMFONT || _currentLabelType == LabelType::CHARMAP)
     {
-        if (_shadowEnabled)
-        {
-            setGLProgramState(GLProgramState::getOrCreateWithGLProgramName(GLProgram::SHADER_NAME_POSITION_TEXTURE_COLOR));
-        } 
-        else
-        {
-            setGLProgramState(GLProgramState::getOrCreateWithGLProgramName(GLProgram::SHADER_NAME_POSITION_TEXTURE_COLOR_NO_MVP));
-        }
+        setGLProgramState(GLProgramState::getOrCreateWithGLProgramName(_shadowEnabled ? GLProgram::SHADER_NAME_POSITION_TEXTURE_COLOR : GLProgram::SHADER_NAME_POSITION_TEXTURE_COLOR_NO_MVP, _getTexture(this)));
     }
 }
 
@@ -1391,6 +1402,7 @@ void Label::updateContent()
 
         if (_numberOfLines)
         {
+            // This is the logic for TTF fonts
             const float charheight = (_textDesiredHeight / _numberOfLines);
             _underlineNode->setLineWidth(charheight/6);
 
@@ -1402,12 +1414,15 @@ void Label::updateContent()
                     offsety += charheight / 2;
                 // FIXME: Might not work with different vertical alignments
                 float y = (_numberOfLines - i - 1) * charheight + offsety;
-                _underlineNode->drawLine(Vec2(_linesOffsetX[i],y), Vec2(_linesWidth[i] + _linesOffsetX[i],y), _textColorF);
+
+                // Github issue #15214. Uses _displayedColor instead of _textColor for the underline.
+                // This is to have the same behavior of SystemFonts.
+                _underlineNode->drawLine(Vec2(_linesOffsetX[i],y), Vec2(_linesWidth[i] + _linesOffsetX[i],y), Color4F(_displayedColor));
             }
         }
         else if (_textSprite)
         {
-            // system font
+            // ...and is the logic for System fonts
             float y = 0;
             const auto spriteSize = _textSprite->getContentSize();
             _underlineNode->setLineWidth(spriteSize.height/6);
@@ -1576,8 +1591,10 @@ void Label::draw(Renderer *renderer, const Mat4 &transform, uint32_t flags)
             {
                 it.second->updateTransform();
             }
+            // ETC1 ALPHA supports for BMFONT & CHARMAP
             auto textureAtlas = _batchNodes.at(0)->getTextureAtlas();
-            _quadCommand.init(_globalZOrder, textureAtlas->getTexture()->getName(), getGLProgramState(), 
+            auto texture = textureAtlas->getTexture();
+            _quadCommand.init(_globalZOrder, texture, getGLProgramState(), 
                 _blendFunc, textureAtlas->getQuads(), textureAtlas->getTotalQuads(), transform, flags);
             renderer->addCommand(&_quadCommand);
         }
@@ -1879,13 +1896,21 @@ void Label::updateDisplayedColor(const Color3B& parentColor)
     if (_textSprite)
     {
         _textSprite->updateDisplayedColor(_displayedColor);
-        if (_shadowNode)
-        {
-            _shadowNode->updateDisplayedColor(_displayedColor);
-        }
+    }
 
-        if (_underlineNode)
-            _contentDirty = true;
+    if (_shadowNode)
+    {
+        _shadowNode->updateDisplayedColor(_displayedColor);
+    }
+
+    if (_underlineNode)
+    {
+        // FIXME: _underlineNode is not a sprite/label. It is a DrawNode
+        // and updating its color doesn't work. it must be re-drawn,
+        // which makes it super expensive to change update it frequently
+        // Correct solution is to update the DrawNode directly since we know it is
+        // a line. Returning a pointer to the line is an option
+        _contentDirty = true;
     }
 
     for (auto&& it : _letters)
@@ -1913,6 +1938,9 @@ void Label::updateDisplayedOpacity(GLubyte parentOpacity)
     }
 }
 
+// FIXME: it is not clear what is the difference between setTextColor() and setColor()
+// if setTextColor() only changes the text and nothing but the text (no glow, no outline, not underline)
+// that's fine but it should be documented
 void Label::setTextColor(const Color4B &color)
 {
     CCASSERT(_currentLabelType == LabelType::TTF || _currentLabelType == LabelType::STRING_TEXTURE, "Only supported system font and ttf!");
@@ -2156,7 +2184,7 @@ void Label::updateLetterSpriteScale(Sprite* sprite)
     }
     else
     {
-        if(fabs(_bmFontSize)<FLT_EPSILON)
+        if (std::abs(_bmFontSize) < FLT_EPSILON)
         {
             sprite->setScale(0);
         }
