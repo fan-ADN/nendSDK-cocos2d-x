@@ -24,6 +24,10 @@ public:
     void showIconSceneButtonCallback(cocos2d::Ref* pSender);
 #endif
     void showNativeAdSceneButtonCallback(cocos2d::Ref* pSender);
+    void showFullBoardAdSceneButtonCallback(cocos2d::Ref* pSender);
+
+private:
+    cocos2d::MenuItem *createMenuItem(const std::string& title, const cocos2d::ccMenuCallback& callback);
 };
 
 #endif // __HELLOWORLD_SCENE_H__
