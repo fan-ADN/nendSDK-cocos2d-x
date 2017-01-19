@@ -7,8 +7,7 @@ cocos2d-xでNendSDKを利用するサンプルプロジェクトになります�
 
 * cocos2d-x-3.13.1
 
-* nendSDK Cocos2d-x module ver2.1.3
-
+* nendSDK Cocos2d-x module ver2.2.0
 ## Usage
 [nend管理画面](https://www.nend.net/admin/login)からcocos2d-xモジュール 3.x用をダウンロードし、以下の手順でプロジェクトにSDKとモジュールの追加及び設定を行ってください。  
 
