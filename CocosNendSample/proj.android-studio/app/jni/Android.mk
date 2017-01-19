@@ -25,7 +25,8 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../../Classes/NativeViewScene.cpp \
                    ../../../Classes/NativeInfeedViewScene.cpp \
                    ../../../Classes/NativeTelopViewScene.cpp \
-                   ../../../Classes/Common/NendNativeLabel.cpp \
+                   ../../../Classes/FullBoardAdScene.cpp \
+				   ../../../Classes/Common/NendNativeLabel.cpp \
                    ../../../Classes/Common/NendNativeSprite.cpp \
                    ../../../Classes/Common/NendNativeClippingNode.cpp \
                    ../../../Classes/Common/NendNativeAdClient.cpp \
@@ -40,7 +41,8 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../../Classes/Android/NendInterstitialModule.cpp \
                    ../../../Classes/Android/AndroidNativeAd.cpp \
                    ../../../Classes/Android/AndroidNativeJNI.cpp \
-                   ../../../Classes/Android/AndroidNativeAdClient.cpp
+				   ../../../Classes/Android/AndroidNativeAdClient.cpp \
+				   ../../../Classes/Android/NendFullBoardAd.cpp
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../../Classes
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../../Classes/Common

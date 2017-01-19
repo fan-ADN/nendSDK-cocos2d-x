@@ -7,8 +7,12 @@
 #include "IconMenuScene.h"
 #endif
 #include "NativeMenuScene.h"
+#include "FullBoardAdScene.h"
 
 USING_NS_CC;
+
+static const std::string font = StringUtils::format("fonts/arial.ttf");
+static const float fontSize = 15.0f;
 
 Scene* HelloWorld::createScene()
 {
@@ -58,9 +62,6 @@ bool HelloWorld::init()
 
     /////////////////////////////
     // 3. add your codes below...
-
-    std::string font = StringUtils::format("fonts/arial.ttf");
-    auto fontSize = 15;
     
     auto label = Label::createWithTTF("NendSDK Cocos2d-x Sample", "fonts/Marker Felt.ttf", 24);
     
@@ -71,49 +72,22 @@ bool HelloWorld::init()
     // add the label as a child to this layer
     this->addChild(label, 1);
     
-    auto showBannerLabel = Label::createWithSystemFont("Show BannerMenuScene", font, fontSize);
-    auto showBannerItem = MenuItemLabel::create(showBannerLabel, CC_CALLBACK_1(HelloWorld::showBannerSceneButtonCallback, this));
-    auto showBannerMenu = Menu::create(showBannerItem, NULL);
-    this->addChild(showBannerMenu);
+    Vector<MenuItem *> vec;
+    vec.pushBack(this->createMenuItem("Show BannerMenuScene", CC_CALLBACK_1(HelloWorld::showBannerSceneButtonCallback, this)));
+    vec.pushBack(this->createMenuItem("Show BannerViewWithSpotIDScene", CC_CALLBACK_1(HelloWorld::showBannerWithSpotIDSceneButtonCallback, this)));
+    vec.pushBack(this->createMenuItem("Show InterstitialMenuScene", CC_CALLBACK_1(HelloWorld::showInterstitialSceneButtonCallback, this)));
+    vec.pushBack(this->createMenuItem("Show NativeAdMenuScene", CC_CALLBACK_1(HelloWorld::showNativeAdSceneButtonCallback, this)));
+    vec.pushBack(this->createMenuItem("Show FullBoardAdScene", CC_CALLBACK_1(HelloWorld::showFullBoardAdSceneButtonCallback, this)));
     
-    auto showBannerWithSpotIDLabel = Label::createWithSystemFont("Show BannerViewWithSpotIDScene", font, fontSize);
-    auto showBannerWithSpotIDItem = MenuItemLabel::create(showBannerWithSpotIDLabel, CC_CALLBACK_1(HelloWorld::showBannerWithSpotIDSceneButtonCallback, this));
-    auto showBannerWithSpotIDMenu = Menu::create(showBannerWithSpotIDItem, NULL);
-    this->addChild(showBannerWithSpotIDMenu);
-    
-    auto showInterstitialLabel = Label::createWithSystemFont("Show InterstitialMenuScene", font, fontSize);
-    auto showInterstitialItem = MenuItemLabel::create(showInterstitialLabel, CC_CALLBACK_1(HelloWorld::showInterstitialSceneButtonCallback, this));
-    auto showInterstitialMenu = Menu::create(showInterstitialItem, NULL);
-    this->addChild(showInterstitialMenu);
-    
-    auto showNativeAdLabel = Label::createWithSystemFont("Show NativeAdMenuScene", font, fontSize);
-    auto showNativeAdItem = MenuItemLabel::create(showNativeAdLabel, CC_CALLBACK_1(HelloWorld::showNativeAdSceneButtonCallback, this));
-    auto showNativeAdMenu = Menu::create(showNativeAdItem, NULL);
-    this->addChild(showNativeAdMenu);
-    
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    
-    showBannerMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 100));
-    showBannerWithSpotIDMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 33));
-    showInterstitialMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 33));
-    showNativeAdMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 100));
-    
-#elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-    
-    showBannerMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 100));
-    showBannerWithSpotIDMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 50));
-    
-    auto showIconLabel = Label::createWithSystemFont("Show IconMenuScene", font, fontSize);
-    auto showIconItem = MenuItemLabel::create(showIconLabel, CC_CALLBACK_1(HelloWorld::showIconSceneButtonCallback, this));
-    auto showIconMenu = Menu::create(showIconItem, NULL);
-    showIconMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
-    this->addChild(showIconMenu);
-    
-    showInterstitialMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 50));
-    showNativeAdMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 100));
-    
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    vec.pushBack(this->createMenuItem("Show IconMenuScene", CC_CALLBACK_1(HelloWorld::showIconSceneButtonCallback, this)));
 #endif
     
+    auto menus = Menu::createWithArray(vec);
+    menus->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
+    menus->alignItemsVerticallyWithPadding(24.0f);
+    this->addChild(menus);
+
     return true;
 }
 
@@ -154,3 +128,16 @@ void HelloWorld::showNativeAdSceneButtonCallback(Ref* pSender)
 {
     Director::getInstance()->replaceScene(TransitionSlideInR::create(0.5f,NativeMenuScene::createScene()));
 }
+
+void HelloWorld::showFullBoardAdSceneButtonCallback(Ref* pSender)
+{
+    Director::getInstance()->replaceScene(TransitionSlideInR::create(0.5f, FullBoardAdScene::createScene()));
+}
+
+MenuItem* HelloWorld::createMenuItem(const std::string& title, const ccMenuCallback& callback)
+{
+    auto label = Label::createWithSystemFont(title, font, fontSize);
+    auto item = MenuItemLabel::create(label, callback);
+    return item;
+}
+
