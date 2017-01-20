@@ -2,6 +2,7 @@ nendSDK-cocos2d-x Sample Project
 ==================
 ## Overview
 cocos2d-xでNendSDKを利用するサンプルプロジェクトになります。  
+NendSDKの利用方法については [Wiki](https://github.com/fan-ADN/nendSDK-cocos2d-x/wiki) をご覧ください。
 
 ## Requirement
 
@@ -40,6 +41,3 @@ cocos2d-xでNendSDKを利用するサンプルプロジェクトになります�
 $ cocos compile -p android --android-studio
 ```
 を実行後、Android StudioでRunする。  
-
-
-その他nendSDKの使用方法については [Wiki](https://github.com/fan-ADN/nendSDK-cocos2d-x/wiki) をご覧ください。
