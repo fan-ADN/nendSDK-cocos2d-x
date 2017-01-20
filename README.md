@@ -2,7 +2,7 @@ nendSDK-cocos2d-x Sample Project
 ==================
 ## Overview
 cocos2d-xでNendSDKを利用するサンプルプロジェクトになります。  
-NendSDKの利用方法については [Wiki](https://github.com/fan-ADN/nendSDK-cocos2d-x/wiki) をご覧ください。
+NendSDKの使用方法については [Wiki](https://github.com/fan-ADN/nendSDK-cocos2d-x/wiki) をご覧ください。
 
 ## Requirement
 
