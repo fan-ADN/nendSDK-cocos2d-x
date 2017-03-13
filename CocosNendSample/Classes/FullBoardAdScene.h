@@ -6,6 +6,7 @@
 #ifndef FullBoardAdScene_h
 #define FullBoardAdScene_h
 
+#include "cocos2d.h"
 #include "NendFullBoardAd.h"
 
 class FullBoardAdScene : public cocos2d::Layer
