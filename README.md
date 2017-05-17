@@ -6,9 +6,9 @@ NendSDKの使用方法については [Wiki](https://github.com/fan-ADN/nendSDK-
 
 ## Requirement
 
-* cocos2d-x-3.13.1
+* cocos2d-x-3.15
 
-* nendSDK Cocos2d-x module ver2.2.1
+* nendSDK Cocos2d-x module ver2.2.3
 
 ## Usage
 [nend管理画面](https://www.nend.net/admin/login)からcocos2d-xモジュール 3.x用をダウンロードし、以下の手順でプロジェクトにSDKとモジュールの追加及び設定を行ってください。  
@@ -26,7 +26,7 @@ NendSDKの使用方法については [Wiki](https://github.com/fan-ADN/nendSDK-
 
 ### Android  
 
-事前にAndroid Studio環境でcocos2d-x-3.13.1のセットアップが完了している必要があります。
+事前にAndroid Studio環境でcocos2d-x-3.15のセットアップが完了している必要があります。
 
 #### Android Studio
 

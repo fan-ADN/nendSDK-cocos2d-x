@@ -3,7 +3,7 @@
 
 #include "cocos2d.h"
 
-class HelloWorld : public cocos2d::Layer
+class HelloWorld : public cocos2d::Scene
 {
 public:
     static cocos2d::Scene* createScene();
@@ -25,7 +25,7 @@ public:
 #endif
     void showNativeAdSceneButtonCallback(cocos2d::Ref* pSender);
     void showFullBoardAdSceneButtonCallback(cocos2d::Ref* pSender);
-
+    
 private:
     cocos2d::MenuItem *createMenuItem(const std::string& title, const cocos2d::ccMenuCallback& callback);
 };
