@@ -38,6 +38,10 @@
 		4F896D421ECC374500C17D8C /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F896D411ECC374500C17D8C /* AdSupport.framework */; };
 		4F896D441ECC374A00C17D8C /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F896D431ECC374A00C17D8C /* ImageIO.framework */; };
 		4F896D461ECC375100C17D8C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F896D451ECC375100C17D8C /* Security.framework */; };
+		4FABE6B31F0DEA2B0015D5A2 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FABE6B21F0DEA2B0015D5A2 /* CoreMedia.framework */; };
+		4FABE6B71F0DEA530015D5A2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FABE6B61F0DEA530015D5A2 /* SystemConfiguration.framework */; };
+		4FABE6B91F0DEA830015D5A2 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FABE6B81F0DEA830015D5A2 /* WebKit.framework */; };
+		4FABE6BC1F0DEC780015D5A2 /* VideoAdScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FABE6BA1F0DEC780015D5A2 /* VideoAdScene.cpp */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
@@ -162,6 +166,12 @@
 		4F896D411ECC374500C17D8C /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
 		4F896D431ECC374A00C17D8C /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
 		4F896D451ECC375100C17D8C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		4FABE6B21F0DEA2B0015D5A2 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
+		4FABE6B41F0DEA3A0015D5A2 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/SafariServices.framework; sourceTree = DEVELOPER_DIR; };
+		4FABE6B61F0DEA530015D5A2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		4FABE6B81F0DEA830015D5A2 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
+		4FABE6BA1F0DEC780015D5A2 /* VideoAdScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VideoAdScene.cpp; sourceTree = "<group>"; };
+		4FABE6BB1F0DEC780015D5A2 /* VideoAdScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoAdScene.h; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -215,6 +225,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FABE6B91F0DEA830015D5A2 /* WebKit.framework in Frameworks */,
+				4FABE6B71F0DEA530015D5A2 /* SystemConfiguration.framework in Frameworks */,
+				4FABE6B31F0DEA2B0015D5A2 /* CoreMedia.framework in Frameworks */,
 				4F896D461ECC375100C17D8C /* Security.framework in Frameworks */,
 				4F896D441ECC374A00C17D8C /* ImageIO.framework in Frameworks */,
 				4F896D421ECC374500C17D8C /* AdSupport.framework in Frameworks */,
@@ -308,6 +321,10 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4FABE6B81F0DEA830015D5A2 /* WebKit.framework */,
+				4FABE6B61F0DEA530015D5A2 /* SystemConfiguration.framework */,
+				4FABE6B41F0DEA3A0015D5A2 /* SafariServices.framework */,
+				4FABE6B21F0DEA2B0015D5A2 /* CoreMedia.framework */,
 				4F896D451ECC375100C17D8C /* Security.framework */,
 				4F896D431ECC374A00C17D8C /* ImageIO.framework */,
 				4F896D411ECC374500C17D8C /* AdSupport.framework */,
@@ -375,6 +392,8 @@
 				4F896D311ECC36D200C17D8C /* NativeViewScene.h */,
 				4F896D3E1ECC36E300C17D8C /* FullBoardAdScene.cpp */,
 				4F896D3F1ECC36E300C17D8C /* FullBoardAdScene.h */,
+				4FABE6BA1F0DEC780015D5A2 /* VideoAdScene.cpp */,
+				4FABE6BB1F0DEC780015D5A2 /* VideoAdScene.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -581,6 +600,7 @@
 				4F896D391ECC36D200C17D8C /* NativeTelopViewScene.cpp in Sources */,
 				4F896D3A1ECC36D200C17D8C /* NativeViewScene.cpp in Sources */,
 				4F896D351ECC36D200C17D8C /* InterstitialMenuScene.cpp in Sources */,
+				4FABE6BC1F0DEC780015D5A2 /* VideoAdScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				4F896D361ECC36D200C17D8C /* NativeCustomViewScene.cpp in Sources */,
 				4F896D381ECC36D200C17D8C /* NativeMenuScene.cpp in Sources */,
@@ -625,6 +645,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -638,7 +659,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
@@ -658,6 +679,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -670,7 +692,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",

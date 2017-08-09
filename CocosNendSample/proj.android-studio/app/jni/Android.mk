@@ -26,6 +26,7 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../../Classes/NativeInfeedViewScene.cpp \
                    ../../../Classes/NativeTelopViewScene.cpp \
                    ../../../Classes/FullBoardAdScene.cpp \
+                   ../../../Classes/VideoAdScene.cpp \
 				   ../../../Classes/Common/NendNativeLabel.cpp \
                    ../../../Classes/Common/NendNativeSprite.cpp \
                    ../../../Classes/Common/NendNativeClippingNode.cpp \
@@ -36,13 +37,17 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../../Classes/Common/NendNativeAdBinder.cpp \
                    ../../../Classes/Common/NendNativeAd.cpp \
                    ../../../Classes/Common/NendNativeImpressionTracker.cpp \
+                   ../../../Classes/Common/NendVideoAd.cpp \
                    ../../../Classes/Android/NendModule.cpp \
                    ../../../Classes/Android/NendIconModule.cpp \
                    ../../../Classes/Android/NendInterstitialModule.cpp \
                    ../../../Classes/Android/AndroidNativeAd.cpp \
                    ../../../Classes/Android/AndroidNativeJNI.cpp \
 				   ../../../Classes/Android/AndroidNativeAdClient.cpp \
-				   ../../../Classes/Android/NendFullBoardAd.cpp
+				   ../../../Classes/Android/NendFullBoardAd.cpp \
+                   ../../../Classes/Android/NendAdJniUtils.cpp \
+                   ../../../Classes/Android/NendInterstitialVideoAd.cpp \
+                   ../../../Classes/Android/NendRewardedVideoAd.cpp
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../../Classes
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../../Classes/Common

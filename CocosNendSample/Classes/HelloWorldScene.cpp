@@ -8,6 +8,7 @@
 #endif
 #include "NativeMenuScene.h"
 #include "FullBoardAdScene.h"
+#include "VideoAdScene.h"
 
 USING_NS_CC;
 
@@ -71,6 +72,7 @@ bool HelloWorld::init()
     vec.pushBack(this->createMenuItem("Show InterstitialMenuScene", CC_CALLBACK_1(HelloWorld::showInterstitialSceneButtonCallback, this)));
     vec.pushBack(this->createMenuItem("Show NativeAdMenuScene", CC_CALLBACK_1(HelloWorld::showNativeAdSceneButtonCallback, this)));
     vec.pushBack(this->createMenuItem("Show FullBoardAdScene", CC_CALLBACK_1(HelloWorld::showFullBoardAdSceneButtonCallback, this)));
+    vec.pushBack(this->createMenuItem("Show VideoAdScene", CC_CALLBACK_1(HelloWorld::showVideoAdSceneButtonCallback, this)));
     
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
     vec.pushBack(this->createMenuItem("Show IconMenuScene", CC_CALLBACK_1(HelloWorld::showIconSceneButtonCallback, this)));
@@ -133,6 +135,11 @@ void HelloWorld::showNativeAdSceneButtonCallback(Ref* pSender)
 void HelloWorld::showFullBoardAdSceneButtonCallback(Ref* pSender)
 {
     Director::getInstance()->replaceScene(TransitionSlideInR::create(0.5f, FullBoardAdScene::createScene()));
+}
+
+void HelloWorld::showVideoAdSceneButtonCallback(Ref* pSender)
+{
+    Director::getInstance()->replaceScene(TransitionSlideInR::create(0.5f, VideoAdScene::createScene()));
 }
 
 MenuItem* HelloWorld::createMenuItem(const std::string& title, const ccMenuCallback& callback)
