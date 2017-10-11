@@ -11,7 +11,7 @@ NendSDKの使用方法については [Wiki](https://github.com/fan-ADN/nendSDK-
 * nendSDK Cocos2d-x module ver2.3.1
 
 ## Usage
-[nendSDK-Android-AdmobMediation-pub/releases](https://github.com/fan-ADN/nendSDK-Android-AdmobMediation-pub/releases)からcocos2d-xモジュール 3.x用をダウンロードし、以下の手順でプロジェクトにSDKとモジュールの追加及び設定を行ってください。  
+[nendSDK-Cocos2dx-pub/releases](https://github.com/fan-ADN/nendSDK-Cocos2dx-pub/releases)からcocos2d-xモジュール 3.x用をダウンロードし、以下の手順でプロジェクトにSDKとモジュールの追加及び設定を行ってください。  
 
 #### 複数の広告枠IDをサンプルで利用する場合
 広告枠ID ( apikey と spotID )を複数利用する場合は、サンプルプロジェクト内の apiKey と spotID の定義箇所を書き換えてご利用ください。
