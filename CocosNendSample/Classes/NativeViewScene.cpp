@@ -17,8 +17,6 @@ using namespace nend_module;
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 const auto smallSquareApiKey = "10d9088b5bd36cf43b295b0774e5dcf7d20a4071";
 const auto smallSquareSpotId = "485500";
-const auto smallWideApiKey = "a3972604a76864dd110d0b02204f4b72adb092ae";
-const auto smallWideSpotId = "485502";
 const auto largeWideApiKey = "30fda4b3386e793a14b27bedb4dcd29f03d638e5";
 const auto largeWideSpotId = "485504";
 const auto textOnlyApiKey = "31e861edb574cfa0fb676ebdf0a0b9a0621e19fc";
@@ -26,8 +24,6 @@ const auto textOnlySpotId = "485507";
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 const auto smallSquareApiKey = "16cb170982088d81712e63087061378c71e8aa5c";
 const auto smallSquareSpotId = "485516";
-const auto smallWideApiKey = "186927de979c5e542ee1ef111cc69c52e37a58f9";
-const auto smallWideSpotId = "485517";
 const auto largeWideApiKey = "a88c0bcaa2646c4ef8b2b656fd38d6785762f2ff";
 const auto largeWideSpotId = "485520";
 const auto textOnlyApiKey = "2b2381a116290c90b936e409482127efb7123dbc";
@@ -43,10 +39,6 @@ const tSpotId spotIdArray[] = {
     {
         smallSquareApiKey,
         smallSquareSpotId
-    },
-    {
-        smallWideApiKey,
-        smallWideSpotId
     },
     {
         largeWideApiKey,
@@ -84,28 +76,6 @@ const Point smallSquareActionTextLabelPoint = Point(192, 8);
 const Size  smallSquareActionTextLabelSize = Size(100, 21);
 const float smallSquareActionTextLabelFontSize =14;
 const Point smallSquareAdImageSpritePoint = Point(8, 94);
-
-// Small-Wide layout
-const Size  smallWideLayerSize = Size(300, 216);
-const Point smallWidePrLabelPoint = Point(8, 8);
-const Size  smallWidePrLabelSize = Size(40, 21);
-const float smallWidePrLabelFontSize = 14;
-const Point smallWideShortTextLabelPoint = Point(8, 168);
-const Size  smallWideShortTextLabelSize = Size(284, 40);
-const float smallWideShortTextLabelFontSize = 14;
-const Point smallWideLongTextLabelPoint = Point(96, 100);
-const Size  smallWideLongTextLabelSize = Size(196, 60);
-const float smallWideLongTextLabelFontSize = 14;
-const Point smallWidePromotionNameLabelPoint = Point(8, 71);
-const Size  smallWidePromotionNameLabelSize = Size(284, 21);
-const float smallWidePromotionNameLabelFontSize = 14;
-const Point smallWidePromotionURLLabelPoint = Point(8, 42);
-const Size  smallWidePromotionURLLabelSize = Size(284, 21);
-const float smallWidePromotionURLLabelFontSize = 14;
-const Point smallWideActionTextLabelPoint = Point(192, 8);
-const Size  smallWideActionTextLabelSize = Size(100, 21);
-const float smallWideActionTextLabelFontSize =14;
-const Point smallWideAdImageSpritePoint = Point(8, 100);
 
 // Large-Wide layout
 const Size  longWideLayerSize = Size(320, 380);
@@ -190,29 +160,6 @@ const tNativeAdLayout layoutArrays[] = {
         smallSquareActionTextLabelSize ,
         smallSquareActionTextLabelFontSize ,
         smallSquareAdImageSpritePoint ,
-        dummyPoint
-    },
-    {
-        smallWideLayerSize ,
-        smallWidePrLabelPoint ,
-        smallWidePrLabelSize ,
-        smallWidePrLabelFontSize ,
-        smallWideShortTextLabelPoint ,
-        smallWideShortTextLabelSize ,
-        smallWideShortTextLabelFontSize ,
-        smallWideLongTextLabelPoint ,
-        smallWideLongTextLabelSize ,
-        smallWideLongTextLabelFontSize ,
-        smallWidePromotionNameLabelPoint ,
-        smallWidePromotionNameLabelSize ,
-        smallWidePromotionNameLabelFontSize ,
-        smallWidePromotionURLLabelPoint ,
-        smallWidePromotionURLLabelSize ,
-        smallWidePromotionURLLabelFontSize ,
-        smallWideActionTextLabelPoint ,
-        smallWideActionTextLabelSize ,
-        smallWideActionTextLabelFontSize ,
-        smallWideAdImageSpritePoint ,
         dummyPoint
     },
     {

@@ -57,40 +57,33 @@ bool NativeMenuScene::init()
 
     showSmallSquareMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 100));
 
-    auto showSmallWideLabel = Label::createWithSystemFont("Show Small-Wide", font, fontSize);
-    auto showSmallWideItem = MenuItemLabel::create(showSmallWideLabel, CC_CALLBACK_1(NativeMenuScene::showNativeViewSceneButtonCallback, this, NATIVE_SMALL_WIDE));
-    auto showSmallWideMenu = Menu::create(showSmallWideItem, NULL);
-    this->addChild(showSmallWideMenu);
-    
-    showSmallWideMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 50));
-
     auto showLargeWideLabel = Label::createWithSystemFont("Show Large-Wide", font, fontSize);
     auto showLargeWideItem = MenuItemLabel::create(showLargeWideLabel, CC_CALLBACK_1(NativeMenuScene::showNativeViewSceneButtonCallback, this, NATIVE_LARGE_WIDE));
     auto showLargeWideMenu = Menu::create(showLargeWideItem, NULL);
     this->addChild(showLargeWideMenu);
     
-    showLargeWideMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 0));
+    showLargeWideMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y + 50));
 
     auto showTextOnlyLabel = Label::createWithSystemFont("Show Text Only", font, fontSize);
     auto showTextOnlyItem = MenuItemLabel::create(showTextOnlyLabel, CC_CALLBACK_1(NativeMenuScene::showNativeViewSceneButtonCallback, this, NATIVE_TEXT_ONLY));
     auto showTextOnlyMenu = Menu::create(showTextOnlyItem, NULL);
     this->addChild(showTextOnlyMenu);
     
-    showTextOnlyMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 50));
+    showTextOnlyMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
 
     auto showInfeedLabel = Label::createWithSystemFont("Show Infeed", font, fontSize);
     auto showInfeedItem = MenuItemLabel::create(showInfeedLabel, CC_CALLBACK_1(NativeMenuScene::showNativeInfeedViewSceneButtonCallback, this));
     auto showInfeedMenu = Menu::create(showInfeedItem, NULL);
     this->addChild(showInfeedMenu);
     
-    showInfeedMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 100));
+    showInfeedMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 50));
 
     auto showTelopLabel = Label::createWithSystemFont("Show Telop", font, fontSize);
     auto showTelopItem = MenuItemLabel::create(showTelopLabel, CC_CALLBACK_1(NativeMenuScene::showNativeTelopViewSceneButtonCallback, this));
     auto showTelopMenu = Menu::create(showTelopItem, NULL);
     this->addChild(showTelopMenu);
     
-    showTelopMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 150));
+    showTelopMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 100));
 
     auto showPreviousLabel = Label::createWithSystemFont("Back", font, fontSize);
     auto showPreviousItem = MenuItemLabel::create(showPreviousLabel, CC_CALLBACK_1(NativeMenuScene::showPreviousSceneButtonCallback, this));
