@@ -73,7 +73,7 @@ bool NativeTelopViewScene::init()
     
     auto margin = 4.0f;
     
-    auto adBackground = LayerColor::create(Color4B::YELLOW, 240, 64);
+    auto adBackground = LayerColor::create(Color4B::YELLOW, 260, 64);
     adBackground->setPosition(Point((visibleSize.width - adBackground->getContentSize().width) / 2 + origin.x,
                                     (visibleSize.height - adBackground->getContentSize().height) / 2 + origin.y));
     this->addChild(adBackground);
@@ -86,7 +86,8 @@ bool NativeTelopViewScene::init()
     adBackground->addChild(clippingNode);
 
     _adImage = Sprite::create();
-    _adImage->setContentSize(Size(80, 60));
+    _adImage->setScale(0.75);
+    _adImage->setContentSize(Size(60, 60));
     _adImage->setPosition(Point(_adImage->getContentSize().width / 2, _adImage->getContentSize().height / 2));
 
     _prText = Label::create();
@@ -114,11 +115,11 @@ bool NativeTelopViewScene::init()
     _adNode->addChild(_prText);
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    const auto apiKey = "a3972604a76864dd110d0b02204f4b72adb092ae";
-    const auto spotId = "485502";
+    const auto apiKey = "10d9088b5bd36cf43b295b0774e5dcf7d20a4071";
+    const auto spotId = "485500";
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-    const auto apiKey = "186927de979c5e542ee1ef111cc69c52e37a58f9";
-    const auto spotId = "485517";
+    const auto apiKey = "16cb170982088d81712e63087061378c71e8aa5c";
+    const auto spotId = "485516";
 #endif
     
     _client = new NendNativeAdClient(apiKey, spotId);
@@ -167,7 +168,7 @@ void NativeTelopViewScene::menuCloseCallback(Ref* pSender)
 
 void NativeTelopViewScene::scroll()
 {
-    auto to = (_shortText->getContentSize().width * -1) + _adImage->getContentSize().width + _prText->getWidth();
+    auto to = (_shortText->getContentSize().width * -1) + _adImage->getContentSize().width;
     auto distance = _shortText->getPosition().x - to;
     auto callback = CallFuncN::create(CC_CALLBACK_1(NativeTelopViewScene::scrollFinished, this));
     auto move = MoveTo::create(distance / speed, Vec2(to, _shortText->getPosition().y));

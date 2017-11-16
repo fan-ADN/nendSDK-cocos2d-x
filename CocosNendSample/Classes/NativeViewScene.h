@@ -14,7 +14,6 @@
 
 typedef enum {
     NATIVE_SMALL_SQUARE,
-    NATIVE_SMALL_WIDE,
     NATIVE_LARGE_WIDE,
     NATIVE_TEXT_ONLY
 } NativeType;
