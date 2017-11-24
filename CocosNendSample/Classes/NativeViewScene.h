@@ -18,7 +18,7 @@ typedef enum {
     NATIVE_TEXT_ONLY
 } NativeType;
 
-class NativeViewScene : public cocos2d::Layer
+class NativeViewScene : public cocos2d::Scene
 {
 private:
     void showPreviousSceneButtonCallback(cocos2d::Ref* pSender);

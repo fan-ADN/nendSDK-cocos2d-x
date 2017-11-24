@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include "cocos2d.h"
 
-class InterstitialMenuScene : public cocos2d::Layer
+class InterstitialMenuScene : public cocos2d::Scene
 {
 public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
@@ -39,7 +39,8 @@ public:
     // EventDispatcher登録&削除
     void addEventDispatcher();
     void removeEventDispatcher();
-    
+
+    void onKeyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event);
 };
 
 #endif /* defined(__HelloCpp__InterstitialMenuScene__) */

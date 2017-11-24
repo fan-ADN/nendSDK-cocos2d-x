@@ -16,15 +16,12 @@ USING_NS_CC;
 
 Scene* NativeMenuScene::createScene()
 {
-    Scene* scene = Scene::create();
-    NativeMenuScene* layer = NativeMenuScene::create();
-    scene->addChild(layer);
-    return scene;
+    return NativeMenuScene::create();
 }
 
 bool NativeMenuScene::init()
 {
-    if (!Layer::init()) {
+    if (!Scene::init()) {
         return false;
     }
     

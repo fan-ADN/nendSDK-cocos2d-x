@@ -16,17 +16,7 @@ using namespace nend_module;
 
 Scene* NativeTelopViewScene::createScene()
 {
-    // 'scene' is an autorelease object
-    auto scene = Scene::create();
-    
-    // 'layer' is an autorelease object
-    auto layer = NativeTelopViewScene::create();
-    
-    // add layer as a child to scene
-    scene->addChild(layer);
-    
-    // return the scene
-    return scene;
+    return NativeTelopViewScene::create();
 }
 
 NativeTelopViewScene::~NativeTelopViewScene()
@@ -42,7 +32,7 @@ bool NativeTelopViewScene::init()
 {
     //////////////////////////////
     // 1. super init first
-    if ( !Layer::init() )
+    if ( !Scene::init() )
     {
         return false;
     }
@@ -129,7 +119,7 @@ bool NativeTelopViewScene::init()
 
 void NativeTelopViewScene::onEnter()
 {
-    Layer::onEnter();
+    Scene::onEnter();
     
     _client->loadAd([=](NendNativeAd *nativeAd, NendNativeLoadResultCode code, std::string errorMessage) {
         if (code == NEND_SUCCESS_LOAD_AD) {
@@ -157,7 +147,7 @@ void NativeTelopViewScene::onEnter()
 
 void NativeTelopViewScene::onExit()
 {
-    Layer::onExit();
+    Scene::onExit();
     _shortText->stopAllActions();
 }
 

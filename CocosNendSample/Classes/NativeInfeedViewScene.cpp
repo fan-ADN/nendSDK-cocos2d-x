@@ -35,11 +35,7 @@ std::vector<LayerColor*> m_adlayers;
 
 Scene* NativeInfeedViewScene::createScene()
 {
-    Scene* scene = Scene::create();
-    NativeInfeedViewScene* layer = NativeInfeedViewScene::create();
-    scene->addChild(layer);
-    
-    return scene;
+    return NativeInfeedViewScene::create();
 }
 
 NativeInfeedViewScene::NativeInfeedViewScene()
@@ -62,7 +58,7 @@ NativeInfeedViewScene::~NativeInfeedViewScene()
 
 bool NativeInfeedViewScene::init()
 {
-    if ( !Layer::init() )
+    if ( !Scene::init() )
     {
         return false;
     }
@@ -97,12 +93,12 @@ bool NativeInfeedViewScene::init()
 
 void NativeInfeedViewScene::onEnter()
 {
-    Layer::onEnter();
+    Scene::onEnter();
 }
 
 void NativeInfeedViewScene::onExit()
 {
-    Layer::onExit();
+    Scene::onExit();
 }
 
 #pragma mark - button callback

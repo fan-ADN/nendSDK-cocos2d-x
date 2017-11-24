@@ -11,43 +11,43 @@ LOCAL_MODULE := MyGame_shared
 
 LOCAL_MODULE_FILENAME := libMyGame
 
-LOCAL_SRC_FILES := hellocpp/main.cpp \
-                   ../../../Classes/AppDelegate.cpp \
-                   ../../../Classes/HelloWorldScene.cpp \
-                   ../../../Classes/BannerMenuScene.cpp \
-                   ../../../Classes/BannerViewScene.cpp \
-                   ../../../Classes/BannerViewWithSpotIDScene.cpp \
-                   ../../../Classes/IconMenuScene.cpp \
-                   ../../../Classes/IconMenuWithSpotIDScene.cpp \
-                   ../../../Classes/InterstitialMenuScene.cpp \
-                   ../../../Classes/NativeMenuScene.cpp \
-                   ../../../Classes/NativeCustomViewScene.cpp \
-                   ../../../Classes/NativeViewScene.cpp \
-                   ../../../Classes/NativeInfeedViewScene.cpp \
-                   ../../../Classes/NativeTelopViewScene.cpp \
-                   ../../../Classes/FullBoardAdScene.cpp \
-                   ../../../Classes/VideoAdScene.cpp \
-				   ../../../Classes/Common/NendNativeLabel.cpp \
-                   ../../../Classes/Common/NendNativeSprite.cpp \
-                   ../../../Classes/Common/NendNativeClippingNode.cpp \
-                   ../../../Classes/Common/NendNativeAdClient.cpp \
-                   ../../../Classes/Common/NendHttpHelper.cpp \
-                   ../../../Classes/Common/NendNativeAdLog.cpp \
-                   ../../../Classes/Common/NendNativeAdRender.cpp \
-                   ../../../Classes/Common/NendNativeAdBinder.cpp \
-                   ../../../Classes/Common/NendNativeAd.cpp \
-                   ../../../Classes/Common/NendNativeImpressionTracker.cpp \
-                   ../../../Classes/Common/NendVideoAd.cpp \
-                   ../../../Classes/Android/NendModule.cpp \
-                   ../../../Classes/Android/NendIconModule.cpp \
-                   ../../../Classes/Android/NendInterstitialModule.cpp \
-                   ../../../Classes/Android/AndroidNativeAd.cpp \
-                   ../../../Classes/Android/AndroidNativeJNI.cpp \
-				   ../../../Classes/Android/AndroidNativeAdClient.cpp \
-				   ../../../Classes/Android/NendFullBoardAd.cpp \
-                   ../../../Classes/Android/NendAdJniUtils.cpp \
-                   ../../../Classes/Android/NendInterstitialVideoAd.cpp \
-                   ../../../Classes/Android/NendRewardedVideoAd.cpp
+LOCAL_SRC_FILES := $(LOCAL_PATH)/hellocpp/main.cpp \
+                   $(LOCAL_PATH)/../../../Classes/AppDelegate.cpp \
+                   $(LOCAL_PATH)/../../../Classes/HelloWorldScene.cpp \
+                   $(LOCAL_PATH)/../../../Classes/BannerMenuScene.cpp \
+                   $(LOCAL_PATH)/../../../Classes/BannerViewScene.cpp \
+                   $(LOCAL_PATH)/../../../Classes/BannerViewWithSpotIDScene.cpp \
+                   $(LOCAL_PATH)/../../../Classes/IconMenuScene.cpp \
+                   $(LOCAL_PATH)/../../../Classes/IconMenuWithSpotIDScene.cpp \
+                   $(LOCAL_PATH)/../../../Classes/InterstitialMenuScene.cpp \
+                   $(LOCAL_PATH)/../../../Classes/NativeMenuScene.cpp \
+                   $(LOCAL_PATH)/../../../Classes/NativeCustomViewScene.cpp \
+                   $(LOCAL_PATH)/../../../Classes/NativeViewScene.cpp \
+                   $(LOCAL_PATH)/../../../Classes/NativeInfeedViewScene.cpp \
+                   $(LOCAL_PATH)/../../../Classes/NativeTelopViewScene.cpp \
+                   $(LOCAL_PATH)/../../../Classes/FullBoardAdScene.cpp \
+                   $(LOCAL_PATH)/../../../Classes/VideoAdScene.cpp \
+                   $(LOCAL_PATH)/../../../Classes/Common/NendNativeLabel.cpp \
+                   $(LOCAL_PATH)/../../../Classes/Common/NendNativeSprite.cpp \
+                   $(LOCAL_PATH)/../../../Classes/Common/NendNativeClippingNode.cpp \
+                   $(LOCAL_PATH)/../../../Classes/Common/NendNativeAdClient.cpp \
+                   $(LOCAL_PATH)/../../../Classes/Common/NendHttpHelper.cpp \
+                   $(LOCAL_PATH)/../../../Classes/Common/NendNativeAdLog.cpp \
+                   $(LOCAL_PATH)/../../../Classes/Common/NendNativeAdRender.cpp \
+                   $(LOCAL_PATH)/../../../Classes/Common/NendNativeAdBinder.cpp \
+                   $(LOCAL_PATH)/../../../Classes/Common/NendNativeAd.cpp \
+                   $(LOCAL_PATH)/../../../Classes/Common/NendNativeImpressionTracker.cpp \
+                   $(LOCAL_PATH)/../../../Classes/Common/NendVideoAd.cpp \
+                   $(LOCAL_PATH)/../../../Classes/Android/NendModule.cpp \
+                   $(LOCAL_PATH)/../../../Classes/Android/NendIconModule.cpp \
+                   $(LOCAL_PATH)/../../../Classes/Android/NendInterstitialModule.cpp \
+                   $(LOCAL_PATH)/../../../Classes/Android/AndroidNativeAd.cpp \
+                   $(LOCAL_PATH)/../../../Classes/Android/AndroidNativeJNI.cpp \
+                   $(LOCAL_PATH)/../../../Classes/Android/AndroidNativeAdClient.cpp \
+                   $(LOCAL_PATH)/../../../Classes/Android/NendFullBoardAd.cpp \
+                   $(LOCAL_PATH)/../../../Classes/Android/NendAdJniUtils.cpp \
+                   $(LOCAL_PATH)/../../../Classes/Android/NendInterstitialVideoAd.cpp \
+                   $(LOCAL_PATH)/../../../Classes/Android/NendRewardedVideoAd.cpp                   
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../../Classes
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../../Classes/Common

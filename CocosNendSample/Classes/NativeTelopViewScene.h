@@ -9,7 +9,7 @@
 #include "cocos2d.h"
 #include "NendNativeAdClient.h"
 
-class NativeTelopViewScene : public cocos2d::Layer
+class NativeTelopViewScene : public cocos2d::Scene
 {
 private:
     // a selector callback

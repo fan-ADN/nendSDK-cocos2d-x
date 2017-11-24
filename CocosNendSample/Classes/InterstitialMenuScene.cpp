@@ -23,17 +23,7 @@ static char interstitialSpotID[] = "213206";
 
 Scene* InterstitialMenuScene::createScene()
 {
-    // 'scene' is an autorelease object
-    auto scene = Scene::create();
-    
-    // 'layer' is an autorelease object
-    auto layer = InterstitialMenuScene::create();
-    
-    // add layer as a child to scene
-    scene->addChild(layer);
-    
-    // return the scene
-    return scene;
+    return InterstitialMenuScene::create();
 }
 
 // on "init" you need to initialize your instance
@@ -41,7 +31,7 @@ bool InterstitialMenuScene::init()
 {
     //////////////////////////////
     // 1. super init first
-    if ( !Layer::init() )
+    if ( !Scene::init() )
     {
         return false;
     }
@@ -107,7 +97,7 @@ bool InterstitialMenuScene::init()
 
 void InterstitialMenuScene::onEnter()
 {
-    Layer::onEnter();
+    Scene::onEnter();
     
     // インタースティシャル広告のロードを開始する
     NendInterstitialModule::createNADInterstitial(interstitialApiKey, interstitialSpotID);
@@ -116,7 +106,7 @@ void InterstitialMenuScene::onEnter()
 
 void InterstitialMenuScene::onExit()
 {
-    Layer::onExit();
+    Scene::onExit();
     // EventDispatcher登録の解除
     this->removeEventDispatcher();
 }
@@ -357,5 +347,10 @@ void InterstitialMenuScene::removeEventDispatcher()
     Director::getInstance()->getEventDispatcher()->removeCustomEventListeners(NADInterstitialDelegateShowResultWithSpotIdNotification);
     Director::getInstance()->getEventDispatcher()->removeCustomEventListeners(NADInterstitialDelegateClickResultNotification);
     Director::getInstance()->getEventDispatcher()->removeCustomEventListeners(NADInterstitialDelegateClickResultWithSpotIdNotification);
+    
+}
+
+void InterstitialMenuScene::onKeyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event *event)
+{
     
 }

@@ -20,14 +20,7 @@ char spotID[128];
 
 Scene* BannerViewScene::createScene(BannerSize bannerSize)
 {
-    // 'scene' is an autorelease object
-    auto scene = Scene::create();
-    
-    // 'layer' is an autorelease object
-    auto layer = BannerViewScene::create();
-    
-    // add layer as a child to scene
-    scene->addChild(layer);
+    auto scene = BannerViewScene::create();
     
     adSize = bannerSize;
 
@@ -92,7 +85,7 @@ bool BannerViewScene::init()
 {
     //////////////////////////////
     // 1. super init first
-    if ( !Layer::init() )
+    if ( !Scene::init() )
     {
         return false;
     }
@@ -194,12 +187,12 @@ bool BannerViewScene::init()
 
 void BannerViewScene::onEnter()
 {
-    Layer::onEnter();
+    Scene::onEnter();
 }
 
 void BannerViewScene::onExit()
 {
-    Layer::onExit();
+    Scene::onExit();
 }
 
 void BannerViewScene::onExitTransitionDidStart()

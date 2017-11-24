@@ -15,17 +15,7 @@ USING_NS_CC;
 
 Scene* BannerMenuScene::createScene()
 {
-    // 'scene' is an autorelease object
-    auto scene = Scene::create();
-    
-    // 'layer' is an autorelease object
-    auto layer = BannerMenuScene::create();
-    
-    // add layer as a child to scene
-    scene->addChild(layer);
-    
-    // return the scene
-    return scene;
+    return BannerMenuScene::create();
 }
 
 // on "init" you need to initialize your instance
@@ -33,7 +23,7 @@ bool BannerMenuScene::init()
 {
     //////////////////////////////
     // 1. super init first
-    if ( !Layer::init() )
+    if ( !Scene::init() )
     {
         return false;
     }

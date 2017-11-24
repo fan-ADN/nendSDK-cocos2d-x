@@ -9,7 +9,7 @@
 #include "cocos2d.h"
 #include "NendFullBoardAd.h"
 
-class FullBoardAdScene : public cocos2d::Layer
+class FullBoardAdScene : public cocos2d::Scene
 {
 public:
     static cocos2d::Scene* createScene();

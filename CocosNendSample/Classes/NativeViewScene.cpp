@@ -230,17 +230,14 @@ NativeViewScene::~NativeViewScene(){
 
 Scene* NativeViewScene::createScene(NativeType type)
 {
-    Scene* scene = Scene::create();
-    NativeViewScene* layer = NativeViewScene::create();
-    scene->addChild(layer);
-    
+    NativeViewScene* scene = NativeViewScene::create();
     _nativeType = type;
     return scene;
 }
 
 bool NativeViewScene::init()
 {
-    if (!Layer::init()) {
+    if (!Scene::init()) {
         return false;
     }
     
@@ -267,7 +264,7 @@ bool NativeViewScene::init()
 
 void NativeViewScene::onEnter()
 {
-    Layer::onEnter();
+    Scene::onEnter();
     
     // ネイティブ広告のログレベルを設定します
     NendNativeAdLog::setNativeLogLevel(NEND_NATIVE_LOG_LEVEL_DEBUG);
@@ -276,7 +273,7 @@ void NativeViewScene::onEnter()
 
 void NativeViewScene::onExit()
 {
-    Layer::onExit();
+    Scene::onExit();
 }
 
 
