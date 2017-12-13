@@ -12,7 +12,7 @@
 #include "cocos2d.h"
 #include "NendNativeAdClient.h"
 
-class NativeCustomViewScene : public cocos2d::Layer
+class NativeCustomViewScene : public cocos2d::Scene
 {
 private:
     void makeAndLoadNativeAd();

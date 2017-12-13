@@ -62,16 +62,12 @@ NativeCustomViewScene::~NativeCustomViewScene(){
 
 Scene* NativeCustomViewScene::createScene()
 {
-    Scene* scene = Scene::create();
-    NativeCustomViewScene* layer = NativeCustomViewScene::create();
-    scene->addChild(layer);
-
-    return scene;
+    return NativeCustomViewScene::create();
 }
 
 bool NativeCustomViewScene::init()
 {
-    if (!Layer::init()) {
+    if (!Scene::init()) {
         return false;
     }
     

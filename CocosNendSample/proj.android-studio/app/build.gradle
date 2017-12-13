@@ -4,7 +4,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion '25.0.0'
+    buildToolsVersion "25.0.3"
 
     defaultConfig {
         applicationId "net.nend.cocosnendsample"
@@ -19,8 +19,8 @@ android {
                     // skip the NDK Build step if PROP_NDK_MODE is none
                     targets 'MyGame'
                     arguments 'NDK_TOOLCHAIN_VERSION=4.9'
-                    arguments 'APP_PLATFORM=android-'+PROP_TARGET_SDK_VERSION
-
+                    arguments 'APP_PLATFORM=android-'+PROP_APP_PLATFORM
+                    
                     def module_paths = [project.file("../../cocos2d").absolutePath,
                                         project.file("../../cocos2d/cocos").absolutePath,
                                         project.file("../../cocos2d/external").absolutePath]
@@ -32,7 +32,7 @@ android {
                     else {
                         arguments 'NDK_MODULE_PATH=' + module_paths.join(':')
                     }
-
+                    
                     arguments '-j' + Runtime.runtime.availableProcessors()
                     abiFilters.addAll(PROP_APP_ABI.split(':').collect{it as String})
                 }
@@ -96,7 +96,10 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile project(':libcocos2dx')
-    compile 'com.google.android.gms:play-services-ads:11.0.2'
-    compile 'com.android.support:cardview-v7:25.2.0'
-    compile 'com.android.support:percent:25.2.0'
+    compile('com.google.android.gms:play-services-basement:11.4.2') {
+        exclude module: 'support-v4'
+    }
+    compile 'com.android.support:support-core-utils:25.3.1'
+    compile 'com.android.support:cardview-v7:25.3.1'
+    compile 'com.android.support:percent:25.3.1'
 }

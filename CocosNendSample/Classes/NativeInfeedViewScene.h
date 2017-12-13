@@ -13,7 +13,7 @@
 #include "cocos-ext.h"
 #include "NendNativeAdClient.h"
 
-class NativeInfeedViewScene : public cocos2d::Layer, public cocos2d::extension::TableViewDelegate, public cocos2d::extension::TableViewDataSource
+class NativeInfeedViewScene : public cocos2d::Scene, public cocos2d::extension::TableViewDelegate, public cocos2d::extension::TableViewDataSource
 {
 private:
     void createTableView();

@@ -39,17 +39,7 @@ static char spotID_B[] = "71000";
 
 Scene* BannerViewWithSpotIDScene::createScene()
 {
-    // 'scene' is an autorelease object
-    auto scene = Scene::create();
-    
-    // 'layer' is an autorelease object
-    auto layer = BannerViewWithSpotIDScene::create();
-    
-    // add layer as a child to scene
-    scene->addChild(layer);
-
-    // return the scene
-    return scene;
+    return BannerViewWithSpotIDScene::create();
 }
 
 // on "init" you need to initialize your instance
@@ -57,7 +47,7 @@ bool BannerViewWithSpotIDScene::init()
 {
     //////////////////////////////
     // 1. super init first
-    if ( !Layer::init() )
+    if ( !Scene::init() )
     {
         return false;
     }
@@ -189,12 +179,12 @@ bool BannerViewWithSpotIDScene::init()
 
 void BannerViewWithSpotIDScene::onEnter()
 {
-    Layer::onEnter();
+    Scene::onEnter();
 }
 
 void BannerViewWithSpotIDScene::onExit()
 {
-    Layer::onExit();
+    Scene::onExit();
 }
 
 void BannerViewWithSpotIDScene::onExitTransitionDidStart()
