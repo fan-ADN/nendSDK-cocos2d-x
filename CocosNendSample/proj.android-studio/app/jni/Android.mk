@@ -47,7 +47,8 @@ LOCAL_SRC_FILES := $(LOCAL_PATH)/hellocpp/main.cpp \
                    $(LOCAL_PATH)/../../../Classes/Android/NendFullBoardAd.cpp \
                    $(LOCAL_PATH)/../../../Classes/Android/NendAdJniUtils.cpp \
                    $(LOCAL_PATH)/../../../Classes/Android/NendInterstitialVideoAd.cpp \
-                   $(LOCAL_PATH)/../../../Classes/Android/NendRewardedVideoAd.cpp                   
+                   $(LOCAL_PATH)/../../../Classes/Android/NendRewardedVideoAd.cpp \
+                   $(LOCAL_PATH)/../../../Classes/Android/NendUserFeature.cpp
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../../Classes
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../../Classes/Common
