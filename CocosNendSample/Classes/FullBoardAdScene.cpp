@@ -76,6 +76,8 @@ bool FullBoardAdScene::init()
 #else
     _ad = new nend_module::NendFullBoardAd("485504", "30fda4b3386e793a14b27bedb4dcd29f03d638e5");
 #endif
+    _ad->setBackgroundColor4F(cocos2d::Color4F::WHITE);
+    
     _ad->onFullBoardAdLoaded = [this](const nend_module::NendFullBoardAd& ad) {
         log("onFullBoardAdLoaded");
         _status->setString("Success");

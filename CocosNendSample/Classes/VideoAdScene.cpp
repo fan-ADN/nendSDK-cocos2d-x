@@ -83,7 +83,19 @@ bool VideoAdScene::init()
 
     // Set User ID
     _rewardedVideoAd->setUserid("user id");
-    
+
+    // Set User Feature
+    NendUserFeature *rewardedUserFeature = new NendUserFeature();
+    rewardedUserFeature->setGender(NendUserFeature::Gender::FEMALE);
+    rewardedUserFeature->setBirthday(2000, 1, 1);
+    rewardedUserFeature->setAge(18);
+    rewardedUserFeature->addCustomValue(100, "intParameter");
+    rewardedUserFeature->addCustomValue(123.45, "doubleParameter");
+    rewardedUserFeature->addCustomValue("test", "stringParameter");
+    rewardedUserFeature->addCustomValue(true, "boolParameter");
+    _rewardedVideoAd->setUserFeature(rewardedUserFeature);
+    delete rewardedUserFeature;
+
     // Regist rewardedVideoAd callbacks
     _rewardedVideoAd->onLoaded([=](const VideoAds::RewardedVideoAd& ad) {
         Director::getInstance()->getScheduler()->performFunctionInCocosThread([=](){
@@ -139,6 +151,18 @@ bool VideoAdScene::init()
     // Set User ID
     _interstitialVideoAd->setUserid("user id");
 
+    // Set User Feature
+    NendUserFeature *interstitialUserFeature = new NendUserFeature();
+    interstitialUserFeature->setGender(NendUserFeature::Gender::FEMALE);
+    interstitialUserFeature->setBirthday(2000, 1, 1);
+    interstitialUserFeature->setAge(18);
+    interstitialUserFeature->addCustomValue(100, "intParameter");
+    interstitialUserFeature->addCustomValue(123.45, "doubleParameter");
+    interstitialUserFeature->addCustomValue("test", "stringParameter");
+    interstitialUserFeature->addCustomValue(true, "boolParameter");
+    _interstitialVideoAd->setUserFeature(interstitialUserFeature);
+    delete interstitialUserFeature;
+    
     // Set Fallback Fullboard Ad
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
     _interstitialVideoAd->addFallbackFullBoard("485520", "a88c0bcaa2646c4ef8b2b656fd38d6785762f2ff");
