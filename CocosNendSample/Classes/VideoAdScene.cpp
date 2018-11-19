@@ -76,9 +76,9 @@ bool VideoAdScene::init()
 
     // Create rewardedVideoAd instance
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-    _rewardedVideoAd.reset(VideoAds::createRewardedVideoAd("802558", "a6eb8828d64c70630fd6737bd266756c5c7d48aa", true));
+    _rewardedVideoAd.reset(VideoAds::createRewardedVideoAd("802558", "a6eb8828d64c70630fd6737bd266756c5c7d48aa"));
 #else
-    _rewardedVideoAd.reset(VideoAds::createRewardedVideoAd("802555", "ca80ed7018734d16787dbda24c9edd26c84c15b8", true));
+    _rewardedVideoAd.reset(VideoAds::createRewardedVideoAd("802555", "ca80ed7018734d16787dbda24c9edd26c84c15b8"));
 #endif
 
     // Set User ID
@@ -143,9 +143,9 @@ bool VideoAdScene::init()
 
     // Create interstitialVideoAd
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-    _interstitialVideoAd.reset(VideoAds::createInterstitialVideoAd("802559", "e9527a2ac8d1f39a667dfe0f7c169513b090ad44", true));
+    _interstitialVideoAd.reset(VideoAds::createInterstitialVideoAd("802559", "e9527a2ac8d1f39a667dfe0f7c169513b090ad44"));
 #else
-    _interstitialVideoAd.reset(VideoAds::createInterstitialVideoAd("802557", "b6a97b05dd088b67f68fe6f155fb3091f302b48b", true));
+    _interstitialVideoAd.reset(VideoAds::createInterstitialVideoAd("802557", "b6a97b05dd088b67f68fe6f155fb3091f302b48b"));
 #endif
 
     // Set User ID

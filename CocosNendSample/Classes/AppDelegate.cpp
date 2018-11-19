@@ -8,6 +8,7 @@
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 #include "NendIconModule.h"
 #endif
+#include "NendLogger.h"
 
 #if USE_AUDIO_ENGINE && USE_SIMPLE_AUDIO_ENGINE
 #error "Don't use AudioEngine and SimpleAudioEngine at the same time. Please just select one in your game!"
@@ -81,6 +82,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // run
     director->runWithScene(scene);
+
+    NendLogger::setLogLevel(NendLoggerLogLevel::DEBUG);
 
     return true;
 }
