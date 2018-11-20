@@ -94,10 +94,6 @@ bool NativeCustomViewScene::init()
     _adLayer = nullptr;
     _nativeAdClient = nullptr;
 
-    
-    // ネイティブ広告のログレベルを設定します
-    NendNativeAdLog::setNativeLogLevel(NEND_NATIVE_LOG_LEVEL_DEBUG);
-
     // NendNativeAdClient クラスのインスタンスを生成します
     _nativeAdClient = new NendNativeAdClient(apiKey, spotId);
     
