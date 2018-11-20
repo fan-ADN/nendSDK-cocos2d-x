@@ -266,8 +266,6 @@ void NativeViewScene::onEnter()
 {
     Scene::onEnter();
     
-    // ネイティブ広告のログレベルを設定します
-    NendNativeAdLog::setNativeLogLevel(NEND_NATIVE_LOG_LEVEL_DEBUG);
     this->makeAndLoadNativeAd();
 }
 

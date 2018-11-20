@@ -77,7 +77,6 @@ bool NativeInfeedViewScene::init()
     showPreviousMenu->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - 200));
     this->addChild(showPreviousMenu);
 
-    NendNativeAdLog::setNativeLogLevel(NEND_NATIVE_LOG_LEVEL_DEBUG);
     createNativeAdView();
 
     TableView* tableView = TableView::create(this, Size(visibleSize.width, visibleSize.height - 110));
