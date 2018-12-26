@@ -173,7 +173,7 @@ bool VideoAdScene::init()
     // Set the state of using location data
     _interstitialVideoAd->setLocationEnabled(false);
     
-    // Regist interstitialVideoAd callbacks
+    // Register interstitialVideoAd callbacks
     _interstitialVideoAd->onLoaded([=](const VideoAds::InterstitialVideoAd& ad) {
         Director::getInstance()->getScheduler()->performFunctionInCocosThread([=](){
             _interstitialStatus->setString("Loaded");
