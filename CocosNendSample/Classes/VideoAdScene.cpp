@@ -170,7 +170,10 @@ bool VideoAdScene::init()
     _interstitialVideoAd->addFallbackFullBoard("485504", "30fda4b3386e793a14b27bedb4dcd29f03d638e5");
 #endif
     
-    // Regist interstitialVideoAd callbacks
+    // Set the state of using location data
+    _interstitialVideoAd->setLocationEnabled(false);
+    
+    // Register interstitialVideoAd callbacks
     _interstitialVideoAd->onLoaded([=](const VideoAds::InterstitialVideoAd& ad) {
         Director::getInstance()->getScheduler()->performFunctionInCocosThread([=](){
             _interstitialStatus->setString("Loaded");
