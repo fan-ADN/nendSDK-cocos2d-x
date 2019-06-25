@@ -1,7 +1,8 @@
 /****************************************************************************
 Copyright (c) 2008      Apple Inc. All Rights Reserved.
 Copyright (c) 2010-2012 cocos2d-x.org
-Copyright (c) 2013-2017 Chukong Technologies Inc.
+Copyright (c) 2013-2016 Chukong Technologies Inc.
+Copyright (c) 2017-2018 Xiamen Yaji Software Co., Ltd.
 
 http://www.cocos2d-x.org
 
@@ -579,13 +580,14 @@ bool Texture2D::initWithMipmaps(MipmapInfo* mipmaps, int mipmapsNum, PixelFormat
     }
     
 
-    if(_pixelFormatInfoTables.find(pixelFormat) == _pixelFormatInfoTables.end())
+    auto formatItr = _pixelFormatInfoTables.find(pixelFormat);
+    if(formatItr == _pixelFormatInfoTables.end())
     {
         CCLOG("cocos2d: WARNING: unsupported pixelformat: %lx", (unsigned long)pixelFormat );
         return false;
     }
 
-    const PixelFormatInfo& info = _pixelFormatInfoTables.at(pixelFormat);
+    const PixelFormatInfo& info = formatItr->second;
 
     if (info.compressed && !Configuration::getInstance()->supportsPVRTC()
                         && !Configuration::getInstance()->supportsETC()
@@ -1141,6 +1143,7 @@ bool Texture2D::initWithString(const char *text, const FontDefinition& textDefin
     auto textDef = textDefinition;
     auto contentScaleFactor = CC_CONTENT_SCALE_FACTOR();
     textDef._fontSize *= contentScaleFactor;
+    textDef._lineSpacing *= contentScaleFactor;
     textDef._dimensions.width *= contentScaleFactor;
     textDef._dimensions.height *= contentScaleFactor;
     textDef._stroke._strokeSize *= contentScaleFactor;
