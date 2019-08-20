@@ -31,24 +31,24 @@
 		46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */; };
 		46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */; };
-		4F96156722012E4700A8A091 /* BannerMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F96155222012E4400A8A091 /* BannerMenuScene.cpp */; };
-		4F96156822012E4700A8A091 /* NativeTelopViewScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F96155322012E4400A8A091 /* NativeTelopViewScene.cpp */; };
-		4F96156922012E4700A8A091 /* BannerViewScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F96155422012E4400A8A091 /* BannerViewScene.cpp */; };
-		4F96156A22012E4700A8A091 /* InterstitialMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F96155722012E4500A8A091 /* InterstitialMenuScene.cpp */; };
-		4F96156B22012E4700A8A091 /* NativeCustomViewScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F96155822012E4500A8A091 /* NativeCustomViewScene.cpp */; };
-		4F96156C22012E4700A8A091 /* NativeMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F96155922012E4500A8A091 /* NativeMenuScene.cpp */; };
-		4F96156D22012E4700A8A091 /* FullBoardAdScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F96155A22012E4500A8A091 /* FullBoardAdScene.cpp */; };
-		4F96156E22012E4700A8A091 /* NativeInfeedViewScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F96155C22012E4600A8A091 /* NativeInfeedViewScene.cpp */; };
-		4F96156F22012E4700A8A091 /* VideoAdScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F96155D22012E4600A8A091 /* VideoAdScene.cpp */; };
-		4F96157022012E4700A8A091 /* BannerViewWithSpotIDScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F96156222012E4700A8A091 /* BannerViewWithSpotIDScene.cpp */; };
-		4F96157122012E4700A8A091 /* NativeViewScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F96156322012E4700A8A091 /* NativeViewScene.cpp */; };
-		4F96157422012F0C00A8A091 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F96157322012F0C00A8A091 /* AdSupport.framework */; };
-		4F96157622012F1600A8A091 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F96157522012F1600A8A091 /* ImageIO.framework */; };
-		4F96157822012F2000A8A091 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F96157722012F2000A8A091 /* CoreMedia.framework */; };
-		4F96157A22012F2F00A8A091 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F96157922012F2F00A8A091 /* SystemConfiguration.framework */; };
-		4F96157C22012F3900A8A091 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F96157B22012F3900A8A091 /* WebKit.framework */; };
-		4F96157E22012F4500A8A091 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F96157D22012F4500A8A091 /* GameController.framework */; };
-		4F96158022012F4F00A8A091 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F96157F22012F4F00A8A091 /* MediaPlayer.framework */; };
+		4F986ED8230BC39E00E8A86C /* BannerViewWithSpotIDScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F986EC3230BC39C00E8A86C /* BannerViewWithSpotIDScene.cpp */; };
+		4F986ED9230BC39E00E8A86C /* NativeInfeedViewScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F986EC5230BC39C00E8A86C /* NativeInfeedViewScene.cpp */; };
+		4F986EDA230BC39E00E8A86C /* NativeTelopViewScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F986EC6230BC39C00E8A86C /* NativeTelopViewScene.cpp */; };
+		4F986EDB230BC39E00E8A86C /* NativeViewScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F986EC7230BC39C00E8A86C /* NativeViewScene.cpp */; };
+		4F986EDC230BC39E00E8A86C /* FullBoardAdScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F986EC9230BC39C00E8A86C /* FullBoardAdScene.cpp */; };
+		4F986EDD230BC39E00E8A86C /* NativeMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F986ECB230BC39D00E8A86C /* NativeMenuScene.cpp */; };
+		4F986EDE230BC39E00E8A86C /* BannerViewScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F986ECC230BC39D00E8A86C /* BannerViewScene.cpp */; };
+		4F986EDF230BC39E00E8A86C /* BannerMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F986ECD230BC39D00E8A86C /* BannerMenuScene.cpp */; };
+		4F986EE0230BC39E00E8A86C /* VideoAdScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F986ECE230BC39D00E8A86C /* VideoAdScene.cpp */; };
+		4F986EE1230BC39E00E8A86C /* NativeCustomViewScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F986ED0230BC39D00E8A86C /* NativeCustomViewScene.cpp */; };
+		4F986EE2230BC39E00E8A86C /* InterstitialMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F986ED2230BC39D00E8A86C /* InterstitialMenuScene.cpp */; };
+		4F986EE4230BC3DA00E8A86C /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F986EE3230BC3DA00E8A86C /* AdSupport.framework */; };
+		4F986EE6230BC3E600E8A86C /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F986EE5230BC3E600E8A86C /* ImageIO.framework */; };
+		4F986EE8230BC3F400E8A86C /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F986EE7230BC3F400E8A86C /* CoreMedia.framework */; };
+		4F986EEA230BC40200E8A86C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F986EE9230BC40200E8A86C /* SystemConfiguration.framework */; };
+		4F986EEC230BC40E00E8A86C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F986EEB230BC40E00E8A86C /* WebKit.framework */; };
+		4F986EEE230BC41D00E8A86C /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F986EED230BC41D00E8A86C /* GameController.framework */; };
+		4F986EF0230BC42900E8A86C /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F986EEF230BC42900E8A86C /* MediaPlayer.framework */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10517EB98FF00D1A890 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503AE10317EB98FF00D1A890 /* main.cpp */; };
 		503AE11B17EB9C5A00D1A890 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503AE11A17EB9C5A00D1A890 /* IOKit.framework */; };
@@ -139,35 +139,35 @@
 		46880B8519C43A87006E1F66 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HelloWorldScene.cpp; sourceTree = "<group>"; };
 		46880B8719C43A87006E1F66 /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldScene.h; sourceTree = "<group>"; };
-		4F96155122012E4400A8A091 /* BannerViewScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerViewScene.h; sourceTree = "<group>"; };
-		4F96155222012E4400A8A091 /* BannerMenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BannerMenuScene.cpp; sourceTree = "<group>"; };
-		4F96155322012E4400A8A091 /* NativeTelopViewScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NativeTelopViewScene.cpp; sourceTree = "<group>"; };
-		4F96155422012E4400A8A091 /* BannerViewScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BannerViewScene.cpp; sourceTree = "<group>"; };
-		4F96155522012E4500A8A091 /* InterstitialMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterstitialMenuScene.h; sourceTree = "<group>"; };
-		4F96155622012E4500A8A091 /* NativeInfeedViewScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeInfeedViewScene.h; sourceTree = "<group>"; };
-		4F96155722012E4500A8A091 /* InterstitialMenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InterstitialMenuScene.cpp; sourceTree = "<group>"; };
-		4F96155822012E4500A8A091 /* NativeCustomViewScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NativeCustomViewScene.cpp; sourceTree = "<group>"; };
-		4F96155922012E4500A8A091 /* NativeMenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NativeMenuScene.cpp; sourceTree = "<group>"; };
-		4F96155A22012E4500A8A091 /* FullBoardAdScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FullBoardAdScene.cpp; sourceTree = "<group>"; };
-		4F96155B22012E4500A8A091 /* NativeCustomViewScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeCustomViewScene.h; sourceTree = "<group>"; };
-		4F96155C22012E4600A8A091 /* NativeInfeedViewScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NativeInfeedViewScene.cpp; sourceTree = "<group>"; };
-		4F96155D22012E4600A8A091 /* VideoAdScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VideoAdScene.cpp; sourceTree = "<group>"; };
-		4F96155E22012E4600A8A091 /* NativeViewScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeViewScene.h; sourceTree = "<group>"; };
-		4F96155F22012E4600A8A091 /* VideoAdScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoAdScene.h; sourceTree = "<group>"; };
-		4F96156022012E4600A8A091 /* BannerViewWithSpotIDScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerViewWithSpotIDScene.h; sourceTree = "<group>"; };
-		4F96156122012E4600A8A091 /* NativeMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeMenuScene.h; sourceTree = "<group>"; };
-		4F96156222012E4700A8A091 /* BannerViewWithSpotIDScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BannerViewWithSpotIDScene.cpp; sourceTree = "<group>"; };
-		4F96156322012E4700A8A091 /* NativeViewScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NativeViewScene.cpp; sourceTree = "<group>"; };
-		4F96156422012E4700A8A091 /* NativeTelopViewScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeTelopViewScene.h; sourceTree = "<group>"; };
-		4F96156522012E4700A8A091 /* BannerMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerMenuScene.h; sourceTree = "<group>"; };
-		4F96156622012E4700A8A091 /* FullBoardAdScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullBoardAdScene.h; sourceTree = "<group>"; };
-		4F96157322012F0C00A8A091 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.4.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
-		4F96157522012F1600A8A091 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.4.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
-		4F96157722012F2000A8A091 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.4.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
-		4F96157922012F2F00A8A091 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.4.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
-		4F96157B22012F3900A8A091 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.4.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
-		4F96157D22012F4500A8A091 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.4.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
-		4F96157F22012F4F00A8A091 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.4.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
+		4F986EC2230BC39C00E8A86C /* BannerViewWithSpotIDScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerViewWithSpotIDScene.h; sourceTree = "<group>"; };
+		4F986EC3230BC39C00E8A86C /* BannerViewWithSpotIDScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BannerViewWithSpotIDScene.cpp; sourceTree = "<group>"; };
+		4F986EC4230BC39C00E8A86C /* FullBoardAdScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullBoardAdScene.h; sourceTree = "<group>"; };
+		4F986EC5230BC39C00E8A86C /* NativeInfeedViewScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NativeInfeedViewScene.cpp; sourceTree = "<group>"; };
+		4F986EC6230BC39C00E8A86C /* NativeTelopViewScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NativeTelopViewScene.cpp; sourceTree = "<group>"; };
+		4F986EC7230BC39C00E8A86C /* NativeViewScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NativeViewScene.cpp; sourceTree = "<group>"; };
+		4F986EC8230BC39C00E8A86C /* VideoAdScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoAdScene.h; sourceTree = "<group>"; };
+		4F986EC9230BC39C00E8A86C /* FullBoardAdScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FullBoardAdScene.cpp; sourceTree = "<group>"; };
+		4F986ECA230BC39D00E8A86C /* NativeInfeedViewScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeInfeedViewScene.h; sourceTree = "<group>"; };
+		4F986ECB230BC39D00E8A86C /* NativeMenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NativeMenuScene.cpp; sourceTree = "<group>"; };
+		4F986ECC230BC39D00E8A86C /* BannerViewScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BannerViewScene.cpp; sourceTree = "<group>"; };
+		4F986ECD230BC39D00E8A86C /* BannerMenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BannerMenuScene.cpp; sourceTree = "<group>"; };
+		4F986ECE230BC39D00E8A86C /* VideoAdScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VideoAdScene.cpp; sourceTree = "<group>"; };
+		4F986ECF230BC39D00E8A86C /* BannerViewScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerViewScene.h; sourceTree = "<group>"; };
+		4F986ED0230BC39D00E8A86C /* NativeCustomViewScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NativeCustomViewScene.cpp; sourceTree = "<group>"; };
+		4F986ED1230BC39D00E8A86C /* NativeCustomViewScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeCustomViewScene.h; sourceTree = "<group>"; };
+		4F986ED2230BC39D00E8A86C /* InterstitialMenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InterstitialMenuScene.cpp; sourceTree = "<group>"; };
+		4F986ED3230BC39D00E8A86C /* NativeMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeMenuScene.h; sourceTree = "<group>"; };
+		4F986ED4230BC39D00E8A86C /* InterstitialMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterstitialMenuScene.h; sourceTree = "<group>"; };
+		4F986ED5230BC39D00E8A86C /* NativeViewScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeViewScene.h; sourceTree = "<group>"; };
+		4F986ED6230BC39E00E8A86C /* BannerMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerMenuScene.h; sourceTree = "<group>"; };
+		4F986ED7230BC39E00E8A86C /* NativeTelopViewScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeTelopViewScene.h; sourceTree = "<group>"; };
+		4F986EE3230BC3DA00E8A86C /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.4.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
+		4F986EE5230BC3E600E8A86C /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.4.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
+		4F986EE7230BC3F400E8A86C /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.4.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
+		4F986EE9230BC40200E8A86C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.4.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		4F986EEB230BC40E00E8A86C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.4.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
+		4F986EED230BC41D00E8A86C /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.4.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
+		4F986EEF230BC42900E8A86C /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.4.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE10317EB98FF00D1A890 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = mac/main.cpp; sourceTree = "<group>"; };
@@ -196,13 +196,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F96158022012F4F00A8A091 /* MediaPlayer.framework in Frameworks */,
-				4F96157E22012F4500A8A091 /* GameController.framework in Frameworks */,
-				4F96157C22012F3900A8A091 /* WebKit.framework in Frameworks */,
-				4F96157A22012F2F00A8A091 /* SystemConfiguration.framework in Frameworks */,
-				4F96157822012F2000A8A091 /* CoreMedia.framework in Frameworks */,
-				4F96157622012F1600A8A091 /* ImageIO.framework in Frameworks */,
-				4F96157422012F0C00A8A091 /* AdSupport.framework in Frameworks */,
+				4F986EF0230BC42900E8A86C /* MediaPlayer.framework in Frameworks */,
+				4F986EEE230BC41D00E8A86C /* GameController.framework in Frameworks */,
+				4F986EEC230BC40E00E8A86C /* WebKit.framework in Frameworks */,
+				4F986EEA230BC40200E8A86C /* SystemConfiguration.framework in Frameworks */,
+				4F986EE8230BC3F400E8A86C /* CoreMedia.framework in Frameworks */,
+				4F986EE6230BC3E600E8A86C /* ImageIO.framework in Frameworks */,
+				4F986EE4230BC3DA00E8A86C /* AdSupport.framework in Frameworks */,
 				294D0D641D0D56D500F7F5D4 /* CoreText.framework in Frameworks */,
 				ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */,
 				52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */,
@@ -295,13 +295,13 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4F96157F22012F4F00A8A091 /* MediaPlayer.framework */,
-				4F96157D22012F4500A8A091 /* GameController.framework */,
-				4F96157B22012F3900A8A091 /* WebKit.framework */,
-				4F96157922012F2F00A8A091 /* SystemConfiguration.framework */,
-				4F96157722012F2000A8A091 /* CoreMedia.framework */,
-				4F96157522012F1600A8A091 /* ImageIO.framework */,
-				4F96157322012F0C00A8A091 /* AdSupport.framework */,
+				4F986EEF230BC42900E8A86C /* MediaPlayer.framework */,
+				4F986EED230BC41D00E8A86C /* GameController.framework */,
+				4F986EEB230BC40E00E8A86C /* WebKit.framework */,
+				4F986EE9230BC40200E8A86C /* SystemConfiguration.framework */,
+				4F986EE7230BC3F400E8A86C /* CoreMedia.framework */,
+				4F986EE5230BC3E600E8A86C /* ImageIO.framework */,
+				4F986EE3230BC3DA00E8A86C /* AdSupport.framework */,
 				294D0D631D0D56D500F7F5D4 /* CoreText.framework */,
 				ED545A7D1B68A1FA00C3958E /* libiconv.dylib */,
 				ED545A7B1B68A1F400C3958E /* libiconv.dylib */,
@@ -346,28 +346,28 @@
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */,
 				46880B8719C43A87006E1F66 /* HelloWorldScene.h */,
-				4F96155222012E4400A8A091 /* BannerMenuScene.cpp */,
-				4F96156522012E4700A8A091 /* BannerMenuScene.h */,
-				4F96155422012E4400A8A091 /* BannerViewScene.cpp */,
-				4F96155122012E4400A8A091 /* BannerViewScene.h */,
-				4F96156222012E4700A8A091 /* BannerViewWithSpotIDScene.cpp */,
-				4F96156022012E4600A8A091 /* BannerViewWithSpotIDScene.h */,
-				4F96155A22012E4500A8A091 /* FullBoardAdScene.cpp */,
-				4F96156622012E4700A8A091 /* FullBoardAdScene.h */,
-				4F96155722012E4500A8A091 /* InterstitialMenuScene.cpp */,
-				4F96155522012E4500A8A091 /* InterstitialMenuScene.h */,
-				4F96155822012E4500A8A091 /* NativeCustomViewScene.cpp */,
-				4F96155B22012E4500A8A091 /* NativeCustomViewScene.h */,
-				4F96155C22012E4600A8A091 /* NativeInfeedViewScene.cpp */,
-				4F96155622012E4500A8A091 /* NativeInfeedViewScene.h */,
-				4F96155922012E4500A8A091 /* NativeMenuScene.cpp */,
-				4F96156122012E4600A8A091 /* NativeMenuScene.h */,
-				4F96155322012E4400A8A091 /* NativeTelopViewScene.cpp */,
-				4F96156422012E4700A8A091 /* NativeTelopViewScene.h */,
-				4F96156322012E4700A8A091 /* NativeViewScene.cpp */,
-				4F96155E22012E4600A8A091 /* NativeViewScene.h */,
-				4F96155D22012E4600A8A091 /* VideoAdScene.cpp */,
-				4F96155F22012E4600A8A091 /* VideoAdScene.h */,
+				4F986ECD230BC39D00E8A86C /* BannerMenuScene.cpp */,
+				4F986ED6230BC39E00E8A86C /* BannerMenuScene.h */,
+				4F986ECC230BC39D00E8A86C /* BannerViewScene.cpp */,
+				4F986ECF230BC39D00E8A86C /* BannerViewScene.h */,
+				4F986EC3230BC39C00E8A86C /* BannerViewWithSpotIDScene.cpp */,
+				4F986EC2230BC39C00E8A86C /* BannerViewWithSpotIDScene.h */,
+				4F986EC9230BC39C00E8A86C /* FullBoardAdScene.cpp */,
+				4F986EC4230BC39C00E8A86C /* FullBoardAdScene.h */,
+				4F986ED2230BC39D00E8A86C /* InterstitialMenuScene.cpp */,
+				4F986ED4230BC39D00E8A86C /* InterstitialMenuScene.h */,
+				4F986ED0230BC39D00E8A86C /* NativeCustomViewScene.cpp */,
+				4F986ED1230BC39D00E8A86C /* NativeCustomViewScene.h */,
+				4F986EC5230BC39C00E8A86C /* NativeInfeedViewScene.cpp */,
+				4F986ECA230BC39D00E8A86C /* NativeInfeedViewScene.h */,
+				4F986ECB230BC39D00E8A86C /* NativeMenuScene.cpp */,
+				4F986ED3230BC39D00E8A86C /* NativeMenuScene.h */,
+				4F986EC6230BC39C00E8A86C /* NativeTelopViewScene.cpp */,
+				4F986ED7230BC39E00E8A86C /* NativeTelopViewScene.h */,
+				4F986EC7230BC39C00E8A86C /* NativeViewScene.cpp */,
+				4F986ED5230BC39D00E8A86C /* NativeViewScene.h */,
+				4F986ECE230BC39D00E8A86C /* VideoAdScene.cpp */,
+				4F986EC8230BC39C00E8A86C /* VideoAdScene.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -526,22 +526,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F96157122012E4700A8A091 /* NativeViewScene.cpp in Sources */,
-				4F96156922012E4700A8A091 /* BannerViewScene.cpp in Sources */,
-				4F96156B22012E4700A8A091 /* NativeCustomViewScene.cpp in Sources */,
-				4F96156D22012E4700A8A091 /* FullBoardAdScene.cpp in Sources */,
+				4F986EE1230BC39E00E8A86C /* NativeCustomViewScene.cpp in Sources */,
+				4F986EDB230BC39E00E8A86C /* NativeViewScene.cpp in Sources */,
+				4F986EDC230BC39E00E8A86C /* FullBoardAdScene.cpp in Sources */,
 				1AF87B781F6F77F7007BE51C /* AppController.mm in Sources */,
-				4F96156822012E4700A8A091 /* NativeTelopViewScene.cpp in Sources */,
+				4F986EE0230BC39E00E8A86C /* VideoAdScene.cpp in Sources */,
+				4F986EDF230BC39E00E8A86C /* BannerMenuScene.cpp in Sources */,
+				4F986EDE230BC39E00E8A86C /* BannerViewScene.cpp in Sources */,
 				1AF87B8B1F6F782A007BE51C /* RootViewController.mm in Sources */,
-				4F96156C22012E4700A8A091 /* NativeMenuScene.cpp in Sources */,
-				4F96157022012E4700A8A091 /* BannerViewWithSpotIDScene.cpp in Sources */,
-				4F96156F22012E4700A8A091 /* VideoAdScene.cpp in Sources */,
+				4F986EDD230BC39E00E8A86C /* NativeMenuScene.cpp in Sources */,
+				4F986EE2230BC39E00E8A86C /* InterstitialMenuScene.cpp in Sources */,
+				4F986ED9230BC39E00E8A86C /* NativeInfeedViewScene.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
-				4F96156A22012E4700A8A091 /* InterstitialMenuScene.cpp in Sources */,
 				1AF87B8A1F6F7822007BE51C /* main.m in Sources */,
-				4F96156722012E4700A8A091 /* BannerMenuScene.cpp in Sources */,
+				4F986EDA230BC39E00E8A86C /* NativeTelopViewScene.cpp in Sources */,
+				4F986ED8230BC39E00E8A86C /* BannerViewWithSpotIDScene.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
-				4F96156E22012E4700A8A091 /* NativeInfeedViewScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,7 +579,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -597,7 +596,6 @@
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
-					"-ObjC",
 				);
 				SDKROOT = iphoneos;
 				STRIP_PNG_TEXT = NO;
@@ -615,7 +613,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ios/Prefix.pch;
@@ -632,7 +629,6 @@
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
-					"-ObjC",
 				);
 				SDKROOT = iphoneos;
 				STRIP_PNG_TEXT = NO;

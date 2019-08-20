@@ -122,7 +122,7 @@ void AppDelegate::applicationDidEnterBackground() {
     SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
     SimpleAudioEngine::getInstance()->pauseAllEffects();
 #endif
-
+    
     // アプリがバックグラウンドになった時に定期ロードを停止する
     NendModule::pause();
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
@@ -140,7 +140,6 @@ void AppDelegate::applicationWillEnterForeground() {
     SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
     SimpleAudioEngine::getInstance()->resumeAllEffects();
 #endif
-
     // アプリがフォアグラウンドになった時に定期ロードを再開する
     NendModule::resume();
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
