@@ -2,7 +2,7 @@
 //  NativeMenuScene.h
 //  CocosNendSample
 //
-//  Created by F@N Communications, Inc.
+//  Created by FAN Communications, Inc.
 //
 //
 
